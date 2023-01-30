@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+	optimizeFonts: true,
+	poweredByHeader: false,
+	env: {},
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
