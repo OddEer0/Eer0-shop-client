@@ -1,0 +1,26 @@
+{
+	"tabWidth": 2,
+	"useTabs": true,
+
+	"semi": true,
+	"singleQuote": true,
+	"trailingComma": "all",
+	"endOfLine": "lf",
+	"printWidth": 120,
+	"arrowParens": "avoid",
+	"importOrder": [
+		"<THIRD_PARTY_MODULES>",
+		"^@/application/(.*)$",
+		"^@/entities/(.*)$",
+		"^@/features/(.*)$",
+		"^@/pages/(.*)$",
+		"^@/processes/(.*)$",
+		"^@/shared/(.*)$",
+		"^@/widgets/(.*)$",
+		"^../(.*)",
+		"^./(.*)",
+		"^(.scss)$"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}
