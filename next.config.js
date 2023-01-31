@@ -2,7 +2,7 @@
 const nextConfig = {
 	optimizeFonts: true,
 	poweredByHeader: false,
-	env: {},
-};
+	env: {}
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

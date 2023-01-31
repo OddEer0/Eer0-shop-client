@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head"
 
 const Home = () => {
 	return (
@@ -11,7 +11,7 @@ const Home = () => {
 			</Head>
 			<main></main>
 		</>
-	);
-};
+	)
+}
 
-export default Home;
+export default Home
