@@ -1,0 +1,60 @@
+import { DefaultTheme } from "styled-components"
+
+export const theme: DefaultTheme = {
+	ui: {
+		text: {
+			default_10: "transparent",
+			default_20: "transparent",
+			default_30: "transparent",
+			default_40: "transparent",
+			default_50: "transparent",
+			default_60: "transparent",
+			default_70: "transparent",
+			default_80: "transparent",
+			default_90: "transparent",
+			default_100: "transparent",
+			primary_50: "#ffffff",
+			primary_60: "rgb(240, 240, 240)",
+			primary_70: "rgb(222, 222, 222)",
+			secondary_50: "#ffffff",
+			secondary_60: "#rgb(240, 240, 240)",
+			secondary_70: "rgb(222, 222, 222)",
+			success_50: "#234121",
+			success_60: "#234121",
+			success_70: "#234121",
+			danger_50: "#234121",
+			danger_60: "#234121",
+			danger_70: "#234121",
+			warning_50: "#234121",
+			warning_60: "#234121",
+			warning_70: "#234121"
+		},
+		color: {
+			default_10: "transparent",
+			default_20: "transparent",
+			default_30: "transparent",
+			default_40: "transparent",
+			default_50: "rgba(81, 81, 81, 0.393)",
+			default_60: "rgba(68, 68, 68, 0.393)",
+			default_70: "rgba(49, 49, 49, 0.393)",
+			default_80: "transparent",
+			default_90: "transparent",
+			default_100: "transparent",
+			primary_50: "#fa1f60",
+			primary_60: "#e11653",
+			primary_70: "#d21b52",
+			secondary_50: "#cdf726",
+			secondary_60: "#c1e924",
+			secondary_70: "#aed21e",
+			success_50: "#234121",
+			success_60: "#234121",
+			success_70: "#234121",
+			danger_50: "#234121",
+			danger_60: "#234121",
+			danger_70: "#234121",
+			warning_50: "#234121",
+			warning_60: "#234121",
+			warning_70: "#234121"
+		}
+	}
+}

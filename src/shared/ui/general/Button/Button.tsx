@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import { FC, PropsWithChildren } from "react"
 
 import { cn } from "@/shared/helpers"

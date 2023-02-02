@@ -1,5 +1,8 @@
 import Head from "next/head"
 
+import { Button } from "@/shared/ui/general/Button"
+import { ButtonGroup } from "@/shared/ui/general/ButtonGroup"
+
 const Home = () => {
 	return (
 		<>
@@ -9,7 +12,38 @@ const Home = () => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main></main>
+			<main>
+				<Button>CLICK</Button>
+				<Button variant="contained">CLICK</Button>
+				<Button variant="outlined">CLICK</Button>
+				<ButtonGroup>
+					<Button>CLICK</Button>
+					<Button>CLICK</Button>
+					<Button>CLICK</Button>
+				</ButtonGroup>
+				<ButtonGroup>
+					<Button size="large" variant="outlined">
+						CLICK
+					</Button>
+					<Button size="large" variant="outlined">
+						CLICK
+					</Button>
+					<Button size="large" variant="outlined">
+						CLICK
+					</Button>
+				</ButtonGroup>
+				<ButtonGroup>
+					<Button size="large" variant="contained">
+						CLICK
+					</Button>
+					<Button size="large" variant="contained">
+						CLICK
+					</Button>
+					<Button size="large" variant="contained">
+						CLICK
+					</Button>
+				</ButtonGroup>
+			</main>
 		</>
 	)
 }
