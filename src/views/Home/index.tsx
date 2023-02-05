@@ -1,8 +1,7 @@
 import Head from "next/head"
+import { FC } from "react"
 
-import { TextField } from "@/shared/ui/inputs/TextField/TextField"
-
-const Home = () => {
+export const HomeView: FC = () => {
 	return (
 		<>
 			<Head>
@@ -11,11 +10,7 @@ const Home = () => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main>
-				<TextField label="Label" subText="Sub text" />
-			</main>
+			<main></main>
 		</>
 	)
 }
-
-export default Home
