@@ -1,7 +1,6 @@
 import Head from "next/head"
 
-import { Button } from "@/shared/ui/general/Button"
-import { ButtonGroup } from "@/shared/ui/general/ButtonGroup"
+import { TextField } from "@/shared/ui/inputs/TextField/TextField"
 
 const Home = () => {
 	return (
@@ -13,36 +12,7 @@ const Home = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<Button>CLICK</Button>
-				<Button variant="contained">CLICK</Button>
-				<Button variant="outlined">CLICK</Button>
-				<ButtonGroup>
-					<Button>CLICK</Button>
-					<Button>CLICK</Button>
-					<Button>CLICK</Button>
-				</ButtonGroup>
-				<ButtonGroup>
-					<Button size="large" variant="outlined">
-						CLICK
-					</Button>
-					<Button size="large" variant="outlined">
-						CLICK
-					</Button>
-					<Button size="large" variant="outlined">
-						CLICK
-					</Button>
-				</ButtonGroup>
-				<ButtonGroup>
-					<Button size="large" variant="contained">
-						CLICK
-					</Button>
-					<Button size="large" variant="contained">
-						CLICK
-					</Button>
-					<Button size="large" variant="contained">
-						CLICK
-					</Button>
-				</ButtonGroup>
+				<TextField label="Label" subText="Sub text" />
 			</main>
 		</>
 	)
