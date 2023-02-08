@@ -13,14 +13,14 @@ export const Btn = styled.button`
 	}
 
 	&.medium {
-		border-radius: 10px;
-		padding: 8px 12px;
+		border-radius: 90px;
+		padding: 17px 62px;
 		font-size: 18px;
 	}
 
 	&.large {
-		border-radius: 12px;
-		padding: 10px 14px;
+		border-radius: 60px;
+		padding: 16px 97px;
 		font-size: 20px;
 	}
 

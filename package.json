@@ -9,7 +9,6 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@next/font": "13.1.6",
 		"@reduxjs/toolkit": "1.9.2",
 		"axios": "1.2.6",
 		"framer-motion": "9.0.1",

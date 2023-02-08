@@ -1,5 +1,10 @@
 import Head from "next/head"
 import { FC } from "react"
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+	height: 1000px;
+`
 
 export const HomeView: FC = () => {
 	return (
@@ -10,7 +15,7 @@ export const HomeView: FC = () => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main></main>
+			<Wrapper></Wrapper>
 		</>
 	)
 }

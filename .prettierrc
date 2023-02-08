@@ -10,10 +10,10 @@
 	"arrowParens": "avoid",
 	"importOrder": [
 		"<THIRD_PARTY_MODULES>",
-		"^@/application/(.*)$",
+		"^@/app/(.*)$",
 		"^@/entities/(.*)$",
 		"^@/features/(.*)$",
-		"^@/pages/(.*)$",
+		"^@/views/(.*)$",
 		"^@/processes/(.*)$",
 		"^@/shared/(.*)$",
 		"^@/widgets/(.*)$",
