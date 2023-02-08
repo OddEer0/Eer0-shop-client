@@ -1,8 +1,12 @@
 import Head from "next/head"
+import { FC } from "react"
+import styled from "styled-components"
 
-import { TextField } from "@/shared/ui/inputs/TextField/TextField"
+const Wrapper = styled.div`
+	height: 1000px;
+`
 
-const Home = () => {
+export const HomeView: FC = () => {
 	return (
 		<>
 			<Head>
@@ -11,11 +15,7 @@ const Home = () => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main>
-				<TextField label="Label" subText="Sub text" />
-			</main>
+			<Wrapper></Wrapper>
 		</>
 	)
 }
-
-export default Home

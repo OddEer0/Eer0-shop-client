@@ -20,7 +20,7 @@
 			"~/*": ["/*"],
 			"@/app/*": ["application/*"],
 			"@/processes/*": ["processes/*"],
-			"@/pages/*": ["pages/*"],
+			"@/views/*": ["views/*"],
 			"@/widgets/*": ["widgets/*"],
 			"@/features/*": ["features/*"],
 			"@/entities/*": ["entities/*"],

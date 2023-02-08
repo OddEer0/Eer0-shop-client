@@ -26,6 +26,27 @@ interface IThemeUIColorNaming {
 	warning_70: string
 }
 
+interface IThemeBaseColorNaming {
+	primary_50: string
+	primary_60: string
+	primary_70: string
+	secondary_50: string
+	secondary_60: string
+	secondary_70: string
+	tertiary_50: string
+	tertiary_60: string
+	tertiary_70: string
+	quaternary_50: string
+	quaternary_60: string
+	quaternary_70: string
+}
+
+interface IBase {
+	text: IThemeBaseColorNaming
+	bg: IThemeBaseColorNaming
+	border: IThemeBaseColorNaming
+}
+
 interface IUI {
 	color: IThemeUIColorNaming
 	text: IThemeUIColorNaming
@@ -33,4 +54,5 @@ interface IUI {
 
 export interface ITheme {
 	ui: IUI
+	base: IBase
 }

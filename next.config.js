@@ -2,7 +2,11 @@
 const nextConfig = {
 	optimizeFonts: true,
 	poweredByHeader: false,
-	env: {}
+	env: {},
+
+	images: {
+		domains: []
+	}
 }
 
 module.exports = nextConfig

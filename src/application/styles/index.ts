@@ -6,6 +6,9 @@ export const GlobalStyle = createGlobalStyle`
 	${resetStyle}
 
 	body {
-	background: rgb(62, 62, 62);
-}
+		background: ${({ theme }) => theme.base.bg.primary_50};
+		color: ${({ theme }) => theme.base.text.primary_50};
+		font-family: 'Inter', sans-serif;
+		font-size: 18px;
+	}
 `
