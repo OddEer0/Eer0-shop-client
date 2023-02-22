@@ -1,7 +1,9 @@
 import { FC } from "react"
 
+import { LoginView } from "@/views/auth/Login"
+
 const Login: FC = () => {
-	return <div></div>
+	return <LoginView />
 }
 
 export default Login

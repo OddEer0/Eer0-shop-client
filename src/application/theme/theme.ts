@@ -17,7 +17,7 @@ export const theme: DefaultTheme = {
 			primary_60: "rgb(240, 240, 240)",
 			primary_70: "rgb(222, 222, 222)",
 			secondary_50: "#ffffff",
-			secondary_60: "#rgb(240, 240, 240)",
+			secondary_60: "rgb(240, 240, 240)",
 			secondary_70: "rgb(222, 222, 222)",
 			success_50: "#234121",
 			success_60: "#234121",
@@ -42,10 +42,10 @@ export const theme: DefaultTheme = {
 			default_100: "transparent",
 			primary_50: "#3C336C",
 			primary_60: "#3C336C",
-			primary_70: "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #3C336C",
+			primary_70: "#3C336C",
 			secondary_50: "#309F85",
 			secondary_60: "#309F85",
-			secondary_70: "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #309F85",
+			secondary_70: "#309F85",
 			success_50: "#26b85e",
 			success_60: "#21a453",
 			success_70: "#1e8a47",
@@ -59,12 +59,12 @@ export const theme: DefaultTheme = {
 	},
 	base: {
 		bg: {
-			primary_50: "#ffffff",
-			primary_60: "##F5F5F5",
+			primary_50: "#F5F5F5",
+			primary_60: "#ffffff",
 			primary_70: "#ffffff",
 			secondary_50: "linear-gradient(38.95deg, #9796F0 -10.38%, #FFE0E8 107.56%)",
-			secondary_60: "#ffffff",
-			secondary_70: "linear-gradient(42.14deg, #9796F0 -17.31%, #FBC7D4 106.72%)",
+			secondary_60: "linear-gradient(42.14deg, #9796F0 -17.31%, #FBC7D4 106.72%)",
+			secondary_70: "#ffffff",
 			tertiary_50: "#EEF1F6",
 			tertiary_60: "#ffffff",
 			tertiary_70: "#FAFBFD",
@@ -99,6 +99,12 @@ export const theme: DefaultTheme = {
 			quaternary_50: "#ffffff",
 			quaternary_60: "#ffffff",
 			quaternary_70: "#ffffff"
+		},
+		boxShadow: {
+			primary: "0px 0px 10px black",
+			secondary: "0px 0px 10px black",
+			tertiary: "0px 0px 10px black",
+			quaternary: "0px 0px 10px black"
 		}
 	}
 }

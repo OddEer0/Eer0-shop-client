@@ -15,7 +15,7 @@ export const TextFieldContainer = styled.div`
 	&.small {
 		input {
 			padding: 6px 10px;
-			border-radius: 8px;
+			border-radius: 36px;
 			font-size: 18px;
 		}
 	}
@@ -23,7 +23,7 @@ export const TextFieldContainer = styled.div`
 	&.medium {
 		input {
 			padding: 8px 12px;
-			border-radius: 10px;
+			border-radius: 40px;
 			font-size: 20px;
 		}
 	}
@@ -31,7 +31,7 @@ export const TextFieldContainer = styled.div`
 	&.large {
 		input {
 			padding: 10px 14px;
-			border-radius: 12px;
+			border-radius: 48px;
 			font-size: 22px;
 		}
 	}
@@ -47,6 +47,8 @@ export const TextFieldContainer = styled.div`
 			font-size: 16px;
 			margin-left: 10px;
 			margin-bottom: 6px;
+			cursor: pointer;
+			user-select: none;
 		}
 
 		&__sub-text {
@@ -71,7 +73,7 @@ export const TextFieldContainer = styled.div`
 				}
 				&__input {
 					background: transparent;
-					color: ${({ theme }) => theme.ui.text.primary_50};
+					color: inherit;
 					border: 2px solid ${({ theme }) => theme.ui.color.default_50};
 
 					&:hover {
