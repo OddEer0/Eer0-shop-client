@@ -5,7 +5,7 @@ const nextConfig = {
 	env: {},
 
 	images: {
-		domains: []
+		remotePatterns: [{ protocol: "https", hostname: "i.pinimg.com", port: "", pathname: "/**" }]
 	}
 }
 

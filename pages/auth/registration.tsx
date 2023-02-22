@@ -1,7 +1,9 @@
 import { FC } from "react"
 
+import { RegistrationView } from "@/views/auth/Registration"
+
 const Registration: FC = () => {
-	return <div></div>
+	return <RegistrationView />
 }
 
 export default Registration

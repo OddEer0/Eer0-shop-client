@@ -7,18 +7,14 @@ import { GlobalStyle } from "@/app/styles"
 // eslint-disable-next-line import/no-unresolved
 import { theme } from "@/app/theme"
 
-import { MainLayout } from "@/widgets/MainLayout"
-
 const App = ({ Component, ...rest }: AppProps) => {
 	const { store, props } = wrapper.useWrappedStore(rest)
 
 	return (
 		<Provider store={store}>
 			<ThemeProvider theme={theme}>
-				<MainLayout>
-					<GlobalStyle />
-					<Component {...props.pageProps} />
-				</MainLayout>
+				<GlobalStyle />
+				<Component {...props.pageProps} />
 			</ThemeProvider>
 		</Provider>
 	)

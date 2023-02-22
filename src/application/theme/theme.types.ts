@@ -41,10 +41,18 @@ interface IThemeBaseColorNaming {
 	quaternary_70: string
 }
 
+interface IBoxShadow {
+	primary: string
+	secondary: string
+	tertiary: string
+	quaternary: string
+}
+
 interface IBase {
 	text: IThemeBaseColorNaming
 	bg: IThemeBaseColorNaming
 	border: IThemeBaseColorNaming
+	boxShadow: IBoxShadow
 }
 
 interface IUI {
