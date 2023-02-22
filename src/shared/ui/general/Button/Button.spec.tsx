@@ -21,7 +21,7 @@ describe("Рендер кнопки", () => {
 	})
 
 	it("Snapshot кнопки", () => {
-		const component = shallow(<Button variant="contained">BUTTON</Button>)
+		const component = shallow(<Button variant="contained"></Button>)
 		expect(component).toMatchSnapshot()
 	})
 })
