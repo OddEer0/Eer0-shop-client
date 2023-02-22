@@ -287,3 +287,5 @@ export const Btn = styled.button`
 		}
 	}
 `
+
+Btn.displayName = 'button'
