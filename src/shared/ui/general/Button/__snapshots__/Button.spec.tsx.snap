@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Рендер кнопки Snapshot кнопки 1`] = `
+<button
+  className="prefix contained medium primary "
+>
+  BUTTON
+</button>
+`;
