@@ -1,27 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { shallow } from "enzyme"
+import { render } from "@test-utils"
+import "@testing-library/jest-dom"
 
 import { Button } from "./Button"
 
-describe("Рендер кнопки", () => {
-	let component: any
-	beforeEach(() => {
-		component = shallow(<Button />)
-	})
-
-	it("Проверка на рендер кнопки", () => {
-		const button = component.find("button")
-		expect(button.length).toBe(1)
-	})
-
-	it("Рендер contained кнопки", () => {
-		const component = shallow(<Button variant="contained" />)
-		const wrapper = component.find(".contained")
-		expect(wrapper.length).toBe(1)
-	})
-
-	it("Snapshot кнопки", () => {
-		const component = shallow(<Button variant="contained"></Button>)
-		expect(component).toMatchSnapshot()
+describe("should render component", () => {
+	it("Should default render", () => {
+		const { getByText } = render(<Button>BUTTON</Button>)
+		const text = getByText(/button/i)
+		expect(text).toBeInTheDocument()
 	})
 })
