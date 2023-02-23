@@ -39,9 +39,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 		const cl = cn("prefix", variant, color, inputSize, className)
 
 		return (
-			<TextFieldContainer className={cl}>
+			<TextFieldContainer data-testid="wrapper" className={cl}>
 				{label && (
-					<h4 className="eer0-ui-textfield__label" onClick={focusHandler}>
+					<h4 data-testid="label" className="eer0-ui-textfield__label" onClick={focusHandler}>
 						{label}
 					</h4>
 				)}
@@ -50,13 +50,23 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 					<input className="eer0-ui-textfield__input" {...props} type={inputType} ref={inputRef} />
 					{type === "password" ? (
 						<span onClick={toggleTypeHandler}>
-							{endIcon ? endIcon : inputType === "password" ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+							{endIcon ? (
+								endIcon
+							) : inputType === "password" ? (
+								<AiOutlineEyeInvisible data-testid="close-eye" />
+							) : (
+								<AiOutlineEye data-testid="open-eye" />
+							)}
 						</span>
 					) : (
 						endIcon && <span className="eer0-ui-textfield__end-icon">{endIcon}</span>
 					)}
 				</div>
-				{subText && <p className="eer0-ui-textfield__sub-text">{subText}</p>}
+				{subText && (
+					<p data-testid="sub-text" className="eer0-ui-textfield__sub-text">
+						{subText}
+					</p>
+				)}
 			</TextFieldContainer>
 		)
 	}
