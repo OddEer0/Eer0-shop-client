@@ -47,9 +47,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 				)}
 				<div className="eer0-ui-textfield__wrapper">
 					{startIcon && <span className="eer0-ui-textfield__start-icon">{startIcon}</span>}
-					<input className="eer0-ui-textfield__input" {...props} type={inputType} ref={inputRef} />
+
 					{type === "password" ? (
-						<span onClick={toggleTypeHandler}>
+						<span className="eer0-ui-textfield__end-icon-default" onClick={toggleTypeHandler}>
 							{endIcon ? (
 								endIcon
 							) : inputType === "password" ? (
@@ -61,6 +61,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 					) : (
 						endIcon && <span className="eer0-ui-textfield__end-icon">{endIcon}</span>
 					)}
+					<input className="eer0-ui-textfield__input" {...props} type={inputType} ref={inputRef} />
 				</div>
 				{subText && (
 					<p data-testid="sub-text" className="eer0-ui-textfield__sub-text">

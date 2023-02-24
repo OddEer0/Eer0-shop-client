@@ -37,11 +37,39 @@ export const TextFieldContainer = styled.div`
 	}
 
 	.eer0-ui-textfield {
+		&__start-icon {
+			user-select: none;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 10px;
+			font-size: 20px;
+		}
+		&__end-icon {
+			user-select: none;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+			font-size: 20px;
+		}
+		&__end-icon-default {
+			user-select: none;
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+			font-size: 20px;
+		}
 		&__start-icon ~ .eer0-ui-textfield__input {
-			padding-left: 24px;
+			padding-left: 32px;
 		}
 		&__end-icon ~ .eer0-ui-textfield__input {
-			padding-right: 24px;
+			padding-right: 32px;
+		}
+		&__end-icon-default ~ .eer0-ui-textfield__input {
+			padding-right: 32px;
 		}
 		&__label {
 			font-size: 16px;
