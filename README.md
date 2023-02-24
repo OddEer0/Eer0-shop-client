@@ -1,38 +1,107 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+`git checkout -b название_ветки` - создаем ветку для работы по таске
 
-## Getting Started
+Если какие-то изменения надо стянуть с ветки develop, делаем `git pull origin develop`
 
-First, run the development server:
+## Команды для работы
+
+- `dev` - запуск dev сервера проекта
+- `build` - сборка прод версии проекта
+- `start` - запуск прод сервера проекта
+- `stylelint` - проверяем файлы стилей на синтаксические ошибки
+- `stylelint:fix` - авто-исправление синтаксических ошибок в стилях
+- `prettier` - форматер кода
+- `prettier:fix` - форматирование всех файлов
+- `lint` - проверка синтаксиса js/ts файлов
+- `lint:fix` - авто-исправление синтаксических ошибок
+- `storybook` - запуск dev-сервера storybook`а
+- `build-storybook` - сборка storybook для деплоя
+
+## Во время разработки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm run storybook
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Перед пушем
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- `npm run build` - проверяем исправность build сборки
+  stylelint и eslint сделает проверку при коммите
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Структура компонента
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+Component
+  ├── index.ts
+  ├── Component.tsx
+  ├── Component.styles.ts
+  ├── Component.stories.tsx
+  ├── Component.types.ts
+  ├── Component.context.ts
+  ├── Component.lazy.ts
+  └── Component.spec.ts
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Все эти файлы могут быть не обязательны. К примеру, если типизация достаточно большая, то выносим её в отдельный файл. В противном случае не обязательно.
 
-## Learn More
+Про lazy файл. Он служит для декомпозиций набора стилизованных loader или skeleton если она окажется достаточно большой
 
-To learn more about Next.js, take a look at the following resources:
+```
+views
+└── registration
+  ├── index.tsx
+  ├── registration.module.scss
+  ├── registration.types.ts
+  ├── registration.context.ts
+  ├── registration.test.ts
+  └── sections
+    ├── first
+    | ├── index.tsx
+    | ├── first.module.scss
+    | ├── first.types.ts
+    | ├── first.context.ts
+    | └── first.test.ts
+    └── second
+      ├── index.tsx
+      ├── second.module.scss
+      ├── second.types.ts
+      ├── second.context.ts
+      └── second.test.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+В случай, если в страницу много секций. Создаем папку sections и туда помещаем first, second, third и тд
+для декомпозиций страницы. После куски собираем в index файле. Так же можно index файл сделать public api
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+views
+└── registration
+  ├── index.ts
+  ├── registration.module.scss
+  ├── registration.types.ts
+  ├── registration.context.ts
+  ├── registration.test.ts
+  └── registration.tsx
+```
 
-## Deploy on Vercel
+## Структура приложения
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+src
+  ├── application ─ содержит настройку роутера, глобальные хранилища и стили.
+  ├── processes ─ содержит часть аутентификации, отвечающую за чтение/запись токенов аутентификации.
+  ├── views ─ содержит компоненты роутов на каждую страницу в приложении, преимущественно композирующие, по возможности, без собственной логики.
+  ├── widgets ─ содержит "собранную" карточку поста, с содержимым и интерактивными кнопками, в которые вшиты запросы к бэкенду.
+  ├── features ─ содержит всю интерактивность карточки (например, кнопку лайка) и логику обработки этой интерактивности.
+  ├── entities ─ содержит скелет карточки со слотами под интерактивные элементы. Компонент, демонстрирующий автора поста, также находится в этой папке, но в другом слайсе.
+  └── shared ─ максимально переиспользуемые компоненты(ui), helpers, constants без бизнес логики.
+
+```
+
+## Архитектура приложения
+
+Используем архитектуру feature sliced design. У данной архитектуры есть своя документация. Вот ссылка https://feature-sliced.design/
+можете ознакомится с данной архитектурой.
+
+У нас в сегментах нет lib, у нас идут сегменты constants и helpers. Для типизаций и хуков сегменты types и hooks соответственно.
+Так же возможно, что могут быть введены ещё какие-то сегменты.
