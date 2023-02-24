@@ -48,6 +48,13 @@ interface IBoxShadow {
 	quaternary: string
 }
 
+interface IUIBackground {
+	primary: string
+	secondary: string
+	tertiary: string
+	quaternary: string
+}
+
 interface IBase {
 	text: IThemeBaseColorNaming
 	bg: IThemeBaseColorNaming
@@ -58,6 +65,8 @@ interface IBase {
 interface IUI {
 	color: IThemeUIColorNaming
 	text: IThemeUIColorNaming
+	bg: IUIBackground
+	boxShadow: IBoxShadow
 }
 
 export interface ITheme {

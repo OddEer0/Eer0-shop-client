@@ -2,6 +2,18 @@ import { DefaultTheme } from "styled-components"
 
 export const theme: DefaultTheme = {
 	ui: {
+		bg: {
+			primary: "#ffffff",
+			secondary: "yellow",
+			tertiary: "orange",
+			quaternary: "lime"
+		},
+		boxShadow: {
+			primary: "0px 0px 10px black",
+			secondary: "0px 0px 10px black",
+			tertiary: "0px 0px 10px black",
+			quaternary: "0px 0px 10px black"
+		},
 		text: {
 			default_10: "transparent",
 			default_20: "transparent",
