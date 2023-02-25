@@ -25,7 +25,7 @@
 			"@/features/*": ["features/*"],
 			"@/entities/*": ["entities/*"],
 			"@/shared/*": ["shared/*"],
-			"@test-utils": ["shared/utils/customRender.tsx"]
+			"@test-utils": ["../utils/test.tsx"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js"],
