@@ -15,7 +15,7 @@ const customJestConfig = {
 		"^@/views(.*)$": "<rootDir>/src/views$1",
 		"^@/processes(.*)$": "<rootDir>/src/processes$1",
 		"^@/app(.*)$": "<rootDir>/src/application$1",
-		"^@test-utils": "<rootDir>/src/shared/utils/customRender.tsx"
+		"^@test-utils": "<rootDir>/utils/test.tsx"
 	},
 	testEnvironment: "jest-environment-jsdom"
 }
