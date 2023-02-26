@@ -26,13 +26,14 @@ export const Avatar = forwardRef<HTMLInputElement, PropsWithChildren<AvatarProps
 			avatarSize = "medium",
 			isChangeable = false,
 			defaultAvatar = null,
+			variant = "circle",
 			changeableIcon,
 			children,
 			...props
 		},
 		ref
 	) => {
-		const cl = cn("prefix", avatarSize, className)
+		const cl = cn("prefix", avatarSize, variant, className)
 		const random = defaultAvatar ? (defaultAvatar.codePointAt(0) as number) % 10 : null
 		const inputRef = useRef<HTMLInputElement>(null)
 		useImperativeHandle(ref, () => inputRef.current as HTMLInputElement)
