@@ -2,6 +2,8 @@
 import Head from "next/head"
 import { FC, PropsWithChildren } from "react"
 
+import { Layout } from "@/shared/ui"
+
 import { Header } from "../Header"
 
 export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
@@ -15,8 +17,11 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 					rel="stylesheet"
 				></link>
 			</Head>
-			<Header />
-			<main>{children}</main>
+			<Layout>
+				<Layout.Header as={Header}></Layout.Header>
+				<Layout.Content>{children}</Layout.Content>
+				<Layout.Footer></Layout.Footer>
+			</Layout>
 		</>
 	)
 }

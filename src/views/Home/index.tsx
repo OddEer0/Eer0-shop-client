@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { MainLayout } from "@/widgets/MainLayout"
 
 const Wrapper = styled.div`
-	height: 1000px;
+	height: 2000px;
 `
 
 export const HomeView: FC = () => {
