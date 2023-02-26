@@ -7,7 +7,6 @@ interface StyledProps {
 }
 
 export const AvatarWrapper = styled.div<StyledProps>`
-	border-radius: 50%;
 	position: relative;
 	display: inline-flex;
 	align-items: center;
@@ -17,6 +16,18 @@ export const AvatarWrapper = styled.div<StyledProps>`
 	user-select: none;
 	background: ${({ theme, randomColor }) =>
 		randomColor ? theme.ui.randomColor[randomColor] : theme.ui.color.default_40};
+
+	&.circle {
+		border-radius: 50%;
+	}
+
+	&.rounded {
+		border-radius: 15px;
+	}
+
+	&.square {
+		border-radius: none;
+	}
 
 	&.xxsmall {
 		width: 32px;

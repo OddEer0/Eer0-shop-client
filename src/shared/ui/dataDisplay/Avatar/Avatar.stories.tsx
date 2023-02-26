@@ -20,6 +20,17 @@ Default.args = {
 	defaultAvatar: "Marlen Karimov"
 }
 
+export const Variant = () => (
+	<>
+		<h4>default circle</h4>
+		<Avatar url={AVATAR_URL} />
+		<h4>rounded</h4>
+		<Avatar variant="rounded" url={AVATAR_URL2} />
+		<h4>square</h4>
+		<Avatar variant="square" url={AVATAR_URL3} />
+	</>
+)
+
 export const Size = () => (
 	<>
 		<h4>xlarge</h4>

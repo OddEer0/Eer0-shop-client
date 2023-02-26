@@ -18,6 +18,30 @@ describe("Avatar every props", () => {
 		expect(asFragment()).toMatchSnapshot()
 	})
 
+	it("Default circle variant", () => {
+		const { asFragment, getByText } = render(<Avatar defaultAvatar="Marlen Karimov" />)
+		expect(getByText(/mk/i)).toHaveClass("circle")
+		expect(getByText(/mk/i)).not.toHaveClass("rounded")
+		expect(getByText(/mk/i)).not.toHaveClass("square")
+		expect(asFragment()).toMatchSnapshot()
+	})
+
+	it("Rounded variant", () => {
+		const { asFragment, getByText } = render(<Avatar variant="rounded" defaultAvatar="Marlen Karimov" />)
+		expect(getByText(/mk/i)).not.toHaveClass("circle")
+		expect(getByText(/mk/i)).toHaveClass("rounded")
+		expect(getByText(/mk/i)).not.toHaveClass("square")
+		expect(asFragment()).toMatchSnapshot()
+	})
+
+	it("Square variant", () => {
+		const { asFragment, getByText } = render(<Avatar variant="square" defaultAvatar="Marlen Karimov" />)
+		expect(getByText(/mk/i)).not.toHaveClass("circle")
+		expect(getByText(/mk/i)).not.toHaveClass("rounded")
+		expect(getByText(/mk/i)).toHaveClass("square")
+		expect(asFragment()).toMatchSnapshot()
+	})
+
 	it("xlarge avatarSize", () => {
 		const { asFragment, getByText } = render(<Avatar avatarSize="xlarge" defaultAvatar="Marlen Karimov" />)
 		expect(getByText(/mk/i)).toHaveClass("xlarge")
