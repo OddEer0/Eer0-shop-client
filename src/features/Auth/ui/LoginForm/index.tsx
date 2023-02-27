@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-import { TextField } from "@/shared/ui/inputs/TextField"
+import { TextField } from "@/shared/ui"
 
 import { useLoginForm } from "../../hooks"
 

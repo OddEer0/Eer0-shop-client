@@ -8,7 +8,7 @@ import { Avatar } from "../Avatar"
 import { Badge } from "./Badge"
 
 export default {
-	title: "UI/Badge",
+	title: "UI/Data Display/Badge",
 	component: Badge
 } as ComponentMeta<typeof Badge>
 
@@ -110,6 +110,14 @@ export const Color = () => (
 		<p>Secondary</p>
 		<Badge color="secondary">
 			<Avatar url={AVATAR_URL} />
+		</Badge>
+		<p>Tertiary</p>
+		<Badge color="tertiary">
+			<Avatar url={AVATAR_URL5} />
+		</Badge>
+		<p>Quaternary</p>
+		<Badge color="quaternary">
+			<Avatar url={AVATAR_URL2} />
 		</Badge>
 	</>
 )

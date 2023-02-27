@@ -4,8 +4,10 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 
 import { cn } from "@/shared/helpers"
 
-import { TextFieldContainer } from "./TextField.styles"
 import { TextFieldProps } from "./TextField.types"
+import { FilledTextField } from "./styles/filled.styles"
+import { OutlinedTextField } from "./styles/outlined.styles"
+import { StandardTextField } from "./styles/standard.styles"
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 	(
@@ -38,17 +40,17 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 
 		const cl = cn("prefix", variant, color, inputSize, className)
 
-		return (
-			<TextFieldContainer data-testid="wrapper" className={cl}>
+		const TextFieldContent = (
+			<>
 				{label && (
-					<h4 data-testid="label" className="eer0-ui-textfield__label" onClick={focusHandler}>
+					<h4 data-testid="label" className="label" onClick={focusHandler}>
 						{label}
 					</h4>
 				)}
-				<div className="eer0-ui-textfield__wrapper">
-					{startIcon && <span className="eer0-ui-textfield__start-icon">{startIcon}</span>}
+				<div className="wrapper">
+					{startIcon && <span className="start-icon">{startIcon}</span>}
 					{type === "password" ? (
-						<span className="eer0-ui-textfield__end-icon-default" onClick={toggleTypeHandler}>
+						<span className="end-icon-default" onClick={toggleTypeHandler}>
 							{endIcon ? (
 								endIcon
 							) : inputType === "password" ? (
@@ -58,16 +60,34 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 							)}
 						</span>
 					) : (
-						endIcon && <span className="eer0-ui-textfield__end-icon">{endIcon}</span>
+						endIcon && <span className="end-icon">{endIcon}</span>
 					)}
-					<input className="eer0-ui-textfield__input" {...props} type={inputType} ref={inputRef} />
+					<input className="input" {...props} type={inputType} ref={inputRef} />
 				</div>
 				{subText && (
-					<p data-testid="sub-text" className="eer0-ui-textfield__sub-text">
+					<p data-testid="sub-text" className="sub-text">
 						{subText}
 					</p>
 				)}
-			</TextFieldContainer>
+			</>
+		)
+
+		return (
+			<>
+				{variant === "standard" ? (
+					<StandardTextField data-testid="wrapper" className={cl}>
+						{TextFieldContent}
+					</StandardTextField>
+				) : variant === "filled" ? (
+					<FilledTextField data-testid="wrapper" className={cl}>
+						{TextFieldContent}
+					</FilledTextField>
+				) : (
+					<OutlinedTextField data-testid="wrapper" className={cl}>
+						{TextFieldContent}
+					</OutlinedTextField>
+				)}
+			</>
 		)
 	}
 )

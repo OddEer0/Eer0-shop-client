@@ -2,12 +2,12 @@ import { ComponentMeta } from "@storybook/react"
 import { useState } from "react"
 import styled from "styled-components"
 
-import { Button } from "../../general/Button"
+import { Button } from "../../input/Button"
 
 import { Dropdown } from "./Dropdown"
 
 export default {
-	title: "UI/Dropdown",
+	title: "UI/Navigation/Dropdown",
 	component: Dropdown
 } as ComponentMeta<typeof Dropdown>
 

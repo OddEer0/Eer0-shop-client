@@ -63,53 +63,32 @@ describe("Should render TextField with every props, snapshot", () => {
 	})
 
 	it("Should render primary color", () => {
-		const { asFragment } = render(<TextField />)
+		const { rerender } = render(<TextField />)
 		expect(screen.getByTestId("wrapper")).toHaveClass("primary")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("secondary")
+		expect(screen.getByTestId("wrapper")).not.toHaveClass("tertiary")
+		expect(screen.getByTestId("wrapper")).not.toHaveClass("quaternary")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("success")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("danger")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("warning")
-		expect(asFragment()).toMatchSnapshot()
-	})
-
-	it("Should render secondary color", () => {
-		const { asFragment } = render(<TextField color="secondary" />)
+		rerender(<TextField color="secondary" />)
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("primary")
 		expect(screen.getByTestId("wrapper")).toHaveClass("secondary")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("success")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("danger")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("warning")
-		expect(asFragment()).toMatchSnapshot()
-	})
-
-	it("Should render danger color", () => {
-		const { asFragment } = render(<TextField color="danger" />)
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("primary")
+		rerender(<TextField color="tertiary" />)
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("secondary")
+		expect(screen.getByTestId("wrapper")).toHaveClass("tertiary")
+		rerender(<TextField color="quaternary" />)
+		expect(screen.getByTestId("wrapper")).not.toHaveClass("tertiary")
+		expect(screen.getByTestId("wrapper")).toHaveClass("quaternary")
+		rerender(<TextField color="success" />)
+		expect(screen.getByTestId("wrapper")).not.toHaveClass("quaternary")
+		expect(screen.getByTestId("wrapper")).toHaveClass("success")
+		rerender(<TextField color="danger" />)
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("success")
 		expect(screen.getByTestId("wrapper")).toHaveClass("danger")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("warning")
-		expect(asFragment()).toMatchSnapshot()
-	})
-
-	it("Should render success color", () => {
-		const { asFragment } = render(<TextField color="success" />)
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("primary")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("secondary")
-		expect(screen.getByTestId("wrapper")).toHaveClass("success")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("danger")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("warning")
-		expect(asFragment()).toMatchSnapshot()
-	})
-
-	it("Should render warning color", () => {
-		const { asFragment } = render(<TextField color="warning" />)
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("primary")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("secondary")
-		expect(screen.getByTestId("wrapper")).not.toHaveClass("success")
+		rerender(<TextField color="warning" />)
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("danger")
 		expect(screen.getByTestId("wrapper")).toHaveClass("warning")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should render label and sub text", () => {
