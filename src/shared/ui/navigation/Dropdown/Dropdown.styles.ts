@@ -52,16 +52,16 @@ export const DropdownWrapper = styled.div`
 		}
 
 		&.primary {
-			background: ${({ theme }) => theme.ui.bg.primary};
+			background: ${({ theme }) => theme.ui.bg.primary_50};
 		}
 		&.secondary {
-			background: ${({ theme }) => theme.ui.bg.secondary};
+			background: ${({ theme }) => theme.ui.bg.secondary_50};
 		}
 		&.tertiary {
-			background: ${({ theme }) => theme.ui.bg.tertiary};
+			background: ${({ theme }) => theme.ui.bg.tertiary_50};
 		}
 		&.quaternary {
-			background: ${({ theme }) => theme.ui.bg.quaternary};
+			background: ${({ theme }) => theme.ui.bg.quaternary_50};
 		}
 	}
 `
