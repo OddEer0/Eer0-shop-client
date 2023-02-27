@@ -2,6 +2,7 @@
 
 # custom
 .swc
+theme.exemple.css
 
 # dependencies
 /node_modules
