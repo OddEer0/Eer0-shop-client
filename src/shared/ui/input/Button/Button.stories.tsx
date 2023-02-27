@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Button } from "./Button"
 
 export default {
-	title: "UI/Button",
+	title: "UI/Input/Button",
 	component: Button
 } as ComponentMeta<typeof Button>
 
@@ -16,7 +16,9 @@ const Line = styled.div`
 `
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+	children: "Button"
+}
 
 export const Variant = () => (
 	<>
@@ -30,13 +32,22 @@ export const Color = () => (
 	<>
 		<Button>Primary</Button>
 		<Button color="secondary">Secondary</Button>
+		<Button color="tertiary">Tertiary</Button>
+		<Button color="quaternary">Quaternary</Button>
 		<Button color="success">Success</Button>
 		<Button color="danger">Danger</Button>
 		<Button color="warning">Warning</Button>
+		<Button color="default">Default</Button>
 		<Line />
 		<Button variant="outlined">Primary</Button>
 		<Button variant="outlined" color="secondary">
 			Secondary
+		</Button>
+		<Button variant="outlined" color="tertiary">
+			Tertiary
+		</Button>
+		<Button variant="outlined" color="quaternary">
+			Quaternary
 		</Button>
 		<Button variant="outlined" color="success">
 			Success
@@ -47,10 +58,19 @@ export const Color = () => (
 		<Button variant="outlined" color="warning">
 			Warning
 		</Button>
+		<Button variant="outlined" color="default">
+			Default
+		</Button>
 		<Line />
 		<Button variant="contained">Primary</Button>
 		<Button variant="contained" color="secondary">
 			Secondary
+		</Button>
+		<Button variant="contained" color="tertiary">
+			Tertiary
+		</Button>
+		<Button variant="contained" color="quaternary">
+			Quaternary
 		</Button>
 		<Button variant="contained" color="success">
 			Success
@@ -60,6 +80,9 @@ export const Color = () => (
 		</Button>
 		<Button variant="contained" color="warning">
 			Warning
+		</Button>
+		<Button variant="contained" color="default">
+			Default
 		</Button>
 	</>
 )

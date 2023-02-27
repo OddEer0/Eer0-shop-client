@@ -43,23 +43,6 @@
 		"@typescript-eslint/indent": "off",
 		"@typescript-eslint/comma-dangle": "off",
 		"@typescript-eslint/lines-between-class-members": "off",
-		"import/order": [
-			"error",
-			{
-				"alphabetize": { "order": "asc", "caseInsensitive": true },
-				"newlines-between": "always-and-inside-groups",
-				"pathGroups": [
-					{ "group": "internal", "position": "after", "pattern": "~/processes/**" },
-					{ "group": "internal", "position": "after", "pattern": "~/pages/**" },
-					{ "group": "internal", "position": "after", "pattern": "~/widgets/**" },
-					{ "group": "internal", "position": "after", "pattern": "~/features/**" },
-					{ "group": "internal", "position": "after", "pattern": "~/entities/**" },
-					{ "group": "internal", "position": "after", "pattern": "~/shared/**" }
-				],
-				"pathGroupsExcludedImportTypes": ["builtin"],
-				"groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
-			}
-		],
 		"no-restricted-imports": [
 			"error",
 			{

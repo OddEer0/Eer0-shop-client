@@ -89,5 +89,13 @@ export const BadgeWrapper = styled.div`
 		&.secondary {
 			background: ${({ theme }) => theme.ui.color.secondary_50};
 		}
+
+		&.tertiary {
+			background: ${({ theme }) => theme.ui.color.tertiary_50};
+		}
+
+		&.quaternary {
+			background: ${({ theme }) => theme.ui.color.quaternary_50};
+		}
 	}
 `

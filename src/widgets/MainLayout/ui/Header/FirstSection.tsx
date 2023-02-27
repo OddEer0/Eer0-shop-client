@@ -3,8 +3,7 @@ import Image from "next/image"
 import { FC } from "react"
 import { RiApps2Line } from "react-icons/ri"
 
-import { Button } from "@/shared/ui/inputs/Button"
-import { TextField } from "@/shared/ui/inputs/TextField"
+import { Button, TextField } from "@/shared/ui"
 
 import { IconList } from "../IconList"
 

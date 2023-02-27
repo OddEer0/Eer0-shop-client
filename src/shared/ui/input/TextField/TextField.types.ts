@@ -4,7 +4,7 @@ type InputType = "text" | "password" | "number"
 
 type VariantType = "outlined" | "standard" | "filled"
 
-type ColorType = "primary" | "secondary" | "success" | "danger" | "warning"
+type ColorType = "primary" | "secondary" | "tertiary" | "quaternary" | "success" | "danger" | "warning"
 
 type SizeType = "small" | "medium" | "large"
 

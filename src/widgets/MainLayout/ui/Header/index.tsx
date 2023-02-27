@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FC } from "react"
 
-import { Container } from "@/shared/ui/layouts/Container"
+import { Container } from "@/shared/ui"
 
 import { FirstSection } from "./FirstSection"
 import { $Header } from "./Header.styles"

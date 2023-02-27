@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 
-import { TextFieldProps } from "@/shared/ui/inputs/TextField"
+import { TextFieldProps } from "@/shared/ui"
 
 import { ILoginForm } from "../types"
 

@@ -8,7 +8,7 @@ import { AVATAR_URL, AVATAR_URL2, AVATAR_URL3, AVATAR_URL4, AVATAR_URL5, AVATAR_
 import { Avatar } from "./Avatar"
 
 export default {
-	title: "UI/Avatar",
+	title: "UI/Data Display/Avatar",
 	component: Avatar
 } as ComponentMeta<typeof Avatar>
 
