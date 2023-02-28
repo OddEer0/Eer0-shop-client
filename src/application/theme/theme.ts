@@ -1,6 +1,7 @@
 import { DefaultTheme } from "styled-components"
 
 import { baseBackground } from "./base/background"
+import { baseBoxShadow } from "./base/boxShadow"
 import { baseText } from "./base/text"
 import { uiBackground } from "./ui/background"
 import { uiBoxShadow } from "./ui/boxShadow"
@@ -18,6 +19,7 @@ export const theme: DefaultTheme = {
 	},
 	base: {
 		text: baseText,
-		bg: baseBackground
+		bg: baseBackground,
+		boxShadow: baseBoxShadow
 	}
 }
