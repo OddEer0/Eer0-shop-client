@@ -1,3 +1,4 @@
+import { IBaseBoxShadow } from "./base/boxShadow"
 import { IBaseText } from "./base/text"
 import { IUIBackground } from "./ui/background"
 import { IUIBoxShadow } from "./ui/boxShadow"
@@ -16,6 +17,7 @@ interface IUI {
 interface IBase {
 	text: IBaseText
 	bg: IUIBackground
+	boxShadow: IBaseBoxShadow
 }
 
 export interface ITheme {
