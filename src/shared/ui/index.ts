@@ -27,7 +27,7 @@ export type {
 	AutoCompleteProps
 } from "./input"
 
-export { Container, Layout, Grid, Stack } from "./layout"
+export { Container, Layout, Grid } from "./layout"
 export type { ContainerProps } from "./layout"
 
 export { Dropdown, Pagination } from "./navigation"
