@@ -56,3 +56,5 @@ export type {
 	SpinnerProps,
 	TostProps
 } from "./feedback"
+
+export { Portal, Meta } from "./utility"
