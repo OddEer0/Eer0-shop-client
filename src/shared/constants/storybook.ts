@@ -1,0 +1,6 @@
+export const AVATAR_URL = "https://i.pinimg.com/564x/f9/46/2a/f9462a77dfdef5bdd77979a13f988ca7.jpg"
+export const AVATAR_URL2 = "https://i.pinimg.com/564x/8e/3a/af/8e3aafb2b6cfcb43b4f1443374535d1b.jpg"
+export const AVATAR_URL3 = "https://i.pinimg.com/564x/5e/3a/56/5e3a5668e7029321b99061cef17e7d20.jpg"
+export const AVATAR_URL4 = "https://i.pinimg.com/564x/aa/77/4b/aa774b1ad12c03c2652f02d1d7c4b413.jpg"
+export const AVATAR_URL5 = "https://i.pinimg.com/564x/d9/af/65/d9af657c4fe5d9ac5d4594217f0cac8c.jpg"
+export const AVATAR_URL6 = "https://i.pinimg.com/564x/36/a0/c1/36a0c1d16cc6c345222c98d30875ade8.jpg"

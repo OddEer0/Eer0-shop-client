@@ -1,6 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+	optimizeFonts: true,
+	poweredByHeader: false,
+	env: {},
+
+	images: {
+		remotePatterns: [{ protocol: "https", hostname: "i.pinimg.com", port: "", pathname: "/**" }]
+	},
+
+	compiler: {
+		styledComponents: true
+	}
 }
 
 module.exports = nextConfig

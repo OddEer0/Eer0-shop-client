@@ -1,5 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# custom
+.swc
+theme.exemple.css
+
 # dependencies
 /node_modules
 /.pnp
@@ -7,6 +11,7 @@
 
 # testing
 /coverage
+__snapshots__
 
 # next.js
 /.next/
