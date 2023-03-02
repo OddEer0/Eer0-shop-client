@@ -2,7 +2,7 @@ import Head from "next/head"
 import { FC } from "react"
 import styled from "styled-components"
 
-import { Portal } from "@/shared/ui"
+import { Portal, Spinner } from "@/shared/ui"
 
 import { MainLayout } from "@/widgets/MainLayout"
 
@@ -17,9 +17,7 @@ export const HomeView: FC = () => {
 				<title>Create Next App</title>
 			</Head>
 			<Wrapper></Wrapper>
-			<Portal>
-				<div className="">sdsd</div>
-			</Portal>
+			<Spinner variant="double-snake" color="tertiary" />
 		</MainLayout>
 	)
 }
