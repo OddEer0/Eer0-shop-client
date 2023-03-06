@@ -2,9 +2,13 @@ import styled from "styled-components"
 
 export const BaseTextFieldWrapper = styled.div`
 	display: inline-block;
+	position: relative;
 
 	input {
 		transition: all 0.3s ease-in-out;
+		width: 100%;
+		max-width: 300px;
+		min-width: 200px;
 
 		&:disabled {
 			border-color: ${({ theme }) => theme.ui.color.default_50};
@@ -79,8 +83,9 @@ export const BaseTextFieldWrapper = styled.div`
 	}
 
 	& > .sub-text {
+		position: absolute;
+		top: calc(100% + 5px);
 		font-size: 16px;
 		margin-left: 10px;
-		margin-top: 6px;
 	}
 `

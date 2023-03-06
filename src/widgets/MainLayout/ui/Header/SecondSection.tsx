@@ -5,7 +5,7 @@ import { FC } from "react"
 
 import { cn } from "@/shared/helpers"
 
-import { navList } from "../../consts"
+import { navList } from "../../constants"
 
 import { $SecondSection } from "./Header.styles"
 

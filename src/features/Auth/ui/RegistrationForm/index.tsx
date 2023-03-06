@@ -2,7 +2,7 @@ import { FC } from "react"
 
 import { TextField } from "@/shared/ui"
 
-import { useRegistrationForm } from "../../hooks"
+import { useUserRegistrationForm } from "../../hooks"
 
 import { $Button, $Form, $FormInputSection, $FormWrapper, $Title } from "./RegistrationForm.styles"
 
@@ -15,7 +15,7 @@ export const RegistrationForm: FC = () => {
 		getFirstNameInputProps,
 		getLastNameInputProps,
 		submitHandler
-	} = useRegistrationForm()
+	} = useUserRegistrationForm()
 
 	return (
 		<$FormWrapper>

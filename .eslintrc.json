@@ -47,13 +47,13 @@
 			"error",
 			{
 				"patterns": [
-					{ "message": "Private imports are prohibited, use public imports instead", "group": ["~/app/**"] },
-					{ "message": "Private imports are prohibited, use public imports instead", "group": ["~/processes/*/**"] },
-					{ "message": "Private imports are prohibited, use public imports instead", "group": ["~/pages/*/**"] },
-					{ "message": "Private imports are prohibited, use public imports instead", "group": ["~/widgets/*/**"] },
-					{ "message": "Private imports are prohibited, use public imports instead", "group": ["~/features/*/**"] },
-					{ "message": "Private imports are prohibited, use public imports instead", "group": ["~/entities/*/**"] },
-					{ "message": "Private imports are prohibited, use public imports instead", "group": ["~/shared/*/*/**"] },
+					{ "message": "Private imports are prohibited, use public imports instead", "group": ["@/app/**"] },
+					{ "message": "Private imports are prohibited, use public imports instead", "group": ["@/processes/*/**"] },
+					{ "message": "Private imports are prohibited, use public imports instead", "group": ["@/pages/*/**"] },
+					{ "message": "Private imports are prohibited, use public imports instead", "group": ["@/widgets/*/**"] },
+					{ "message": "Private imports are prohibited, use public imports instead", "group": ["@/features/*/**"] },
+					{ "message": "Private imports are prohibited, use public imports instead", "group": ["@/entities/*/**"] },
+					{ "message": "Private imports are prohibited, use public imports instead", "group": ["@/shared/*/*/**"] },
 					{ "message": "Prefer absolute imports instead of relatives (for root modules)", "group": ["../**/app"] },
 					{
 						"message": "Prefer absolute imports instead of relatives (for root modules)",

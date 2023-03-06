@@ -2,16 +2,23 @@ import { FC } from "react"
 
 import { RegistrationForm } from "@/features/Auth"
 
+import { Meta } from "@/shared/ui"
+
 import { AuthLayout } from "@/widgets/AuthLayout"
 
 import { ImgHead } from "./ui"
 
-export const RegistrationView: FC = () => {
+const RegistrationView: FC = () => {
 	return (
-		<AuthLayout
-			form={<RegistrationForm />}
-			imgUrl="/illustration/registration-illustration.png"
-			imgHead={<ImgHead />}
-		/>
+		<>
+			<Meta title="Eer0 Shop | Registration" />
+			<AuthLayout
+				form={<RegistrationForm />}
+				imgUrl="/illustration/registration-illustration.png"
+				imgHead={<ImgHead />}
+			/>
+		</>
 	)
 }
+
+export default RegistrationView

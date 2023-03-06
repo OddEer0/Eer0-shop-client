@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-imports */
 import type { AppProps } from "next/app"
 import { Provider } from "react-redux"
 
