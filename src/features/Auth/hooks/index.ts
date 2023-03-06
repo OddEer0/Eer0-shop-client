@@ -1,2 +1,2 @@
-export { useLoginForm } from "./useLoginForm"
-export { useRegistrationForm } from "./useRegistrationForm"
+export { useUserLoginForm } from "./useUserLoginForm"
+export { useUserRegistrationForm } from "./useUserRegistrationForm"

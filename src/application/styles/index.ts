@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 		color: ${({ theme }) => theme.base.text.primary_50};
 		font-family: 'Inter', sans-serif;
 		font-size: 18px;
+		padding: 0 10px;
 	}
 
 	.h1 {

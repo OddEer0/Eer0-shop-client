@@ -1,6 +1,6 @@
-import { FC } from "react"
+import { FC, lazy } from "react"
 
-import { RegistrationView } from "@/views/auth/Registration"
+const RegistrationView = lazy(() => import("@/views/auth/Registration"))
 
 const Registration: FC = () => {
 	return <RegistrationView />

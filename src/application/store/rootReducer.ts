@@ -1,3 +1,7 @@
-import { combineReducers } from '@reduxjs/toolkit';
+import { combineReducers } from "@reduxjs/toolkit"
 
-export const rootReducer = combineReducers({});
+import { userReducer } from "@/entities/User"
+
+export const rootReducer = combineReducers({
+	user: userReducer
+})

@@ -1,2 +1,1 @@
-export type { ILoginForm } from "./LoginForm"
-export type { IRegistrationForm } from "./RegistrationForm"
+export type { IUserRegistrationForm } from "./Registration"

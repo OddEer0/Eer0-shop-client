@@ -1,4 +1,4 @@
-import { HomeView } from "@/views/Home"
+import HomeView from "@/views/Home"
 
 const Home = () => {
 	return <HomeView />

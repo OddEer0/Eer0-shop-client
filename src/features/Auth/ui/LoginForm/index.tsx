@@ -2,12 +2,12 @@ import { FC } from "react"
 
 import { TextField } from "@/shared/ui"
 
-import { useLoginForm } from "../../hooks"
+import { useUserLoginForm } from "../../hooks"
 
 import { $Button, $Form, $FormWrapper, $Input, $Link, $LinkTitle, $Title } from "./LoginForm.styles"
 
 export const LoginForm: FC = () => {
-	const { getEmailInputProps, getPasswordInputProps, submitHandler } = useLoginForm()
+	const { getEmailInputProps, getPasswordInputProps, submitHandler } = useUserLoginForm()
 
 	return (
 		<$FormWrapper>
