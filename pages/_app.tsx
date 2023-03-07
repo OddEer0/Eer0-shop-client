@@ -1,5 +1,7 @@
 /* eslint-disable no-restricted-imports */
 import type { AppProps } from "next/app"
+// eslint-disable-next-line import/no-named-as-default
+import Scrollbars from "react-custom-scrollbars-2"
 import { Provider } from "react-redux"
 
 import { AppProvider } from "@/app/providers"

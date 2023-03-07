@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import Cookies from "js-cookie"
 import { FC, PropsWithChildren } from "react"
 
 import { IUser, api } from "@/shared/api"
@@ -15,13 +14,12 @@ const queryClient = new QueryClient({
 
 queryClient.setQueryDefaults(["profile"], {
 	queryFn: async () => {
-		if (Cookies.get("accessToken")) {
-			const res = await api.get<IUser>("users/profile")
-			return res.data
-		}
-		return null
+		const res = await api.get<IUser>("users/profile")
+		return res.data
 	},
-	retry: false
+	retry: false,
+	cacheTime: Infinity,
+	staleTime: 100000
 })
 
 export const WithQueryClientProvider: FC<PropsWithChildren> = ({ children }) => {
