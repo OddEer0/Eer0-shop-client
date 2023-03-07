@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
+import { motion } from "framer-motion"
 import Link from "next/link"
 import { FC } from "react"
 import { BiUser } from "react-icons/bi"
@@ -18,19 +19,19 @@ export const UserPanel: FC = () => {
 		}
 	})
 
-	if (isLoading) {
-		return <Skeleton variant="circle" width="56px" height="56px" />
-	}
-
-	if (user) {
-		return <Avatar url={user.avatar} defaultAvatar={user.firstName} />
-	}
-
 	return (
-		<Link href="/auth/login">
-			<Avatar>
-				<AvatarIcon as={BiUser} />
-			</Avatar>
-		</Link>
+		<motion.div initial={{ y: -60 }} animate={{ y: 0 }}>
+			{isLoading ? (
+				<Skeleton variant="circle" width="56px" height="56px" />
+			) : user ? (
+				<Avatar url={user.avatar} defaultAvatar={user.firstName} />
+			) : (
+				<Link href="/auth/login">
+					<Avatar>
+						<AvatarIcon as={BiUser} />
+					</Avatar>
+				</Link>
+			)}
+		</motion.div>
 	)
 }
