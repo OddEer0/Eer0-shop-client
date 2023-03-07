@@ -1,1 +1,1 @@
-export { navList } from "./navList"
+export { ICON_LIST } from "./iconList"

@@ -14,12 +14,12 @@ const queryClient = new QueryClient({
 
 queryClient.setQueryDefaults(["profile"], {
 	queryFn: async () => {
-		const res = await api.get<IUser>("users/profile")
+		const res = await api.get<IUser>("auth/refresh")
 		return res.data
 	},
 	retry: false,
 	cacheTime: Infinity,
-	staleTime: 100000
+	staleTime: 15 * 60 * 1000
 })
 
 export const WithQueryClientProvider: FC<PropsWithChildren> = ({ children }) => {

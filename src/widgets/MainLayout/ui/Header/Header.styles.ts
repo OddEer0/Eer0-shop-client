@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const $Header = styled.header`
-	position: fixed;
+	position: sticky;
 	z-index: 1000;
 	top: 0;
 	left: 0;
@@ -18,6 +18,11 @@ export const $FirstSection = styled.section`
 	justify-content: space-between;
 
 	.header {
+		&__menu-icon {
+			font-size: 32px;
+			cursor: pointer;
+			margin-right: 25px;
+		}
 		&__left,
 		&__right {
 			flex: 1;
@@ -42,7 +47,7 @@ export const $FirstSection = styled.section`
 			margin-left: -26px;
 		}
 		&__search {
-			margin-left: 35px;
+			margin-right: 35px;
 		}
 	}
 `

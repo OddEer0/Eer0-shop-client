@@ -1,1 +1,1 @@
-export type { IUserRegistrationForm } from "./Registration"
+export type { IUserRegistrationForm } from "./auth"

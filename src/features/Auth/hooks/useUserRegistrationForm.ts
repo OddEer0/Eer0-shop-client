@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form"
 
 import { useUserRegistrationMutate } from "@/entities/User"
 
-import { IUserRegistration } from "@/shared/api"
 import { TextFieldProps } from "@/shared/ui"
 
 import {
@@ -27,7 +26,7 @@ export const useUserRegistrationForm = () => {
 		formState: { errors }
 	} = useForm<IUserRegistrationForm>({ mode: "onBlur" })
 
-	const submitHandler = handleSubmit((data: IUserRegistration) => {
+	const submitHandler = handleSubmit((data: IUserRegistrationForm) => {
 		mutate(data)
 	})
 

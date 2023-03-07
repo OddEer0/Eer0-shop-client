@@ -7,9 +7,9 @@ import { BiUser } from "react-icons/bi"
 import { IUser } from "@/shared/api"
 import { Avatar, Skeleton } from "@/shared/ui"
 
-import { AvatarIcon } from "./UserAvatar.styles"
+import { $AvatarIcon, $Wrapper } from "./HeaderUserAvatar.styles"
 
-export const UserPanel: FC = () => {
+export const HeaderUserAvatar: FC = () => {
 	const { data: user, isLoading } = useQuery(["profile"], {
 		select(data: IUser) {
 			if (data) {
@@ -20,7 +20,7 @@ export const UserPanel: FC = () => {
 	})
 
 	return (
-		<motion.div initial={{ y: -60 }} animate={{ y: 0 }}>
+		<$Wrapper transition={{ delay: 0.15 }} as={motion.div} initial={{ y: -100 }} animate={{ y: 0 }}>
 			{isLoading ? (
 				<Skeleton variant="circle" width="56px" height="56px" />
 			) : user ? (
@@ -28,10 +28,10 @@ export const UserPanel: FC = () => {
 			) : (
 				<Link href="/auth/login">
 					<Avatar>
-						<AvatarIcon as={BiUser} />
+						<$AvatarIcon as={BiUser} />
 					</Avatar>
 				</Link>
 			)}
-		</motion.div>
+		</$Wrapper>
 	)
 }

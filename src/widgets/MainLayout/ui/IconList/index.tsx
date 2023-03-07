@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { FC } from "react"
 
-import { ICON_LIST } from "../../constants/iconList"
+import { ICON_LIST } from "../../constants"
 
 import { $IconList } from "./IconList.styles"
 
