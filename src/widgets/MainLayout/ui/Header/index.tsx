@@ -1,8 +1,9 @@
-import { HTMLMotionProps, motion } from "framer-motion"
 import Image from "next/image"
 import { FC } from "react"
 import { FiMenu } from "react-icons/fi"
 import { RiApps2Line } from "react-icons/ri"
+
+import { ToggleThemeCheckbox } from "@/features/ThemeAction"
 
 import { Button, Container, TextField } from "@/shared/ui"
 
@@ -11,13 +12,13 @@ import { IconList } from "../IconList"
 
 import { $FirstSection, $Header } from "./Header.styles"
 
-interface HeaderProps extends HTMLMotionProps<"header"> {
+interface HeaderProps {
 	openHandler: () => void
 }
 
-export const Header: FC<HeaderProps> = ({ openHandler, ...props }) => {
+export const Header: FC<HeaderProps> = ({ openHandler }) => {
 	return (
-		<$Header as={motion.header} {...props}>
+		<$Header>
 			<Container>
 				<$FirstSection>
 					<div className="header__left">
@@ -31,6 +32,7 @@ export const Header: FC<HeaderProps> = ({ openHandler, ...props }) => {
 					<div className="header__right">
 						<TextField className="header__search" />
 						<IconList />
+						<ToggleThemeCheckbox />
 						<HeaderUserAvatar />
 					</div>
 				</$FirstSection>

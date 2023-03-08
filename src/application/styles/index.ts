@@ -13,6 +13,11 @@ export const GlobalStyle = createGlobalStyle`
 		overflow-x: hidden;
 	}
 
+	#myportal {
+		z-index: 1000;
+		position: relative;
+	}
+
 	.h1 {
 		font-weight: 700;
 		font-size: 64px;

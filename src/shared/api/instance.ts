@@ -2,6 +2,10 @@
 import axios from "axios"
 import Cookies from "js-cookie"
 
+import { queryClient } from "../config"
+
+import { IUser } from "./types"
+
 export const API_URL = `http://localhost:5000`
 
 export const api = axios.create({
@@ -23,11 +27,11 @@ api.interceptors.response.use(
 		if (error.response.status == 401 && error.config && !error.config._isRetry) {
 			originalRequest._isRetry = true
 			try {
-				await axios.get(`${API_URL}/auth/refresh`, { withCredentials: true })
+				const user = await axios.get<IUser>(`${API_URL}/auth/refresh`, { withCredentials: true })
+				queryClient.setQueriesData(["profile"], user.data)
 				return api.request(originalRequest)
 			} catch (e) {
-				// eslint-disable-next-line no-console
-				console.log("НЕ АВТОРИЗОВАН")
+				queryClient.setQueryData(["profile"], null)
 			}
 		}
 		throw error
