@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/router"
 
-import { IUserRegistration, IUserResponse, api } from "@/shared/api"
+import { IUser, IUserRegistrationBody, api } from "@/shared/api"
 
 export const useUserRegistrationMutate = () => {
 	const router = useRouter()
@@ -9,8 +9,8 @@ export const useUserRegistrationMutate = () => {
 
 	const mutation = useMutation({
 		mutationKey: ["profile"],
-		mutationFn: async (user: IUserRegistration) => {
-			const { data } = await api.post<IUserResponse>("auth/registration", user)
+		mutationFn: async (user: IUserRegistrationBody) => {
+			const { data } = await api.post<IUser>("auth/registration", user)
 			return data
 		},
 		onSuccess(data) {

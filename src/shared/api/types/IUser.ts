@@ -1,5 +1,4 @@
 import { IRole } from "./IRole"
-import { ITokens } from "./ITokens"
 
 export interface IUser {
 	id: string
@@ -15,20 +14,13 @@ export interface IUser {
 	roles: IRole[]
 }
 
-export interface IUserRegistration {
-	email: string
+export interface IUserLoginBody {
 	nickname: string
 	password: string
+}
+
+export interface IUserRegistrationBody extends IUserLoginBody {
+	email: string
 	firstName: string
 	lastName: string
-}
-
-export interface IUserLogin {
-	nickname: string
-	password: string
-}
-
-export interface IUserResponse {
-	user: IUser
-	tokens: ITokens
 }

@@ -12,9 +12,9 @@ export const baseText: IBaseText = {
 	secondary_40: "#ffffff",
 	secondary_50: "#f8f8f8",
 	secondary_60: "#f5f4f4",
-	tertiary_40: "#d3d3d3",
-	tertiary_50: "#c9c8c8",
-	tertiary_60: "#c2c1c1",
+	tertiary_40: "#ffffff",
+	tertiary_50: "#f8f8f8",
+	tertiary_60: "#f5f4f4",
 	quaternary_40: "#d3d3d3",
 	quaternary_50: "#c9c8c8",
 	quaternary_60: "#c2c1c1"

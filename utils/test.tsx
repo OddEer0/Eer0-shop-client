@@ -1,10 +1,18 @@
+/* eslint-disable no-restricted-imports */
 import { RenderOptions, render } from "@testing-library/react"
 import React, { ReactElement } from "react"
+import { Provider } from "react-redux"
 
 import { AppProvider } from "@/app/providers"
+import { makeStore } from "@/app/store/store"
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
-	return <AppProvider>{children}</AppProvider>
+	const store = makeStore()
+	return (
+		<Provider store={store}>
+			<AppProvider>{children}</AppProvider>
+		</Provider>
+	)
 }
 
 const customRender = (ui: ReactElement, options?: Omit<RenderOptions, "wrapper">) =>

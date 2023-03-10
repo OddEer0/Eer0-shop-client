@@ -14,6 +14,7 @@ const $Container = styled.div<StyledContainerProps>`
 	max-width: ${({ width }) => width || 1920}px;
 	margin: 0 auto;
 	height: 100%;
+	padding: 0 10px;
 `
 
 export const Container: FC<PropsWithChildren<ContainerProps>> = ({ width, children, ...props }) => {

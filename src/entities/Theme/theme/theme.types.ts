@@ -6,6 +6,11 @@ import { IUIColor } from "./ui/color"
 import { IUIRandomColor } from "./ui/randomColor"
 import { IUIText } from "./ui/text"
 
+export enum ThemeEnum {
+	light = "light",
+	dark = "dark"
+}
+
 interface IUI {
 	color: IUIColor
 	text: IUIText

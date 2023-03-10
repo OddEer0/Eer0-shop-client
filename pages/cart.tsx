@@ -1,9 +1,13 @@
-import { FC } from "react"
+import { ReactElement } from "react"
 
 import CartView from "@/views/Cart"
 
-const Comp: FC = () => {
+import { MainLayout } from "@/widgets/MainLayout"
+
+const Cart = () => {
 	return <CartView />
 }
 
-export default Comp
+Cart.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
+
+export default Cart

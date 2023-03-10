@@ -2,8 +2,9 @@ import styled from "styled-components"
 
 export const $IconList = styled.ul`
 	display: inline-block;
+	height: 32px;
 
-	.icon-list__icon {
+	.icon {
 		display: inline-block;
 		font-size: 32px;
 		width: 32px;
@@ -12,6 +13,10 @@ export const $IconList = styled.ul`
 
 		&:not(:last-child) {
 			margin-right: 2vw;
+		}
+
+		a {
+			height: 32px;
 		}
 	}
 `

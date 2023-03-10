@@ -1,29 +1,32 @@
+import { motion } from "framer-motion"
 import Image from "next/image"
 import { FC } from "react"
-import { RiApps2Line } from "react-icons/ri"
 
-import { Button, TextField } from "@/shared/ui"
+import { Container } from "@/shared/ui"
 
-import { IconList } from "../IconList"
-import { UserPanel } from "../UserAvatar"
+import { HeaderUserAvatar } from "../HeaderUserAvatar"
+import { MenuBurger } from "../MenuBurger"
 
-import { $FirstSection } from "./Header.styles"
+import { $FirstSection, $ToggleThemeIcon } from "./Header.styles"
 
 export const FirstSection: FC = () => {
 	return (
 		<$FirstSection>
-			<div className="header__left">
-				<Button className="header__category" variant="contained" color="secondary">
-					<RiApps2Line className="header__category-icon" />
-					Category
-				</Button>
-				<TextField className="header__search" />
-			</div>
-			<Image draggable={false} src="/images/logo.png" width={75} height={75} alt="" priority />
-			<div className="header__right">
-				<IconList />
-				<UserPanel />
-			</div>
+			<Container className="container">
+				<div className="left-wrapper">
+					<MenuBurger />
+				</div>
+				<motion.div
+					animate={{ rotate: 360, scale: [1.4, 1] }}
+					transition={{ duration: 0.35, repeat: Infinity, repeatDelay: 10 }}
+				>
+					<Image draggable={false} src="/images/logo.png" width={40} height={40} alt="" priority />
+				</motion.div>
+				<div className="right-wrapper">
+					<$ToggleThemeIcon />
+					<HeaderUserAvatar />
+				</div>
+			</Container>
 		</$FirstSection>
 	)
 }

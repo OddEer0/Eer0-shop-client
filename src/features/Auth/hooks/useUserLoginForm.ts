@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form"
 
 import { useUserLoginMutate } from "@/entities/User"
 
-import { IUserLogin } from "@/shared/api"
+import { IUserLoginBody } from "@/shared/api"
 import { TextFieldProps } from "@/shared/ui"
 
 import { FIELD_REQUIRED, LOGIN_MAX_LENGTH, LOGIN_MIN_LENGTH } from "../constants"
@@ -14,9 +14,9 @@ export const useUserLoginForm = () => {
 		register,
 		handleSubmit,
 		formState: { errors }
-	} = useForm<IUserLogin>({ mode: "onBlur" })
+	} = useForm<IUserLoginBody>({ mode: "onBlur" })
 
-	const submitHandler = handleSubmit((data: IUserLogin) => mutate(data))
+	const submitHandler = handleSubmit((data: IUserLoginBody) => mutate(data))
 
 	const getEmailInputProps: TextFieldProps = {
 		...register("nickname", {
