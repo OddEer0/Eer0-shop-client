@@ -1,55 +1,70 @@
 import styled from "styled-components"
 
+import { ToggleThemeIcon } from "@/features/ThemeAction"
+
 export const $Header = styled.header`
 	position: sticky;
 	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: none;
-	backdrop-filter: saturate(180%) blur(10px);
+	user-select: none;
 `
 
-export const $FirstSection = styled.section`
-	padding: 0 15px;
-	height: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+export const $ToggleThemeIcon = styled(ToggleThemeIcon)`
+	height: 32px;
+`
 
-	.header {
-		&__menu-icon {
-			font-size: 32px;
-			width: 32px;
-			height: 32px;
-			cursor: pointer;
-			margin-right: 25px;
-		}
-		&__left,
-		&__right {
+export const $FirstSection = styled.div`
+	width: 100%;
+	background: ${({ theme }) => theme.base.bg.tertiary_40};
+	color: ${({ theme }) => theme.base.text.tertiary_40};
+
+	& > .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 50px;
+
+		& > .left-wrapper {
 			flex: 1;
 			display: flex;
 			align-items: center;
 		}
-		&__right {
-			justify-content: end;
-		}
-		&__contact {
-			display: inline-block;
-			font-weight: 600;
-			margin-left: 6vw;
-		}
-		&__category {
+
+		& > .right-wrapper {
+			flex: 1;
 			display: flex;
 			align-items: center;
+			justify-content: flex-end;
 		}
-		&__category-icon {
-			font-size: 24px;
-			margin-right: 10px;
-			margin-left: -26px;
-		}
-		&__search {
-			margin-right: 35px;
+	}
+`
+
+export const $SecondSection = styled.section`
+	width: 100%;
+	background: none;
+	backdrop-filter: saturate(180%) blur(10px);
+	& > .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 60px;
+
+		& > .right-wrapper {
+			display: flex;
+			align-items: center;
+
+			button {
+				margin-right: 2vw;
+				display: flex;
+				align-items: center;
+
+				.icon {
+					margin-right: 8px;
+					font-size: 20px;
+				}
+			}
 		}
 	}
 `

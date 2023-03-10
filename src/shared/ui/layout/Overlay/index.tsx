@@ -43,6 +43,7 @@ export const Overlay: FC<PropsWithChildren<OverlayProps>> = ({
 			<AnimatePresence>
 				{isShow && (
 					<$Overlay
+						key="overlay"
 						as={motion.div}
 						transition={transition}
 						variants={animation}

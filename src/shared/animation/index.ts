@@ -1,0 +1,1 @@
+export { toggleScaleAnimation } from "./ToggleScale"

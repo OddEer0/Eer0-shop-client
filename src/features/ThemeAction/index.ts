@@ -1,1 +1,1 @@
-export { ToggleThemeCheckbox } from "./ui"
+export { ToggleThemeIcon } from "./ui"

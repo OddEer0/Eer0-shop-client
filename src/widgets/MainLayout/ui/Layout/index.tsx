@@ -4,33 +4,34 @@ import { FC, PropsWithChildren } from "react"
 import { Aside } from "../Aside"
 import { Header } from "../Header"
 
-import { $LayoutWrapper, $Overlay } from "./Layout.styles"
+import { LayoutProvider } from "./LayoutProvider"
+
+export { LayoutContext } from "./LayoutProvider"
 
 export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	const x = useMotionValue(0)
 	const opacity = useMotionValue(0)
-	const visibility = useMotionValue(-1)
+	const zIndex = useMotionValue(-1)
 
-	const openHandler = () => {
-		animate(x, 340)
-		animate(opacity, 1)
-		animate(visibility, 1000)
+	const openHandle = () => {
+		animate(x, 340, { duration: 0.35, type: "tween" })
+		animate(opacity, 1, { duration: 0.35, type: "tween" })
+		animate(zIndex, 1000, { duration: 0.35, type: "tween" })
 	}
 
-	const closeHandler = () => {
-		animate(x, 0)
-		animate(opacity, 0)
-		animate(visibility, -1)
+	const closeHandle = () => {
+		animate(x, 0, { duration: 0.35, type: "tween" })
+		animate(opacity, 0, { duration: 0.35, type: "tween" })
+		animate(zIndex, -1, { duration: 0.35, type: "tween" })
 	}
 
 	return (
-		<>
-			<Aside></Aside>
-			<$LayoutWrapper as={motion.div} style={{ x }}>
-				<Header openHandler={openHandler} />
+		<LayoutProvider closeHandle={closeHandle} openHandle={openHandle}>
+			<Aside style={{ x }}></Aside>
+			<motion.div style={{ x }}>
+				<Header />
 				<motion.main>{children}</motion.main>
-			</$LayoutWrapper>
-			<$Overlay onClick={closeHandler} as={motion.div} style={{ x, opacity, zIndex: visibility }} />
-		</>
+			</motion.div>
+		</LayoutProvider>
 	)
 }

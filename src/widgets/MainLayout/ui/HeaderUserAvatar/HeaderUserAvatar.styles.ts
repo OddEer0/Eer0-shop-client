@@ -8,4 +8,12 @@ export const $AvatarIcon = styled.div`
 
 export const $Wrapper = styled.div`
 	margin-left: 2vw;
+
+	& > .icon {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 `

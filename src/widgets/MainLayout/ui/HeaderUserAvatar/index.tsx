@@ -20,16 +20,14 @@ export const HeaderUserAvatar: FC = () => {
 	})
 
 	return (
-		<$Wrapper transition={{ delay: 0.15 }} as={motion.div} initial={{ y: -100 }} animate={{ y: 0 }}>
+		<$Wrapper transition={{ delay: 0.2 }} as={motion.div} initial={{ y: -100 }} animate={{ y: 0 }}>
 			{isLoading ? (
-				<Skeleton variant="circle" width="56px" height="56px" />
+				<Skeleton variant="circle" width="40px" height="40px" />
 			) : user ? (
-				<Avatar url={user.avatar} defaultAvatar={user.firstName} />
+				<Avatar avatarSize="xsmall" url={user.avatar} defaultAvatar={user.firstName} />
 			) : (
-				<Link href="/auth/login">
-					<Avatar>
-						<$AvatarIcon as={BiUser} />
-					</Avatar>
+				<Link href="/auth/login" className="icon">
+					<$AvatarIcon as={BiUser} />
 				</Link>
 			)}
 		</$Wrapper>

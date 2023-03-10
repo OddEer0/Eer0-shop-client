@@ -1,1 +1,2 @@
-export { themeReducer, toggleTheme, themeSelector } from "./model"
+export { themeReducer, toggleTheme, themeSelector, setTheme, fetchTheme } from "./model"
+export { ThemeEnum } from "./theme/theme.types"

@@ -1,15 +1,60 @@
+import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion"
 import { FC } from "react"
-import { BsMoon, BsSun } from "react-icons/bs"
+import { BiMoon } from "react-icons/bi"
+import { ImSun } from "react-icons/im"
+import styled from "styled-components"
 
-import { useActions } from "@/shared/hooks/useActions"
-import { Checkbox } from "@/shared/ui"
+import { ThemeEnum, themeSelector } from "@/entities/Theme"
 
-export const ToggleThemeCheckbox: FC = () => {
-	const { toggleTheme } = useActions()
+import { toggleScaleAnimation } from "@/shared/animation"
+import { useActions, useAppSelector } from "@/shared/hooks"
 
-	const changeHandler = () => {
-		toggleTheme()
+const Icon = styled.div`
+	font-size: 32px;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+`
+
+export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
+	const { setTheme } = useActions()
+	const { type } = useAppSelector(themeSelector)
+
+	const setDarkTheme = () => {
+		setTheme("dark")
 	}
 
-	return <Checkbox checkboxSize="large" onChange={changeHandler} checkedIcon={<BsMoon />} uncheckedIcon={<BsSun />} />
+	const setLightTheme = () => {
+		setTheme("light")
+	}
+
+	return (
+		<motion.div {...props}>
+			<AnimatePresence mode="wait">
+				{type === ThemeEnum.dark ? (
+					<motion.div
+						key="moon"
+						onClick={setLightTheme}
+						variants={toggleScaleAnimation}
+						animate="show"
+						exit="hidden"
+						initial="init"
+					>
+						<Icon as={BiMoon} />
+					</motion.div>
+				) : (
+					<motion.div
+						key="sun"
+						onClick={setDarkTheme}
+						variants={toggleScaleAnimation}
+						animate="show"
+						exit="hidden"
+						initial="init"
+					>
+						<Icon as={ImSun} />
+					</motion.div>
+				)}
+			</AnimatePresence>
+		</motion.div>
+	)
 }

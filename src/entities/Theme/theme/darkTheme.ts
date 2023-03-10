@@ -15,7 +15,11 @@ export const darkTheme: DefaultTheme = {
 			...theme.ui.boxShadow
 		},
 		color: {
-			...theme.ui.color
+			...theme.ui.color,
+			default_40: "#3e3e3e32",
+			primary_50: "#FA1F60",
+			primary_60: "#e91c59",
+			primary_70: "#db1953"
 		},
 		randomColor: {
 			...theme.ui.randomColor
@@ -28,7 +32,8 @@ export const darkTheme: DefaultTheme = {
 		...theme.base,
 		bg: {
 			...theme.base.bg,
-			primary_50: "#000000"
+			primary_50: "#090606",
+			tertiary_40: "#0E0D0D"
 		},
 		boxShadow: {
 			...theme.base.boxShadow
