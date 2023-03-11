@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withPWA = require("next-pwa")({
+	dest: "public",
+	register: true,
+	skipWaiting: true,
+	disable: process.env.NODE_ENV === "development"
+})
+
+const nextConfig = withPWA({
 	optimizeFonts: true,
 	poweredByHeader: false,
-	env: {},
+	env: {
+		API_URL: process.env.API_URL
+	},
 
 	images: {
 		remotePatterns: [{ protocol: "https", hostname: "i.pinimg.com", port: "", pathname: "/**" }]
@@ -11,6 +20,6 @@ const nextConfig = {
 	compiler: {
 		styledComponents: true
 	}
-}
+})
 
 module.exports = nextConfig

@@ -6,7 +6,7 @@ import { queryClient } from "../config"
 
 import { IUser } from "./types"
 
-export const API_URL = `http://localhost:5000`
+export const API_URL = process.env.API_URL
 
 export const api = axios.create({
 	withCredentials: true,
