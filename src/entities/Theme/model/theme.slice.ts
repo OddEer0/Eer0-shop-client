@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
-import Cookies from "js-cookie"
-import { HYDRATE } from "next-redux-wrapper"
 import { DefaultTheme } from "styled-components"
 
 import { darkTheme } from "../theme/darkTheme"
@@ -26,21 +24,16 @@ export const themeSlice = createSlice({
 		setTheme(state, action: PayloadAction<"dark" | "light">) {
 			if (action.payload === "light") {
 				state.theme = lightTheme
-				Cookies.set("theme", "light")
+				if (typeof window !== "undefined") {
+					localStorage.setItem("theme", "light")
+				}
 			} else {
 				state.theme = darkTheme
-				Cookies.set("theme", "dark")
+				if (typeof window !== "undefined") {
+					localStorage.setItem("theme", "dark")
+				}
 			}
 		}
-	},
-	extraReducers(builder) {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		builder.addCase(HYDRATE, (state, action: any) => {
-			return {
-				...state,
-				...action.payload.theme
-			}
-		})
 	}
 })
 

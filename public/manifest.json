@@ -1,0 +1,32 @@
+{
+	"theme_color": "#FA1F60",
+	"background_color": "#090606",
+	"display": "standalone",
+	"scope": "/",
+	"start_url": "/",
+	"name": "Eer0 Shop",
+	"short_name": "Eer0",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "/icons/icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/icons/icon-256x256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/icons/icon-384x384.png",
+			"sizes": "384x384",
+			"type": "image/png"
+		},
+		{
+			"src": "/icons/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

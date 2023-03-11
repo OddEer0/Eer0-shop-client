@@ -54,6 +54,7 @@ export const $SecondSection = styled.section`
 		& > .right-wrapper {
 			display: flex;
 			align-items: center;
+			margin-right: 2vw;
 
 			button {
 				margin-right: 2vw;
