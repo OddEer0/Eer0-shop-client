@@ -6,7 +6,9 @@ import { queryClient } from "../config"
 
 import { IUser } from "./types"
 
-export const API_URL = process.env.API_URL
+const API_URL = process.env.API_URL
+
+const FAKE_API_URL = process.env.FAKE_API_URL
 
 export const api = axios.create({
 	withCredentials: true,
@@ -37,3 +39,7 @@ api.interceptors.response.use(
 		throw error
 	}
 )
+
+export const fakeApi = axios.create({
+	baseURL: FAKE_API_URL
+})

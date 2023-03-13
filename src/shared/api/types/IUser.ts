@@ -1,5 +1,3 @@
-import { IRole } from "./IRole"
-
 export interface IUser {
 	id: string
 	email: string
@@ -11,7 +9,7 @@ export interface IUser {
 	avatar: Nullable<string>
 	isBanned: boolean
 	banReason: Nullable<string>
-	roles: IRole[]
+	roles: string[]
 }
 
 export interface IUserLoginBody {
