@@ -1,3 +1,3 @@
-export { api } from "./instance"
+export { api, fakeApi } from "./instance"
 
-export type { IRole, IUser, IUserLoginBody, IUserRegistrationBody } from "./types"
+export type { IRole, IUser, IUserLoginBody, IUserRegistrationBody, ICategory } from "./types"

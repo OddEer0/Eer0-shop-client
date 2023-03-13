@@ -32,7 +32,9 @@ export const darkTheme: DefaultTheme = {
 		...theme.base,
 		bg: {
 			...theme.base.bg,
+			primary_40: "#0E0D0D",
 			primary_50: "#090606",
+			primary_60: "#0E0D0D",
 			tertiary_40: "#0E0D0D"
 		},
 		boxShadow: {

@@ -1,2 +1,2 @@
 export type { IUser, IUserLoginBody, IUserRegistrationBody } from "./IUser"
-export type { IRole } from "./IRole"
+export type { ICategory } from "./ICategory"

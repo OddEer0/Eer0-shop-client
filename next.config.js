@@ -10,7 +10,8 @@ const nextConfig = withPWA({
 	optimizeFonts: true,
 	poweredByHeader: false,
 	env: {
-		API_URL: process.env.API_URL
+		API_URL: process.env.API_URL,
+		FAKE_API_URL: process.env.FAKE_API_URL
 	},
 
 	images: {

@@ -1,0 +1,1 @@
+export { useCategoryQuery } from "./useCategoryQuery"
