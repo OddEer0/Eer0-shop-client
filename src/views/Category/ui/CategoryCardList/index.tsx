@@ -1,23 +1,17 @@
 import { FC } from "react"
 
-import { CategoryCard, CategoryCardSkeleton, useCategoryQuery } from "@/entities/Category"
+import { CategoryCard, useCategoryQuery } from "@/entities/Category"
 
 import { Empty } from "@/shared/ui"
 
 import { $CategoryCardList } from "./CategoryCardList.styles"
 
 export const CategoryCardList: FC = () => {
-	const { data, error, isLoading } = useCategoryQuery()
+	const { data, error } = useCategoryQuery()
 
 	return (
 		<$CategoryCardList>
-			{isLoading ? (
-				<>
-					{new Array(20).fill("").map((_, i) => (
-						<CategoryCardSkeleton className="item" key={i} />
-					))}
-				</>
-			) : error ? (
+			{error ? (
 				<h2 className="h2">Произошла ошибка! :(</h2>
 			) : data ? (
 				<>
