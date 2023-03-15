@@ -2,7 +2,7 @@ import * as NextImage from 'next/image';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from '../src/application/styles'
-import { theme } from '../src/application/theme'
+import {lightTheme} from '../src/entities/Theme/theme/lightTheme'
 
 const OriginalNextImage = NextImage.default;
 
@@ -25,7 +25,7 @@ export const parameters = {
 }
 
 const withStyledComponents = (Story) => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={lightTheme}>
     <GlobalStyle />
     <Story/>
   </ThemeProvider>

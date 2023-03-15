@@ -3,6 +3,7 @@
 # custom
 .swc
 theme.exemple.css
+build-storybook.log
 **/public/sw.js
 **/public/workbox-*.js
 **/public/worker-*.js
