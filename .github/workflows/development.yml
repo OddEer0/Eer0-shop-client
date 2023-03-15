@@ -17,18 +17,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+        run: npm install
       - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
+        run: npm run build
       - name: Test the app
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test
+        run: npm run test
       - name: Lint app
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: lint
+        run: npm run lint
