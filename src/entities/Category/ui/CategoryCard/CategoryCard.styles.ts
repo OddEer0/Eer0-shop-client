@@ -14,8 +14,6 @@ export const $CategoryCard = styled.div`
 		z-index: 2;
 
 		img {
-			width: 236px;
-			height: 188px;
 			border-radius: 20px;
 			transition: all 0.3s ease-in-out;
 		}

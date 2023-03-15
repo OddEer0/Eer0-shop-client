@@ -30,7 +30,9 @@
 		"react-hook-form": "^7.43.1",
 		"react-icons": "4.7.1",
 		"react-redux": "8.0.5",
+		"react-slick": "^0.29.0",
 		"sharp": "^0.31.3",
+		"slick-carousel": "^1.8.1",
 		"styled-components": "5.3.6"
 	},
 	"devDependencies": {
@@ -52,6 +54,7 @@
 		"@types/node": "18.11.18",
 		"@types/react": "18.0.27",
 		"@types/react-dom": "18.0.10",
+		"@types/react-slick": "^0.23.10",
 		"@types/styled-components": "5.1.26",
 		"@typescript-eslint/eslint-plugin": "5.49.0",
 		"@typescript-eslint/parser": "5.49.0",

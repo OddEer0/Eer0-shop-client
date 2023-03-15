@@ -16,7 +16,15 @@ export const CategoryCard: FC<CategoryCardProps> = ({ data, ...props }) => {
 	return (
 		<$CategoryCard as={ScaleOpacityScrollable} {...props}>
 			<motion.div initial={{ y: -70 }} animate={{ y: 0 }} transition={{ duration: 0.4 }} className="img-wrapper">
-				<Image priority draggable={false} width={236} height={166} src={data.img} alt={data.name} />
+				<Image
+					style={{ width: "236px", height: "188px" }}
+					priority
+					draggable={false}
+					width={236}
+					height={188}
+					src={data.img}
+					alt={data.name}
+				/>
 			</motion.div>
 			<motion.div
 				initial={{ y: -40, opacity: 0.4 }}

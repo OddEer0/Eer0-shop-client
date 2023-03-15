@@ -59,3 +59,5 @@ export type {
 } from "./feedback"
 
 export { Portal, Meta } from "./utility"
+
+export { Circle } from "./styledComponent"
