@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from "react"
 
-import { Compose } from "./Compose"
+import { Compose } from "@/shared/ui"
+
 import { WithThemeProvider } from "./WithThemeProvider"
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
