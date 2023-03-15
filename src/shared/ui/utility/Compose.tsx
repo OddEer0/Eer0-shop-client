@@ -1,9 +1,10 @@
-interface Props {
+import { FC, PropsWithChildren } from "react"
+
+interface ComposeChildren {
 	providers: Array<React.JSXElementConstructor<React.PropsWithChildren<unknown>>>
-	children: React.ReactNode
 }
 
-export const Compose = ({ children, providers }: Props) => {
+export const Compose: FC<PropsWithChildren<ComposeChildren>> = ({ children, providers }) => {
 	return (
 		<>
 			{providers.reduceRight((acc, Comp) => {

@@ -58,4 +58,6 @@ export type {
 	EmptyProps
 } from "./feedback"
 
-export { Portal, Meta } from "./utility"
+export { Portal, Meta, Compose } from "./utility"
+
+export { Circle } from "./styledComponent"

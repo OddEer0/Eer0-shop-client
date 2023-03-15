@@ -7,7 +7,7 @@ export const $FormWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: ${({ theme }) => theme.base.bg.primary_60};
+	background: ${({ theme }) => theme.base.bg.primary_40};
 	border-radius: 15px;
 	box-shadow: ${({ theme }) => theme.base.boxShadow.primary};
 `

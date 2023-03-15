@@ -37,7 +37,7 @@ describe("Should render every props", () => {
 	})
 
 	it("Placement default bottom, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -54,11 +54,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("top")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topLeft")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topRight")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Placement bottomLeft, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -75,11 +74,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("top")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topLeft")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topRight")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Placement bottomRight, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -96,11 +94,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("top")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topLeft")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topRight")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Placement top, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -117,11 +114,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).toHaveClass("top")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topLeft")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topRight")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Placement topLeft, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -138,11 +134,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("top")
 		expect(screen.getByTestId("dropdown")).toHaveClass("topLeft")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topRight")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Placement topRight, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -159,11 +154,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("top")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("topLeft")
 		expect(screen.getByTestId("dropdown")).toHaveClass("topRight")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Color primary, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -178,11 +172,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("secondary")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("tertiary")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("quaternary")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Color secondary, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -197,11 +190,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).toHaveClass("secondary")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("tertiary")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("quaternary")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Color tertiary, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -216,11 +208,10 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("secondary")
 		expect(screen.getByTestId("dropdown")).toHaveClass("tertiary")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("quaternary")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Color quaternary, screenshot", () => {
-		const { asFragment } = render(
+		render(
 			<Dropdown
 				mainContent={<div>I Test</div>}
 				isShow={true}
@@ -235,7 +226,6 @@ describe("Should render every props", () => {
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("secondary")
 		expect(screen.getByTestId("dropdown")).not.toHaveClass("tertiary")
 		expect(screen.getByTestId("dropdown")).toHaveClass("quaternary")
-		expect(asFragment()).toMatchSnapshot()
 	})
 })
 

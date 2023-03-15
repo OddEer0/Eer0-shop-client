@@ -21,7 +21,7 @@ export const $FormWrapper = styled.div`
 	padding: 40px;
 	border-radius: 15px;
 	box-shadow: ${({ theme }) => theme.base.boxShadow.primary};
-	background: ${({ theme }) => theme.base.bg.primary_60};
+	background: ${({ theme }) => theme.base.bg.primary_40};
 `
 
 export const $Title = styled.h2`

@@ -1,16 +1,12 @@
 import { useQuery } from "@tanstack/react-query"
 
-import { ICategory, fakeApi } from "@/shared/api"
+import { categoryService } from "../api"
 
 export const useCategoryQuery = () => {
-	const result = useQuery(
-		["category"],
-		async () => {
-			const { data } = await fakeApi.get<ICategory[]>("category")
-			return data
-		},
-		{ staleTime: 1000 * 60 * 60, cacheTime: Infinity }
-	)
+	const result = useQuery(["category"], () => categoryService.getCategory(), {
+		staleTime: 1000 * 60 * 60,
+		cacheTime: Infinity
+	})
 
 	return result
 }
