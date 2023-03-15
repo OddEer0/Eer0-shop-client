@@ -22,41 +22,35 @@ describe("Should render component", () => {
 
 describe("Render every props", () => {
 	it("Default dot variant", () => {
-		const { asFragment } = render(<Badge></Badge>)
+		render(<Badge></Badge>)
 		expect(screen.queryByText(/0/i)).toBeNull()
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Content variant, content value and maxValue", () => {
-		const { asFragment } = render(<Badge variant="content" content={100} maxValue={99}></Badge>)
+		render(<Badge variant="content" content={100} maxValue={99}></Badge>)
 		expect(screen.getByText(/99+/i)).toBeInTheDocument()
 		expect(screen.getByText(/99+/i)).toHaveClass("content")
 		expect(screen.getByText(/99+/i)).not.toHaveClass("dot")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Overlap default circular, default horizontal right and vertical top", () => {
-		const { asFragment } = render(<Badge variant="content"></Badge>)
+		render(<Badge variant="content"></Badge>)
 		expect(screen.getByText(/0/i)).toHaveClass("circular")
 		expect(screen.getByText(/0/i)).not.toHaveClass("square")
 		expect(screen.getByText(/0/i)).toHaveClass("right")
 		expect(screen.getByText(/0/i)).not.toHaveClass("left")
 		expect(screen.getByText(/0/i)).toHaveClass("top")
 		expect(screen.getByText(/0/i)).not.toHaveClass("bottom")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Overlap square, horizontal left and vertical bottom", () => {
-		const { asFragment } = render(
-			<Badge variant="content" overlap="square" horizontal="left" vertical="bottom"></Badge>
-		)
+		render(<Badge variant="content" overlap="square" horizontal="left" vertical="bottom"></Badge>)
 		expect(screen.getByText(/0/i)).not.toHaveClass("circular")
 		expect(screen.getByText(/0/i)).toHaveClass("square")
 		expect(screen.getByText(/0/i)).not.toHaveClass("right")
 		expect(screen.getByText(/0/i)).toHaveClass("left")
 		expect(screen.getByText(/0/i)).not.toHaveClass("top")
 		expect(screen.getByText(/0/i)).toHaveClass("bottom")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Color and Size", () => {

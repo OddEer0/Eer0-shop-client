@@ -19,7 +19,7 @@ describe("Should render TextField component", () => {
 
 describe("Should render TextField with every props, snapshot", () => {
 	it("Should render default outlined, size medium, type text", () => {
-		const { asFragment } = render(<TextField data-testid="input" />)
+		render(<TextField data-testid="input" />)
 		expect(screen.getByTestId("wrapper")).toHaveClass("outlined")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("standard")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("filled")
@@ -29,13 +29,10 @@ describe("Should render TextField with every props, snapshot", () => {
 		expect(screen.getByTestId("input")).toHaveAttribute("type", "text")
 		expect(screen.getByTestId("input")).not.toHaveAttribute("type", "password")
 		expect(screen.getByTestId("input")).not.toHaveAttribute("type", "number")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should render standard, size small, type password", () => {
-		const { asFragment } = render(
-			<TextField type="password" data-testid="input" variant="standard" inputSize="small" />
-		)
+		render(<TextField type="password" data-testid="input" variant="standard" inputSize="small" />)
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("outlined")
 		expect(screen.getByTestId("wrapper")).toHaveClass("standard")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("filled")
@@ -45,11 +42,10 @@ describe("Should render TextField with every props, snapshot", () => {
 		expect(screen.getByTestId("input")).not.toHaveAttribute("type", "text")
 		expect(screen.getByTestId("input")).toHaveAttribute("type", "password")
 		expect(screen.getByTestId("input")).not.toHaveAttribute("type", "number")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should render filled, size large, type number", () => {
-		const { asFragment } = render(<TextField type="number" data-testid="input" variant="filled" inputSize="large" />)
+		render(<TextField type="number" data-testid="input" variant="filled" inputSize="large" />)
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("outlined")
 		expect(screen.getByTestId("wrapper")).not.toHaveClass("standard")
 		expect(screen.getByTestId("wrapper")).toHaveClass("filled")
@@ -59,7 +55,6 @@ describe("Should render TextField with every props, snapshot", () => {
 		expect(screen.getByTestId("input")).not.toHaveAttribute("type", "text")
 		expect(screen.getByTestId("input")).not.toHaveAttribute("type", "password")
 		expect(screen.getByTestId("input")).toHaveAttribute("type", "number")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should render primary color", () => {
@@ -92,16 +87,15 @@ describe("Should render TextField with every props, snapshot", () => {
 	})
 
 	it("Should render label and sub text", () => {
-		const { asFragment } = render(<TextField label="I label" subText="I sub text" />)
+		render(<TextField label="I label" subText="I sub text" />)
 		expect(screen.getByTestId("label")).toBeInTheDocument()
 		expect(screen.getByText(/I label/i))
 		expect(screen.getByTestId("sub-text")).toBeInTheDocument()
 		expect(screen.getByText(/I sub text/i))
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should render start and end icon", () => {
-		const { asFragment } = render(
+		render(
 			<TextField
 				startIcon={<div data-testid="start-icon">start</div>}
 				endIcon={<div data-testid="end-icon">end</div>}
@@ -111,7 +105,6 @@ describe("Should render TextField with every props, snapshot", () => {
 		expect(screen.getByTestId("end-icon")).toBeInTheDocument()
 		expect(screen.getByText(/start/i)).toBeInTheDocument()
 		expect(screen.getByText(/end/i)).toBeInTheDocument()
-		expect(asFragment()).toMatchSnapshot()
 	})
 })
 

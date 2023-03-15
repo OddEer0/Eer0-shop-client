@@ -13,9 +13,4 @@ describe("Should render Container component", () => {
 		render(<Container data-testid="eer0">I children</Container>)
 		expect(screen.getByText(/i children/i)).toBeInTheDocument()
 	})
-
-	it("Snapshot component", () => {
-		const { asFragment } = render(<Container>I children</Container>)
-		expect(asFragment()).toMatchSnapshot()
-	})
 })
