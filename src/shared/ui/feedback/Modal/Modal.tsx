@@ -8,25 +8,6 @@ import { Portal } from "../../utility"
 import { $Modal } from "./Modal.styles"
 import { ModalProps } from "./Modal.types"
 
-const circleOpenAnimation = {
-	open: (height = 1000) => ({
-		clipPath: `circle(${height * 2 + 200}px at 50% 50%)`,
-		transition: {
-			type: "spring",
-			stiffness: 1,
-			restDelta: 2
-		}
-	}),
-	closed: {
-		clipPath: "circle(0px at 50% 50%)",
-		transition: {
-			type: "spring",
-			stiffness: 400,
-			damping: 40
-		}
-	}
-}
-
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({
 	isShow,
 	closeHandler,
@@ -49,14 +30,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
 							exit="hidden"
 							data-testid="overlay"
 						/>
-						<motion.div
-							className="modal-main"
-							{...props}
-							variants={circleOpenAnimation}
-							initial="closed"
-							animate="open"
-							exit="closed"
-						>
+						<motion.div className="modal-main" {...props}>
 							{children}
 						</motion.div>
 					</$Modal>
