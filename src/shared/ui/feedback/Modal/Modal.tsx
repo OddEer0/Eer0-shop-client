@@ -1,5 +1,67 @@
-import { FC } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { FC, PropsWithChildren } from "react"
 
-export const Modal: FC = () => {
-	return <div></div>
+import { opacityAnimation } from "@/shared/animation"
+
+import { Portal } from "../../utility"
+
+import { $Modal } from "./Modal.styles"
+import { ModalProps } from "./Modal.types"
+
+const circleOpenAnimation = {
+	open: (height = 1000) => ({
+		clipPath: `circle(${height * 2 + 200}px at 50% 50%)`,
+		transition: {
+			type: "spring",
+			stiffness: 1,
+			restDelta: 2
+		}
+	}),
+	closed: {
+		clipPath: "circle(0px at 50% 50%)",
+		transition: {
+			type: "spring",
+			stiffness: 400,
+			damping: 40
+		}
+	}
+}
+
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({
+	isShow,
+	closeHandler,
+	children,
+	className = "",
+	color = "primary",
+	...props
+}) => {
+	return (
+		<Portal>
+			<AnimatePresence>
+				{isShow && (
+					<$Modal as={motion.div} className={className} color={color}>
+						<motion.div
+							className="modal-overlay"
+							onClick={closeHandler}
+							variants={opacityAnimation}
+							initial={false}
+							animate="show"
+							exit="hidden"
+							data-testid="overlay"
+						/>
+						<motion.div
+							className="modal-main"
+							{...props}
+							variants={circleOpenAnimation}
+							initial="closed"
+							animate="open"
+							exit="closed"
+						>
+							{children}
+						</motion.div>
+					</$Modal>
+				)}
+			</AnimatePresence>
+		</Portal>
+	)
 }
