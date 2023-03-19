@@ -1,8 +1,10 @@
+import Link from "next/link"
 import { FC } from "react"
 
-import { CategoryCard, useCategoryQuery } from "@/entities/Category"
-
 import { Empty } from "@/shared/ui"
+
+import { useCategoryQuery } from "../../api"
+import { CategoryCard } from "../CategoryCard"
 
 import { $CategoryCardList } from "./CategoryCardList.styles"
 
@@ -16,7 +18,12 @@ export const CategoryCardList: FC = () => {
 			) : data ? (
 				<>
 					{data.map(category => (
-						<CategoryCard className="item" key={category.id} data={category} />
+						<Link
+							href={{ pathname: "/category/device", query: { category: category.id, page: "1" } }}
+							key={category.id}
+						>
+							<CategoryCard className="item" data={category} />
+						</Link>
 					))}
 					<Empty className="item" width="260px" count={4} />
 				</>

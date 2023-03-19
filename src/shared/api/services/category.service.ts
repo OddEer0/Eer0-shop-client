@@ -1,4 +1,5 @@
-import { ICategory, fakeApi } from "@/shared/api"
+import { fakeApi } from "../instance"
+import { ICategory } from "../types"
 
 export const categoryService = {
 	api: fakeApi,
