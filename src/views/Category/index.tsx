@@ -1,14 +1,17 @@
 import { FC } from "react"
 
-import { Container } from "@/shared/ui"
+import { CategoryCardList } from "@/entities/Category"
 
-import { CategoryCardList } from "./ui"
+import { Container, Meta } from "@/shared/ui"
 
 const CategoryView: FC = () => {
 	return (
-		<Container>
-			<CategoryCardList />
-		</Container>
+		<>
+			<Meta title="Eer0 Shop | Category" />
+			<Container>
+				<CategoryCardList />
+			</Container>
+		</>
 	)
 }
 
