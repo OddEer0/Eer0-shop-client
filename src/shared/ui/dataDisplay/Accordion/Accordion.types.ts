@@ -3,7 +3,7 @@ import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
 
 type ModeType = "standard" | "controlled"
 
-interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
 	mode?: ModeType
 	defaultOpen?: string
 	className?: string
