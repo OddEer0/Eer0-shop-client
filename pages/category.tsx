@@ -1,9 +1,9 @@
 import { QueryClient, dehydrate } from "@tanstack/react-query"
 import { ReactElement } from "react"
 
-import { categoryService } from "@/entities/Category"
-
 import CategoryView from "@/views/Category"
+
+import { categoryService } from "@/shared/api"
 
 import { MainLayout } from "@/widgets/MainLayout"
 

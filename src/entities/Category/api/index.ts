@@ -1,1 +1,1 @@
-export { categoryService } from "./category.service"
+export { useCategoryQuery } from "./hooks"

@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
+import { libStyle } from "./lib"
 import { resetStyle } from "./reset"
 
 export const GlobalStyle = createGlobalStyle`
 	${resetStyle}
+	${libStyle}
 
 	body {
 		background: ${({ theme }) => theme.base.bg.primary_50};
