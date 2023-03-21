@@ -1,6 +1,8 @@
 import { ComponentMeta } from "@storybook/react"
 import { useState } from "react"
 
+import { circleOpenAnimation } from "@/shared/animation"
+
 import { Button } from "../../input"
 
 import { Modal } from "./Modal"
@@ -16,7 +18,14 @@ export const Default = () => {
 	return (
 		<>
 			<Button onClick={() => setIsShow(true)}>Open</Button>
-			<Modal isShow={isShow} closeHandler={() => setIsShow(false)}>
+			<Modal
+				isShow={isShow}
+				closeHandler={() => setIsShow(false)}
+				variants={circleOpenAnimation}
+				animate="open"
+				exit="closed"
+				initial="closed"
+			>
 				Content
 			</Modal>
 		</>
@@ -33,7 +42,14 @@ export const Color = () => {
 		<>
 			<h2>primary</h2>
 			<Button onClick={() => setIsShow(true)}>Open</Button>
-			<Modal isShow={isShow} closeHandler={() => setIsShow(false)}>
+			<Modal
+				isShow={isShow}
+				closeHandler={() => setIsShow(false)}
+				variants={circleOpenAnimation}
+				animate="open"
+				exit="closed"
+				initial="closed"
+			>
 				Content
 			</Modal>
 			<h2>secondary</h2>

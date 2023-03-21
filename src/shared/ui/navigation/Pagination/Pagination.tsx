@@ -77,7 +77,7 @@ export const Pagination: FC<PaginationProps> = ({
 		} else {
 			startArr.push(siblingCount + 1)
 		}
-		if (bodyItems[bodyItems.length - 1] !== count - boundaryCount - 1) {
+		if (bodyItems.at(-1) !== count - boundaryCount - 1) {
 			endArr.unshift(null)
 		} else {
 			endArr.unshift(count - boundaryCount)
