@@ -1,21 +1,14 @@
-import { IDevice } from "./IDevice"
+import { IBrand } from "./IBrand"
 import { IFilter } from "./IFilter"
 
 export interface ICategory {
 	id: string
 	name: string
+	title: string
 	img: string
 }
 
-export interface ICategoryWithDevices extends ICategory {
-	devices: IDevice[]
-}
-
-export interface ICategoryWithFilters extends ICategory {
+export interface ICategoryAxiosResponse extends ICategory {
+	brands: IBrand[]
 	filters: IFilter[]
-}
-
-export interface ICategoryFull extends ICategory {
-	filters: IFilter[]
-	devices: IDevice[]
 }

@@ -1,1 +1,1 @@
-export { DeviceFilterModal } from "./ui"
+export { BrandSearchedList, OnlyCashSwitch, PriceSlider, StockDeviceSwitch } from "./ui"

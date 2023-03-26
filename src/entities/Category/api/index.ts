@@ -1,1 +1,1 @@
-export { useCategoryQuery } from "./hooks"
+export { useCategoryQuery, useCategoryOneQuery } from "./hooks"

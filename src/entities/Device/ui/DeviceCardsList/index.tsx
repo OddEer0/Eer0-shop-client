@@ -25,7 +25,7 @@ export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, Favor
 	return (
 		<$DeviceCardsList>
 			{isLoading ? (
-				<DeviceCardSkeleton />
+				<DeviceCardSkeleton className="list-gap" />
 			) : error ? (
 				<span>Что-то пошло не так</span>
 			) : data && data.length ? (
@@ -34,6 +34,7 @@ export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, Favor
 						key={device.id}
 						device={device}
 						cart={<CartComponent id={device.id} />}
+						className="list-gap"
 						favorite={<FavoriteComponent id={device.id} />}
 					/>
 				))

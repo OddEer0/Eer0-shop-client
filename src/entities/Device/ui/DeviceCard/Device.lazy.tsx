@@ -1,5 +1,5 @@
-import { FC } from "react"
+import { FC, HTMLAttributes } from "react"
 
-export const DeviceCardSkeleton: FC = () => {
-	return <div></div>
+export const DeviceCardSkeleton: FC<HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
+	return <div {...props}></div>
 }

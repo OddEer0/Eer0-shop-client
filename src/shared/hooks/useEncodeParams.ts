@@ -10,7 +10,11 @@ export const useEncodeParams = () => {
 	}
 
 	const getParams = (paramName: string) => {
-		return query[paramName]
+		const prev = query[paramName]
+		if (Array.isArray(prev)) {
+			return prev.join(",")
+		}
+		return prev
 	}
 
 	const removeAll = (paramName: string) => {
@@ -35,7 +39,8 @@ export const useEncodeParams = () => {
 		return false
 	}
 
-	const append = (paramName: string, value: string) => {
+	const append = async (paramName: string, value?: string) => {
+		if (!value) return
 		if (has(paramName, value)) return
 		const prev = query[paramName]
 		let result = value
@@ -56,10 +61,38 @@ export const useEncodeParams = () => {
 		})
 	}
 
+	const appendMany = (paramsObj: { [key: string]: string }) => {
+		const params = new Map(Object.entries(paramsObj))
+		if (!params.size) return
+		const queryResult = new Map(Object.entries(query))
+
+		params.forEach((val, key) => {
+			if (val && !has(key, val)) {
+				if (queryResult.has(key)) {
+					const prev = queryResult.get(key)
+					let result = val
+
+					if (Array.isArray(prev)) {
+						result = [...prev, val].join(",")
+					} else {
+						result = [prev, val].join(",")
+					}
+					queryResult.set(key, result)
+				} else {
+					queryResult.set(key, val)
+				}
+			}
+		})
+
+		push({
+			query: Object.fromEntries(queryResult)
+		})
+	}
+
 	const remove = (paramName: string, value: string) => {
 		if (!has(paramName, value)) return
 		let result = query[paramName] as string | string[]
-		let queryResult = query
+		const queryResult = new Map(Object.entries(query))
 
 		if (Array.isArray(result)) {
 			result = result.filter(url => url !== value).join(",")
@@ -71,22 +104,20 @@ export const useEncodeParams = () => {
 		}
 
 		if (!result) {
-			delete queryResult[paramName]
+			queryResult.delete(paramName)
 		} else {
-			queryResult = {
-				...queryResult,
-				[paramName]: result
-			}
+			queryResult.set(paramName, result)
 		}
 
 		push({
-			query: queryResult
+			query: Object.fromEntries(queryResult)
 		})
 	}
 
 	return {
 		getParams,
 		removeAllParams,
+		appendMany,
 		removeAll,
 		has,
 		append,
