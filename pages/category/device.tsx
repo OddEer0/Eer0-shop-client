@@ -20,7 +20,12 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 	const queryClient = new QueryClient()
 
 	await queryClient.prefetchQuery(["device", query], () => deviceService.getFilteredAndSortedDevice(query))
-	await queryClient.prefetchQuery(["category", query.category], () => categoryService.getOneCategory(query.category))
+
+	if (query.category) {
+		await queryClient.prefetchQuery(["category", query.category], () =>
+			categoryService.getOneCategory(query.category as string)
+		)
+	}
 
 	return {
 		props: { dehydratedState: dehydrate(queryClient) }
