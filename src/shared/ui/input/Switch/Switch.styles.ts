@@ -12,7 +12,7 @@ export const SwitchWrapper = styled.div`
 
 	& > .switch {
 		position: relative;
-		background: ${({ theme }) => theme.ui.color.default_50};
+		background: ${({ theme }) => theme.ui.color.default_50}32;
 		cursor: pointer;
 		transition: background 0.3s ease-in-out;
 

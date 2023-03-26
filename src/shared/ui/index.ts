@@ -33,14 +33,13 @@ export type { ContainerProps } from "./layout"
 export { Dropdown, Pagination } from "./navigation"
 export type { DropdownProps, PaginationProps } from "./navigation"
 
-export { Avatar, Badge, Divider, Accordion, AvatarGroup, List, Tooltip } from "./dataDisplay"
+export { Avatar, Badge, Divider, Accordion, AvatarGroup, Tooltip } from "./dataDisplay"
 export type {
 	AvatarProps,
 	BadgeProps,
 	DividerProps,
 	AccordionProps,
 	AvatarGroupProps,
-	ListProps,
 	TooltipProps
 } from "./dataDisplay"
 

@@ -7,6 +7,7 @@ export const $Slider = styled.div<StyledSliderProps>`
 	.noUi-target {
 		background: ${({ theme, color }) => theme.ui.color[`${color}_50`]}66;
 		border: none;
+		box-shadow: none;
 
 		&.noUi-horizontal {
 			height: ${({ size }) => SizeBaseEnum[size]}px;

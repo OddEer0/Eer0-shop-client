@@ -7,7 +7,10 @@ export type {
 	ICategory,
 	IDevice,
 	IFilter,
-	IDeviceAxiosResponse
+	IDeviceAxiosResponse,
+	ICategoryAxiosResponse,
+	IFilterWithInfo,
+	IInfo
 } from "./types"
 
 export { deviceService, categoryService } from "./services"
