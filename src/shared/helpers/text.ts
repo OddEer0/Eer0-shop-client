@@ -1,3 +1,5 @@
+export const cn = (...str: string[]) => str.join(" ")
+
 export const getFirstLetters = (str: string) =>
 	str
 		.trim()

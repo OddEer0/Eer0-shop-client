@@ -1,5 +1,6 @@
 export type { IUser, IUserLoginBody, IUserRegistrationBody } from "./IUser"
 export type { ICategory, ICategoryAxiosResponse } from "./ICategory"
-export type { IDevice, IDeviceAxiosResponse } from "./IDevice"
+export type { IDevice, IDeviceAxiosResponse, IDeviceWithInfoAndBrand } from "./IDevice"
 export type { IFilter, IFilterWithInfo } from "./IFilter"
 export type { IInfo } from "./IInfo"
+export type { IBrand } from "./IBrand"

@@ -1,1 +1,1 @@
-export { useDevicesQuery } from "./useDevicesQuery"
+export { useFilteredAndSortedDevicesQuery } from "./useDevicesQuery"

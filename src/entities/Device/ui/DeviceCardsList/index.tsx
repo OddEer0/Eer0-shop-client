@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { FC } from "react"
 
-import { useDevicesQuery } from "../../api"
+import { useFilteredAndSortedDevicesQuery } from "../../api"
 import { deviceQuerySelector } from "../../model"
 import { DeviceCard } from "../DeviceCard"
 import { DeviceCardSkeleton } from "../DeviceCard/Device.lazy"
@@ -19,7 +19,7 @@ interface DeviceCardsListProps {
 
 export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, FavoriteComponent }) => {
 	const { query } = useRouter()
-	const { data, isLoading, error } = useDevicesQuery(query, deviceQuerySelector)
+	const { data, isLoading, error } = useFilteredAndSortedDevicesQuery(query, deviceQuerySelector)
 
 	return (
 		<$DeviceCardsList>

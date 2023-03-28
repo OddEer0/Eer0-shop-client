@@ -1,2 +1,2 @@
 export { userReducer, userSelector, deleteUser, setUser } from "./model"
-export { useUserRegistrationMutate, useUserLoginMutate } from "./hooks"
+export { useUserRegistrationMutate, useUserLoginMutate } from "./api"

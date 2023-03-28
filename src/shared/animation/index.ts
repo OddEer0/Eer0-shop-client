@@ -1,4 +1,2 @@
-export { toggleScaleAnimation } from "./ToggleScale"
-export { ScaleOpacityScrollable } from "./ScaleOpacityScrollable"
-export { opacityAnimation } from "./Opacity"
-export { circleOpenAnimation } from "./CircleOpenAnimation"
+export { ScaleOpacityScrollable } from "./scroll/ui/ScaleOpacityScrollable"
+export { circleOpenAnimation, opacityAnimation, toggleScaleAnimation } from "./variants"

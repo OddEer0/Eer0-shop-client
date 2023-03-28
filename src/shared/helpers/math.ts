@@ -1,5 +1,8 @@
 import { RefObject } from "react"
 
+export const getLimitationNumber = (num: number, limit: number, postfix = "+") =>
+	num > limit ? limit + postfix : num + ""
+
 interface ICoords {
 	x: number | undefined
 	y: number | undefined
