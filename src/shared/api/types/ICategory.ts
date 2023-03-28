@@ -1,5 +1,5 @@
 import { IBrand } from "./IBrand"
-import { IFilter } from "./IFilter"
+import { IFilterWithInfo } from "./IFilter"
 
 export interface ICategory {
 	id: string
@@ -10,5 +10,5 @@ export interface ICategory {
 
 export interface ICategoryAxiosResponse extends ICategory {
 	brands: IBrand[]
-	filters: IFilter[]
+	filters: IFilterWithInfo[]
 }

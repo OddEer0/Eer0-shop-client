@@ -3,7 +3,7 @@ export const circleOpenAnimation = {
 		clipPath: `circle(${height * 2 + 200}px at 50% 50%)`,
 		transition: {
 			type: "spring",
-			stiffness: 1,
+			stiffness: 10,
 			restDelta: 2
 		}
 	}),

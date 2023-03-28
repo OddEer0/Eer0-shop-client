@@ -49,9 +49,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 								<svg xmlns="http://www.w3.org/2000/svg" id="other_yes" fill="none" viewBox="0 0 24 24">
 									<path
 										fill="currentColor"
-										fill-rule="evenodd"
+										fillRule="evenodd"
 										d="M20.9571 6.0434c.3905.3905.3905 1.0237 0 1.4142l-10.5 10.4995c-.3905.3905-1.0236.3906-1.4142.0001l-5.25-5.2496c-.3905-.3905-.3905-1.0236 0-1.4142.3905-.3905 1.0236-.3906 1.4142 0L9.75 15.8359l9.7929-9.7925c.3905-.3906 1.0237-.3905 1.4142 0Z"
-										clip-rule="evenodd"
+										clipRule="evenodd"
 									/>
 								</svg>
 							</span>

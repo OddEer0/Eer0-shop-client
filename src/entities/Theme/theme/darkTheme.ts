@@ -9,7 +9,8 @@ export const darkTheme: DefaultTheme = {
 	ui: {
 		...theme.ui,
 		bg: {
-			...theme.ui.bg
+			...theme.ui.bg,
+			primary_40: "#0E0D0D"
 		},
 		boxShadow: {
 			...theme.ui.boxShadow
