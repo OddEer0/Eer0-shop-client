@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { ChangeEvent, FC, useMemo, useState } from "react"
 
-import { categoryBrandQuerySelector, useCategoryOneQuery } from "@/entities/Category"
+import { useBrandQuery } from "@/entities/Brand"
 
 import { TextField } from "@/shared/ui"
 
@@ -12,7 +12,7 @@ import { $BrandSearchedList } from "./BrandSearchedList.styles"
 export const BrandSearchedList: FC = () => {
 	const [searchValue, setSearchValue] = useState("")
 	const { query } = useRouter()
-	const { data, isLoading, error } = useCategoryOneQuery(query.category as string, categoryBrandQuerySelector)
+	const { data, isLoading, error } = useBrandQuery(query.category as string)
 
 	const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchValue(e.target.value)

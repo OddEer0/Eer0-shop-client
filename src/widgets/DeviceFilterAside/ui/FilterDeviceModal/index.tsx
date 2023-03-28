@@ -1,12 +1,12 @@
 import { useRouter } from "next/router"
 import { FC } from "react"
 
-import { categoryFiltersQuerySelector, useCategoryOneQuery } from "@/entities/Category"
+import { useFilterQuery } from "@/entities/Filter"
+
+import { FilterSearchedCheckboxList } from "@/features/DeviceFilter"
 
 import { circleOpenAnimation } from "@/shared/animation"
 import { Accordion } from "@/shared/ui"
-
-import { FilterSearchedCheckboxList } from "../FilterSearchedCheckboxList"
 
 import { $DeviceFilterModal, $Modal } from "./DeviceFilterModal.styles"
 
@@ -17,7 +17,7 @@ interface DeviceFilterModalProps {
 
 export const FilterDeviceModal: FC<DeviceFilterModalProps> = ({ closeHandler, isShow }) => {
 	const { query } = useRouter()
-	const { data, isLoading, error } = useCategoryOneQuery(query.category as string, categoryFiltersQuerySelector)
+	const { data, isLoading, error } = useFilterQuery(query.category as string)
 
 	return (
 		<$Modal

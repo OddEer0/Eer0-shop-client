@@ -2,7 +2,7 @@ import { FC } from "react"
 
 import { TextField } from "@/shared/ui"
 
-import { useUserLoginForm } from "../../hooks"
+import { useUserLoginForm } from "../../lib"
 
 import { $Button, $Form, $FormWrapper, $Input, $Link, $LinkTitle, $Title } from "./LoginForm.styles"
 

@@ -4,10 +4,9 @@ import { BiMoon } from "react-icons/bi"
 import { ImSun } from "react-icons/im"
 import styled from "styled-components"
 
-import { ThemeEnum, themeSelector } from "@/entities/Theme"
+import { ThemeEnum, useTheme } from "@/entities/Theme"
 
 import { toggleScaleAnimation } from "@/shared/animation"
-import { useActions, useAppSelector } from "@/shared/hooks"
 
 const Icon = styled.div`
 	font-size: 32px;
@@ -17,24 +16,15 @@ const Icon = styled.div`
 `
 
 export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
-	const { setTheme } = useActions()
-	const { type } = useAppSelector(themeSelector)
-
-	const setDarkTheme = () => {
-		setTheme("dark")
-	}
-
-	const setLightTheme = () => {
-		setTheme("light")
-	}
+	const { themeName, toggleTheme } = useTheme()
 
 	return (
 		<motion.div {...props}>
 			<AnimatePresence mode="wait">
-				{type === ThemeEnum.dark ? (
+				{themeName === ThemeEnum.dark ? (
 					<motion.div
 						key="moon"
-						onClick={setLightTheme}
+						onClick={toggleTheme}
 						variants={toggleScaleAnimation}
 						animate="show"
 						exit="hidden"
@@ -45,7 +35,7 @@ export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
 				) : (
 					<motion.div
 						key="sun"
-						onClick={setDarkTheme}
+						onClick={toggleTheme}
 						variants={toggleScaleAnimation}
 						animate="show"
 						exit="hidden"

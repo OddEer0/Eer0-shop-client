@@ -4,7 +4,6 @@ import { DefaultTheme } from "styled-components"
 
 import { darkTheme } from "../theme/darkTheme"
 import { lightTheme } from "../theme/lightTheme"
-import { ThemeEnum } from "../theme/theme.types"
 
 interface InitialStateTypes {
 	theme: DefaultTheme
@@ -18,9 +17,6 @@ export const themeSlice = createSlice({
 	name: "themeSlice",
 	initialState,
 	reducers: {
-		toggleTheme(state) {
-			state.theme = state.theme.type === ThemeEnum.light ? darkTheme : lightTheme
-		},
 		setTheme(state, action: PayloadAction<"dark" | "light">) {
 			if (action.payload === "light") {
 				state.theme = lightTheme
@@ -39,4 +35,4 @@ export const themeSlice = createSlice({
 
 export const themeReducer = themeSlice.reducer
 
-export const { toggleTheme, setTheme } = themeSlice.actions
+export const { setTheme } = themeSlice.actions
