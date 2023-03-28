@@ -1,1 +1,1 @@
-export { BrandSearchedList, OnlyCashSwitch, PriceSlider, StockDeviceSwitch } from "./ui"
+export { BrandSearchedList, OnlyCashSwitch, PriceSlider, StockDeviceSwitch, FilterDeviceModalOpenButton } from "./ui"

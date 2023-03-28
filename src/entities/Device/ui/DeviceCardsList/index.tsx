@@ -18,8 +18,7 @@ interface DeviceCardsListProps {
 }
 
 export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, FavoriteComponent }) => {
-	const router = useRouter()
-	const { query } = router
+	const { query } = useRouter()
 	const { data, isLoading, error } = useDevicesQuery(query, deviceQuerySelector)
 
 	return (
