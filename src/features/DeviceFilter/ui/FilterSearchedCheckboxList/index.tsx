@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react"
+import { FC } from "react"
 
 import { IFilterWithInfo } from "@/shared/api"
 import { useInput } from "@/shared/hooks"
@@ -15,13 +15,7 @@ interface FilterSearchedCheckboxListProps {
 export const FilterSearchedCheckboxList: FC<FilterSearchedCheckboxListProps> = ({ filter }) => {
 	const input = useInput("")
 
-	const infoList = useMemo(() => {
-		if (input.value) {
-			return filter.infos.filter(info => info.value.toLowerCase().includes(input.value.toLowerCase()))
-		}
-		return filter.infos
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [input.value])
+	const infoList = filter.infos.filter(info => info.value.toLowerCase().includes(input.value.toLowerCase()))
 
 	return (
 		<$FilterSearchedCheckboxList>

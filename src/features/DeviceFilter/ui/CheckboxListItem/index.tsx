@@ -1,9 +1,9 @@
 import { FC } from "react"
 
-import { useToggleParam } from "@/shared/hooks"
 import { Checkbox } from "@/shared/ui"
 
 import { $CheckboxListItem } from "./CheckboxListItem.styles"
+import { useCheckboxToggleParam } from "@/shared/hooks"
 
 interface CheckboxListItemProps {
 	name: string
@@ -11,12 +11,12 @@ interface CheckboxListItemProps {
 }
 
 export const CheckboxListItem: FC<CheckboxListItemProps> = ({ value, name }) => {
-	const { isHaveParam, toggleHandle } = useToggleParam(name, value)
+	const checkbox = useCheckboxToggleParam(name, value)
 
 	return (
 		<$CheckboxListItem>
-			<Checkbox checkboxSize="large" value={value} onChange={toggleHandle} checked={isHaveParam} />
-			<h4 onClick={toggleHandle}>{value}</h4>
+			<Checkbox checkboxSize="large" value={value} {...checkbox} />
+			<h4 onClick={checkbox.onChange}>{value}</h4>
 		</$CheckboxListItem>
 	)
 }

@@ -13,7 +13,7 @@ import { $FilterDeviceAside } from "./FilterDeviceAside.styles"
 export const FilterDeviceAside: FC = () => {
 	return (
 		<$FilterDeviceAside>
-			<SimpleBar className="scroll" forceVisible="y">
+			<SimpleBar className="scroll" forceVisible="y" autoHide={false}>
 				<div className="sidebar">
 					<h2 className="h2">Фильтр</h2>
 					<TitledSwitch title="Только в наличий" switchComponent={<OnlyCashSwitch />} />

@@ -1,10 +1,10 @@
 import { FC } from "react"
 
-import { useToggleParam } from "@/shared/hooks"
+import { useCheckboxToggleParam } from "@/shared/hooks"
 import { Switch } from "@/shared/ui"
 
 export const OnlyCashSwitch: FC = () => {
-	const { isHaveParam, toggleHandle } = useToggleParam("isonlycash", "not", true)
+	const checkbox = useCheckboxToggleParam("isonlycash", "not")
 
-	return <Switch onChange={toggleHandle} checked={isHaveParam} />
+	return <Switch {...checkbox} checked={!checkbox.checked} />
 }

@@ -1,6 +1,6 @@
 import { QueryClient } from "@tanstack/react-query"
 
-import { IUser, api } from "../api"
+import { userService } from "../api"
 
 export const queryClient = new QueryClient({
 	defaultOptions: {
@@ -11,9 +11,11 @@ export const queryClient = new QueryClient({
 })
 
 queryClient.setQueryDefaults(["profile"], {
-	queryFn: async () => {
-		const res = await api.get<IUser>("auth/refresh")
-		return res.data
+	queryFn: () => {
+		if (localStorage.getItem("isAuth")) {
+			return userService.getProfile()
+		}
+		return null
 	},
 	retry: false,
 	cacheTime: Infinity,

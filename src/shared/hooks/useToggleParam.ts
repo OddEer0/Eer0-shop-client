@@ -1,33 +1,34 @@
-import { useState } from "react"
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 
 import { useEncodeParams } from "./useEncodeParams"
 
-export const useToggleParam = (paramName: string, paramValue: string, reverse = false) => {
+export const useCheckboxToggleParam = (paramName: string, paramValue: string) => {
+	const { query } = useRouter()
 	const params = useEncodeParams()
-	const [isHaveParam, setIsHaveParam] = useState(() => {
-		return params.has(paramName, paramValue)
-	})
+	const [checked, setChecked] = useState(false)
 
-	const toggleHandle = () => {
-		if (isHaveParam) {
-			setIsHaveParam(false)
-			if (reverse) {
-				params.append(paramName, paramValue)
-			} else {
-				params.remove(paramName, paramValue)
-			}
+	const onChange = () => {
+		if (checked) {
+			setChecked(false)
+			params.remove(paramName, paramValue)
 		} else {
-			if (reverse) {
-				params.remove(paramName, paramValue)
-			} else {
-				params.append(paramName, paramValue)
-			}
-			setIsHaveParam(true)
+			setChecked(true)
+			params.append(paramName, paramValue)
 		}
 	}
 
+	useEffect(() => {
+		if (params.has(paramName, paramValue)) {
+			setChecked(true)
+		} else {
+			setChecked(false)
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [query[paramName]])
+
 	return {
-		isHaveParam,
-		toggleHandle
+		checked,
+		onChange
 	}
 }

@@ -13,4 +13,4 @@ export type {
 	IInfo
 } from "./types"
 
-export { deviceService, categoryService, brandService, filterService } from "./services"
+export { deviceService, categoryService, brandService, filterService, userService } from "./services"

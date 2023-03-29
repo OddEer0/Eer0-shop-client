@@ -17,7 +17,7 @@ interface DeviceFilterModalProps {
 
 export const FilterDeviceModal: FC<DeviceFilterModalProps> = ({ closeHandler, isShow }) => {
 	const { query } = useRouter()
-	const { data, isLoading, error } = useFilterQuery(query.category as string)
+	const { data, isLoading, error } = useFilterQuery(query.category as string, isShow)
 
 	return (
 		<$Modal

@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
 
 import { categoryService } from "@/shared/api"
+import { convertHoursToMs } from "@/shared/helpers"
 
 export const useCategoryQuery = () => {
 	return useQuery(["category"], () => categoryService.getCategory(), {
-		staleTime: 1000 * 60 * 60,
+		staleTime: convertHoursToMs(1),
 		cacheTime: Infinity
 	})
 }

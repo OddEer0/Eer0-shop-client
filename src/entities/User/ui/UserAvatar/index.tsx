@@ -1,23 +1,16 @@
-import { useQuery } from "@tanstack/react-query"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { FC } from "react"
 import { BiUser } from "react-icons/bi"
 
-import { IUser } from "@/shared/api"
 import { Avatar, Skeleton } from "@/shared/ui"
 
-import { $AvatarIcon, $Wrapper } from "./HeaderUserAvatar.styles"
+import { useProfileQuery, userAvatarQuerySelector } from "../../api"
 
-export const HeaderUserAvatar: FC = () => {
-	const { data: user, isLoading } = useQuery(["profile"], {
-		select(data: IUser) {
-			if (data) {
-				return { avatar: data.avatar, firstName: data.firstName }
-			}
-			return null
-		}
-	})
+import { $AvatarIcon, $Wrapper } from "./UserAvatar"
+
+export const ProfileAvatar: FC = () => {
+	const { data: user, isLoading } = useProfileQuery(userAvatarQuerySelector)
 
 	return (
 		<$Wrapper transition={{ delay: 0.2 }} as={motion.div} initial={{ y: -100 }} animate={{ y: 0 }}>

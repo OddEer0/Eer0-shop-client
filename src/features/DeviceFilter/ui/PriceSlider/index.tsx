@@ -22,7 +22,24 @@ export const PriceSlider: FC = () => {
 				range={{ min: 0, max: 500000 }}
 				connect={[false, true, false]}
 				onSet={updateHandler}
-				tooltips={true}
+				tooltips={[
+					{
+						to(val) {
+							return Math.ceil(val)
+						},
+						from(val) {
+							return Math.ceil(+val)
+						}
+					},
+					{
+						to(val) {
+							return Math.ceil(val)
+						},
+						from(val) {
+							return Math.ceil(+val)
+						}
+					}
+				]}
 			/>
 			<Button onClick={clickHandler} variant="contained">
 				OK

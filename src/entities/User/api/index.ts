@@ -1,1 +1,2 @@
-export { useUserLoginMutate, useUserRegistrationMutate } from "./hooks"
+export { useUserLoginMutate, useUserRegistrationMutate, useProfileQuery } from "./hooks"
+export { userAvatarQuerySelector } from "./selectors"

@@ -2,9 +2,10 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { FC } from "react"
 
+import { ProfileAvatar } from "@/entities/User"
+
 import { Container } from "@/shared/ui"
 
-import { HeaderUserAvatar } from "../HeaderUserAvatar"
 import { MenuBurger } from "../MenuBurger"
 
 import { $FirstSection, $ToggleThemeIcon } from "./Header.styles"
@@ -24,7 +25,7 @@ export const FirstSection: FC = () => {
 				</motion.div>
 				<div className="right-wrapper">
 					<$ToggleThemeIcon />
-					<HeaderUserAvatar />
+					<ProfileAvatar />
 				</div>
 			</Container>
 		</$FirstSection>

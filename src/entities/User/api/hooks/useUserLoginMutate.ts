@@ -15,6 +15,7 @@ export const useUserLoginMutate = () => {
 		},
 		onSuccess(data) {
 			if (data) {
+				localStorage.setItem("isAuth", "true")
 				queryClient.setQueryData(["profile"], data)
 				router.push("/")
 			}
