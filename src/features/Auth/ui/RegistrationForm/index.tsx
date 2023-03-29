@@ -9,7 +9,6 @@ import { $Button, $Form, $FormInputSection, $FormWrapper, $Title } from "./Regis
 export const RegistrationForm: FC = () => {
 	const {
 		getEmailInputProps,
-		getCopyPasswordInputProps,
 		getNicknameInputProps,
 		getPasswordInputProps,
 		getFirstNameInputProps,
@@ -27,7 +26,7 @@ export const RegistrationForm: FC = () => {
 					<TextField {...getFirstNameInputProps} />
 					<TextField {...getLastNameInputProps} />
 					<TextField {...getPasswordInputProps} />
-					<TextField {...getCopyPasswordInputProps} />
+					<TextField />
 				</$FormInputSection>
 				<$Button variant="contained">SUBMIT</$Button>
 			</$Form>

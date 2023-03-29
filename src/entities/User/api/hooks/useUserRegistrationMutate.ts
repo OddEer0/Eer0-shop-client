@@ -16,7 +16,7 @@ export const useUserRegistrationMutate = () => {
 		onSuccess(data) {
 			if (data) {
 				localStorage.setItem("isAuth", "true")
-				client.invalidateQueries({ queryKey: ["profile"] })
+				client.setQueryData(["profile"], data)
 				router.push("/")
 			}
 		}

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 
 import { useUserRegistrationMutate } from "@/entities/User"
 
+import { IUserRegistrationBody } from "@/shared/api"
 import { TextFieldProps } from "@/shared/ui"
 
 import {
@@ -15,7 +16,6 @@ import {
 	REGULAR_PASSWORD,
 	REGULAR_PASSWORD_MESSAGE
 } from "../constants"
-import { IUserRegistrationForm } from "../types"
 
 export const useUserRegistrationForm = () => {
 	const { mutate } = useUserRegistrationMutate()
@@ -24,9 +24,9 @@ export const useUserRegistrationForm = () => {
 		register,
 		handleSubmit,
 		formState: { errors }
-	} = useForm<IUserRegistrationForm>({ mode: "onBlur" })
+	} = useForm<IUserRegistrationBody>({ mode: "onBlur" })
 
-	const submitHandler = handleSubmit((data: IUserRegistrationForm) => {
+	const submitHandler = handleSubmit((data: IUserRegistrationBody) => {
 		mutate(data)
 	})
 
@@ -37,7 +37,8 @@ export const useUserRegistrationForm = () => {
 		}),
 		label: "Почта",
 		color: errors.email ? "danger" : "primary",
-		subText: errors.email?.message && errors.email.message
+		subText: errors.email?.message && errors.email.message,
+		placeholder: "example@gmail.com"
 	}
 
 	const getNicknameInputProps: TextFieldProps = {
@@ -48,7 +49,8 @@ export const useUserRegistrationForm = () => {
 		}),
 		label: "Логин",
 		color: errors.nickname ? "danger" : "primary",
-		subText: errors.nickname?.message && errors.nickname.message
+		subText: errors.nickname?.message && errors.nickname.message,
+		placeholder: "example"
 	}
 
 	const getPasswordInputProps: TextFieldProps = {
@@ -60,26 +62,24 @@ export const useUserRegistrationForm = () => {
 		}),
 		label: "Пароль",
 		color: errors.password ? "danger" : "primary",
-		subText: errors.password?.message && errors.password.message
-	}
-
-	const getCopyPasswordInputProps: TextFieldProps = {
-		...register("copyPassword", { required: FIELD_REQUIRED }),
-		label: "Повторите пароль"
+		subText: errors.password?.message && errors.password.message,
+		placeholder: "mypassword13"
 	}
 
 	const getFirstNameInputProps: TextFieldProps = {
 		...register("firstName", { required: FIELD_REQUIRED }),
 		label: "Имя",
 		color: errors.firstName ? "danger" : "primary",
-		subText: errors.firstName?.message && errors.firstName.message
+		subText: errors.firstName?.message && errors.firstName.message,
+		placeholder: "Кирилл"
 	}
 
 	const getLastNameInputProps: TextFieldProps = {
 		...register("lastName", { required: FIELD_REQUIRED }),
 		label: "Фамилия",
 		color: errors.lastName ? "danger" : "primary",
-		subText: errors.lastName?.message && errors.lastName.message
+		subText: errors.lastName?.message && errors.lastName.message,
+		placeholder: "Дубов"
 	}
 
 	return {
@@ -87,7 +87,6 @@ export const useUserRegistrationForm = () => {
 		getEmailInputProps,
 		getPasswordInputProps,
 		getNicknameInputProps,
-		getCopyPasswordInputProps,
 		getFirstNameInputProps,
 		getLastNameInputProps
 	}
