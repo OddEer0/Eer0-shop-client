@@ -1,10 +1,9 @@
-import { useRouter } from "next/router"
-import { FC, useEffect, useState } from "react"
+import { FC } from "react"
 
-import { useEncodeParams } from "@/shared/hooks"
 import { Checkbox } from "@/shared/ui"
 
 import { $CheckboxListItem } from "./CheckboxListItem.styles"
+import { useCheckboxToggleParam } from "@/shared/hooks"
 
 interface CheckboxListItemProps {
 	name: string
@@ -12,33 +11,12 @@ interface CheckboxListItemProps {
 }
 
 export const CheckboxListItem: FC<CheckboxListItemProps> = ({ value, name }) => {
-	const params = useEncodeParams()
-	const router = useRouter()
-	const [isCheck, setIsCheck] = useState(false)
-
-	const changeHandler = () => {
-		if (isCheck) {
-			setIsCheck(false)
-			params.remove(name, value)
-		} else {
-			setIsCheck(false)
-			params.append(name, value)
-		}
-	}
-
-	useEffect(() => {
-		if (params.has(name, value)) {
-			setIsCheck(true)
-		} else {
-			setIsCheck(false)
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [router.query[name]])
+	const checkbox = useCheckboxToggleParam(name, value)
 
 	return (
 		<$CheckboxListItem>
-			<Checkbox checkboxSize="large" value={value} onChange={changeHandler} checked={isCheck} />
-			<h4 onClick={changeHandler}>{value}</h4>
+			<Checkbox checkboxSize="large" value={value} {...checkbox} />
+			<h4 onClick={checkbox.onChange}>{value}</h4>
 		</$CheckboxListItem>
 	)
 }

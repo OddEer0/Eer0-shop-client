@@ -1,0 +1,1 @@
+export { useBrandQuery } from "./useBrandQuery"

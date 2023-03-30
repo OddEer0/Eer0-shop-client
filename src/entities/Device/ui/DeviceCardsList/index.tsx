@@ -1,7 +1,9 @@
 import { useRouter } from "next/router"
 import { FC } from "react"
 
-import { useDevicesQuery } from "../../api"
+import { Empty } from "@/shared/ui"
+
+import { useFilteredAndSortedDevicesQuery } from "../../api"
 import { deviceQuerySelector } from "../../model"
 import { DeviceCard } from "../DeviceCard"
 import { DeviceCardSkeleton } from "../DeviceCard/Device.lazy"
@@ -19,7 +21,7 @@ interface DeviceCardsListProps {
 
 export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, FavoriteComponent }) => {
 	const { query } = useRouter()
-	const { data, isLoading, error } = useDevicesQuery(query, deviceQuerySelector)
+	const { data, isLoading, error } = useFilteredAndSortedDevicesQuery(query, deviceQuerySelector)
 
 	return (
 		<$DeviceCardsList>
@@ -28,15 +30,18 @@ export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, Favor
 			) : error ? (
 				<span>Что-то пошло не так</span>
 			) : data && data.length ? (
-				data.map(device => (
-					<DeviceCard
-						key={device.id}
-						device={device}
-						cart={<CartComponent id={device.id} />}
-						className="list-gap"
-						favorite={<FavoriteComponent id={device.id} />}
-					/>
-				))
+				<>
+					{data.map(device => (
+						<DeviceCard
+							key={device.id}
+							device={device}
+							cart={<CartComponent id={device.id} />}
+							className="list-gap"
+							favorite={<FavoriteComponent id={device.id} />}
+						/>
+					))}
+					<Empty className="list-gap" width="320px" count={3} />
+				</>
 			) : (
 				<h2 className="h2">Товаров с данной категорией на данный момент нет (((</h2>
 			)}

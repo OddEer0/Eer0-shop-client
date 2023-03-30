@@ -2,14 +2,13 @@ import { FC } from "react"
 
 import { TextField } from "@/shared/ui"
 
-import { useUserRegistrationForm } from "../../hooks"
+import { useUserRegistrationForm } from "../../lib"
 
 import { $Button, $Form, $FormInputSection, $FormWrapper, $Title } from "./RegistrationForm.styles"
 
 export const RegistrationForm: FC = () => {
 	const {
 		getEmailInputProps,
-		getCopyPasswordInputProps,
 		getNicknameInputProps,
 		getPasswordInputProps,
 		getFirstNameInputProps,
@@ -27,7 +26,7 @@ export const RegistrationForm: FC = () => {
 					<TextField {...getFirstNameInputProps} />
 					<TextField {...getLastNameInputProps} />
 					<TextField {...getPasswordInputProps} />
-					<TextField {...getCopyPasswordInputProps} />
+					<TextField />
 				</$FormInputSection>
 				<$Button variant="contained">SUBMIT</$Button>
 			</$Form>

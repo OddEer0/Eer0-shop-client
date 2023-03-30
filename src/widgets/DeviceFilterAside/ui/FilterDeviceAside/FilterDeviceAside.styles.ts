@@ -3,13 +3,13 @@ import styled from "styled-components"
 export const $FilterDeviceAside = styled.aside`
 	width: 100%;
 	max-width: 340px;
-	max-height: 1280px;
+	max-height: calc(95vh - 110px);
+	position: sticky;
+	top: 110px;
 
 	& .scroll {
 		max-width: 340px;
 		max-height: calc(95vh - 110px);
-		position: sticky;
-		top: 0;
 
 		.simplebar-content-wrapper {
 			border-radius: 10px;
@@ -25,8 +25,9 @@ export const $FilterDeviceAside = styled.aside`
 	& .sidebar {
 		width: 100%;
 		max-width: 340px;
-		min-height: 720px;
-		padding: 15px 20px;
+		height: 100%;
+		max-height: 1220px;
+		padding: 20px;
 		background: ${({ theme }) => theme.base.bg.primary_40};
 
 		.h2 {

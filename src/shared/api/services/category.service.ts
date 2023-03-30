@@ -1,5 +1,5 @@
 import { api } from "../instance"
-import { ICategory, ICategoryAxiosResponse } from "../types"
+import { ICategory } from "../types"
 
 export const categoryService = {
 	api: api,
@@ -9,7 +9,7 @@ export const categoryService = {
 	},
 
 	async getOneCategory(id: string) {
-		const { data } = await this.api.get<ICategoryAxiosResponse>(`category/${id}`)
+		const { data } = await this.api.get<ICategory>(`category/${id}`)
 		return data
 	}
 }

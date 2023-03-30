@@ -1,16 +1,11 @@
-import { FC, useRef } from "react"
+import { FC } from "react"
 import SimpleBar from "simplebar-react"
 
-import {
-	BrandSearchedList,
-	FilterDeviceModalOpenButton,
-	OnlyCashSwitch,
-	PriceSlider,
-	StockDeviceSwitch
-} from "@/features/DeviceFilter"
+import { BrandSearchedList, OnlyCashSwitch, PriceSlider, StockDeviceSwitch } from "@/features/DeviceFilter"
 
 import { Accordion } from "@/shared/ui"
 
+import { OpenModalButton } from "../OpenModalButton"
 import { TitledSwitch } from "../TitledSwitch"
 
 import { $FilterDeviceAside } from "./FilterDeviceAside.styles"
@@ -18,7 +13,7 @@ import { $FilterDeviceAside } from "./FilterDeviceAside.styles"
 export const FilterDeviceAside: FC = () => {
 	return (
 		<$FilterDeviceAside>
-			<SimpleBar className="scroll" forceVisible="y">
+			<SimpleBar className="scroll" forceVisible="y" autoHide={false}>
 				<div className="sidebar">
 					<h2 className="h2">Фильтр</h2>
 					<TitledSwitch title="Только в наличий" switchComponent={<OnlyCashSwitch />} />
@@ -31,7 +26,7 @@ export const FilterDeviceAside: FC = () => {
 							<BrandSearchedList />
 						</Accordion.Summary>
 					</Accordion>
-					<FilterDeviceModalOpenButton>Фильтры</FilterDeviceModalOpenButton>
+					<OpenModalButton>Фильтры</OpenModalButton>
 				</div>
 			</SimpleBar>
 		</$FilterDeviceAside>

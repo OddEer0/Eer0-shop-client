@@ -68,9 +68,10 @@ export const $Slider = styled.div<StyledSliderProps>`
 				height: ${({ size }) => SizeHandleEnum[size]}px;
 			}
 			.noUi-tooltip {
-				background: ${({ theme }) => theme.ui.color.default_50};
-				color: white;
+				background: ${({ theme, color }) => theme.ui.color[`${color}_50`]};
+				color: ${({ theme, color }) => theme.ui.text[`${color}_50`]};
 				opacity: 0;
+				border-radius: 30px;
 				transition: opacity 0.3s ease-in-out;
 			}
 

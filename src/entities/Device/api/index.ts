@@ -1,1 +1,1 @@
-export { useDevicesQuery } from "./hooks"
+export { useFilteredAndSortedDevicesQuery } from "./hooks"

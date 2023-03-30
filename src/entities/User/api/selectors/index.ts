@@ -1,0 +1,1 @@
+export { userAvatarQuerySelector } from "./userAvatarQuerySelector"

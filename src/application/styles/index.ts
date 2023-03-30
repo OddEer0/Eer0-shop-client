@@ -1,11 +1,18 @@
 import { createGlobalStyle } from "styled-components"
 
+import { globalStyle } from "./global"
 import { libStyle } from "./lib"
 import { resetStyle } from "./reset"
 
 export const GlobalStyle = createGlobalStyle`
 	${resetStyle}
 	${libStyle}
+	${globalStyle}
+
+	html {
+		scrollbar-width: thin;
+		scrollbar-color: ${({ theme }) => theme.ui.color.primary_50} transparent;
+	}
 
 	body {
 		background: ${({ theme }) => theme.base.bg.primary_50};
@@ -20,52 +27,20 @@ export const GlobalStyle = createGlobalStyle`
 		position: relative;
 	}
 
-	.h1 {
-		font-weight: 700;
-		font-size: 64px;
-		line-height: 105.5%;
-	}
-	.h2 {
-		font-weight: 700;
-		font-size: 48px;
-		line-height: 105.5%;
-	}
-	.h3 {
-		font-weight: 700;
-		font-size: 36px;
-		line-height: 105.5%
-	}
-	.h4 {
-		font-weight: 700;
-		font-size: 24px;
-		line-height: 105.5%
-	}
-	.h5 {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 105.5%
-	}
-	.h6 {
-		font-weight: 700;
-		font-size: 18px;
-		line-height: 105.5%
+	::-webkit-scrollbar {
+		width: 8px;
 	}
 
-	.subhead {
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 105.5%;
+	::-webkit-scrollbar-track {
+  	background: transparent;
 	}
 
-	.caption-14-b {
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 105.5%;
+	::-webkit-scrollbar-thumb {
+  	background: ${({ theme }) => theme.ui.color.primary_50};
 	}
 
-	.caption-14-m {
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 105.5%;
+	::-moz-range-thumb {
+		background: ${({ theme }) => theme.ui.color.primary_50};
+		border-radius: 20px;
 	}
 `

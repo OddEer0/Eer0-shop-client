@@ -1,5 +1,15 @@
-import { fakeApi } from "../instance"
+import { api } from "../instance"
+import { IFilter, IFilterWithInfo } from "../types"
 
 export const filterService = {
-	api: fakeApi
+	api: api,
+	async getFiltersByCategoryId(id: string) {
+		const { data } = await this.api.get<IFilterWithInfo[]>(`filter/category/${id}`)
+		return data
+	},
+
+	async getOneFilter(id: string) {
+		const { data } = await this.api.get<IFilter>(`filter/${id}`)
+		return data
+	}
 }

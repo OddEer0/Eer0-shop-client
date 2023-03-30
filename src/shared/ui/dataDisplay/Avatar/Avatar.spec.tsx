@@ -1,6 +1,7 @@
 /* eslint-disable import/order */
-import { fireEvent, render, screen } from "@test-utils"
 import "@testing-library/jest-dom"
+
+import { fireEvent, render, screen } from "@/shared/utils/test"
 
 import { Avatar } from "./Avatar"
 

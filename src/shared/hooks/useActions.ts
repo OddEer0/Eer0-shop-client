@@ -2,10 +2,9 @@
 import { bindActionCreators } from "@reduxjs/toolkit"
 import { useDispatch } from "react-redux"
 
-import { setTheme, toggleTheme } from "@/entities/Theme"
+import { setTheme } from "@/entities/Theme"
 
 const actions = {
-	toggleTheme,
 	setTheme
 }
 

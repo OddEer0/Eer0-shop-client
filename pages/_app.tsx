@@ -7,7 +7,7 @@ import { Hydrate, QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { NextPage } from "next"
 import type { AppProps } from "next/app"
-import { ReactElement, ReactNode } from "react"
+import { ReactElement, ReactNode, useState } from "react"
 import { Provider } from "react-redux"
 import "simplebar-react/dist/simplebar.min.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -30,10 +30,11 @@ type AppPropsWithLayout = AppProps & {
 const MyApp = ({ Component, ...rest }: AppPropsWithLayout) => {
 	const { store, props } = wrapper.useWrappedStore(rest)
 	const getLayout = Component.getLayout ?? (page => page)
+	const [queryClientState] = useState(() => queryClient)
 
 	return (
 		<Provider store={store}>
-			<QueryClientProvider client={queryClient}>
+			<QueryClientProvider client={queryClientState}>
 				<Hydrate state={rest.pageProps.dehydratedState}>
 					<AppProvider>
 						<GlobalStyle />

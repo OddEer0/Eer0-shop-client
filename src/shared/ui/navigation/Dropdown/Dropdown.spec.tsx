@@ -1,7 +1,8 @@
 /* eslint-disable import/order */
-import { render, screen } from "@test-utils"
 import "@testing-library/jest-dom"
 import userEvent from "@testing-library/user-event"
+
+import { render, screen } from "@/shared/utils/test"
 
 import { Dropdown } from "./Dropdown"
 

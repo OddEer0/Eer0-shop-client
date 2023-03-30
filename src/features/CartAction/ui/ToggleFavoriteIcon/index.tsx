@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { FC, useState } from "react"
-import { BsCart, BsCartCheckFill, BsHeart, BsHeartFill } from "react-icons/bs"
+import { BsHeart, BsHeartFill } from "react-icons/bs"
 
 import { toggleScaleAnimation } from "@/shared/animation"
 

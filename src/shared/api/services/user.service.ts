@@ -1,5 +1,10 @@
-import { fakeApi } from "../instance"
+import { api } from "../instance"
+import { IUser } from "../types"
 
 export const userService = {
-	api: fakeApi
+	api: api,
+	async getProfile() {
+		const { data } = await this.api.get<IUser>("auth/refresh")
+		return data
+	}
 }
