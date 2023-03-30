@@ -42,3 +42,27 @@ export const $DeviceCard = styled.div`
 		top: 10px;
 	}
 `
+
+export const $DeviceSkeleton = styled.div`
+	width: 320px;
+	height: 520px;
+	border-radius: 15px;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+
+	.title-skeleton {
+		margin-top: 36px;
+	}
+
+	.circle-list {
+		margin-top: 30px;
+		display: flex;
+		width: 100%;
+		padding-left: 16px;
+		justify-content: flex-start;
+		gap: 5px;
+		height: 15px;
+	}
+`

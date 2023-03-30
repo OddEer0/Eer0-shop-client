@@ -1,39 +1,30 @@
-import { HTMLAttributes, ReactNode } from "react"
+import { ReactPaginateProps } from "react-paginate"
 
-type ColorType = "primary" | "secondary" | "tertiary" | "quaternary" | "success" | "danger" | "warning"
-type VariantType = "outlined" | "standard" | "rounded"
-type SizeType = "small" | "medium" | "large"
+import { ColorType, SizeType } from "@/shared/types"
 
-export enum SizeEnum {
-	"small" = "30px",
-	"medium" = "45px",
-	"large" = "60px"
-}
+type VariantType = "standard" | "outlined" | "rounded"
 
-export enum FontSizeEnum {
-	"small" = "16px",
-	"medium" = "22px",
-	"large" = "28px"
+export interface PaginationProps extends ReactPaginateProps {
+	className?: string
+	variant?: VariantType
+	color?: ColorType
+	size?: SizeType
 }
 
 export interface StyledPaginationProps {
-	color: ColorType
 	variant: VariantType
+	color: ColorType
 	size: SizeType
 }
 
-export interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
-	color?: ColorType
-	variant?: VariantType
-	size?: SizeType
-	nextArrow?: Nullable<ReactNode>
-	prevArrow?: Nullable<ReactNode>
-	count: number
-	defaultCount?: number
-	siblingCount?: number
-	boundaryCount?: number
-	range?: number
-	className?: string
-	layoutId?: string
-	changeHandle?: Nullable<(value: number) => void>
+export enum SizeEnum {
+	"small" = 30,
+	"medium" = 40,
+	"large" = 50
+}
+
+export enum FontSizeEnum {
+	"small" = 16,
+	"medium" = 20,
+	"large" = 34
 }

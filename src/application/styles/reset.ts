@@ -1,4 +1,6 @@
-export const resetStyle = `
+import { css } from "styled-components"
+
+export const resetStyle = css`
 	*,
 	*::after,
 	*::before {
@@ -71,7 +73,7 @@ export const resetStyle = `
 	}
 
 	button,
-	input[type='submit'] {
+	input[type="submit"] {
 		display: inline-block;
 		box-shadow: none;
 		background-color: transparent;
@@ -105,7 +107,7 @@ export const resetStyle = `
 		margin: 0;
 	}
 
-	input[type=number] {
+	input[type="number"] {
 		-moz-appearance: textfield;
 	}
 `

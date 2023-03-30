@@ -32,7 +32,7 @@ export const CategoryCard: FC<CategoryCardProps> = ({ data, ...props }) => {
 				transition={{ duration: 0.25 }}
 				className="card-body"
 			>
-				<h2 className="title">{data.name}</h2>
+				<h2 className="title">{data.title}</h2>
 			</motion.div>
 		</$CategoryCard>
 	)
