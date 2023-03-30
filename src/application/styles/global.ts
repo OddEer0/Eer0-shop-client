@@ -1,4 +1,6 @@
-export const globalStyle = `
+import { css } from "styled-components"
+
+export const globalStyle = css`
 	.h1 {
 		font-weight: 700;
 		font-size: 64px;
@@ -12,22 +14,22 @@ export const globalStyle = `
 	.h3 {
 		font-weight: 700;
 		font-size: 36px;
-		line-height: 105.5%
+		line-height: 105.5%;
 	}
 	.h4 {
 		font-weight: 700;
 		font-size: 24px;
-		line-height: 105.5%
+		line-height: 105.5%;
 	}
 	.h5 {
 		font-weight: 700;
 		font-size: 20px;
-		line-height: 105.5%
+		line-height: 105.5%;
 	}
 	.h6 {
 		font-weight: 700;
 		font-size: 18px;
-		line-height: 105.5%
+		line-height: 105.5%;
 	}
 
 	.subhead {
