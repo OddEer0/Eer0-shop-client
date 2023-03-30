@@ -2,66 +2,52 @@ import styled from "styled-components"
 
 import { FontSizeEnum, SizeEnum, StyledPaginationProps } from "./Pagination.types"
 
-export const $PaginationWrapper = styled.nav<StyledPaginationProps>`
-	ul {
-		display: inline-flex;
+export const $Pagination = styled.div<StyledPaginationProps>`
+	display: inline-block;
 
-		li:not(:last-child) {
-			margin-right: 10px;
-		}
+	.pagination {
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
 
 		li {
-			width: ${({ size }) => SizeEnum[size]};
-			height: ${({ size }) => SizeEnum[size]};
-			font-size: ${({ size }) => FontSizeEnum[size]};
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			border-radius: ${({ variant }) => (variant !== "rounded" ? "50%" : "10px")};
-			position: relative;
-			transition: background 0.3s ease-in-out;
+			border: ${({ variant, color, theme }) =>
+				variant !== "standard" ? `2px solid ${theme.ui.color[`${color}_50`]}` : "none"};
+			cursor: pointer;
+			width: ${({ size }) => SizeEnum[size]}px;
+			height: ${({ size }) => SizeEnum[size]}px;
+			font-size: ${({ size }) => FontSizeEnum[size]}px;
+			transition: all 0.3s ease-in-out;
+			user-select: none;
 
-			&.disable {
-				opacity: 0.5;
-			}
-
-			.pagination-bg {
-				background: ${({ theme, color }) => theme.ui.color[`${color}_50`]};
-				position: absolute;
-				top: 0;
-				left: 0;
+			a {
 				width: 100%;
 				height: 100%;
-				border-radius: ${({ variant }) => (variant !== "rounded" ? "50%" : "10px")};
-				transition: background 0.3s ease-in-out;
-				border: ${({ variant, theme, color }) =>
-					variant !== "standard" ? "2px solid" + theme.ui.color[`${color}_40`] : "none"};
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
-				& ~ button {
-					color: ${({ theme, color }) => theme.ui.text[`${color}_50`]};
-					border: none;
+			&:hover {
+				background: ${({ theme, color }) => theme.ui.color[`${color}_50`]}26;
+			}
+
+			&.selected {
+				background: ${({ theme, color }) => theme.ui.color[`${color}_50`]}${({ variant }) => (variant !== "standard" ? "76" : "")};
+				color: ${({ theme, color }) => theme.ui.text[`${color}_50`]};
+
+				&:hover {
+					background: ${({ theme, color }) => theme.ui.color[`${color}_60`]}${({ variant }) => (variant !== "standard" ? "86" : "")};
 				}
 			}
 
-			button {
-				position: relative;
-				width: 100%;
-				height: 100%;
-				border-radius: ${({ variant }) => (variant !== "rounded" ? "50%" : "10px")};
-				border: ${({ variant, theme }) => (variant !== "standard" ? "2px solid" + theme.ui.color.default_50 : "none")};
-			}
-
-			&.pagination-li:hover {
-				background: ${({ theme, color }) => theme.ui.color[`${color}_50`]}26;
-
-				.pagination-bg {
-					background: ${({ theme, color }) => theme.ui.color[`${color}_60`]};
+			&.previous,
+			&.next {
+				&.disabled {
+					opacity: 0.5;
 				}
 			}
 		}
-	}
-
-	.pagination-count-body {
-		display: flex;
 	}
 `

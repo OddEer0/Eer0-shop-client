@@ -7,7 +7,7 @@ export const deviceService = {
 	api: api,
 	async getFilteredAndSortedDevice(urlQuery: ParsedUrlQuery) {
 		const { data } = await this.api.get<IDeviceAxiosResponse>("device", {
-			params: { ...urlQuery, limit: 30, page: urlQuery.page ? urlQuery.page : "1" }
+			params: { ...urlQuery, limit: 40, page: urlQuery.page ? urlQuery.page : "1" }
 		})
 		return data
 	},

@@ -32,7 +32,7 @@ export interface IDeviceWithComments extends IDevice {
 }
 
 export interface IDeviceAxiosResponse {
-	totalPage: number
+	pageCount: number
 	devices: IDevice[]
 }
 

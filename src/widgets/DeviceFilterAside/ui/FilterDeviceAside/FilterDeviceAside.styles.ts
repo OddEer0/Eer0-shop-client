@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const $FilterDeviceAside = styled.aside`
-	width: 100%;
 	max-width: 340px;
+	min-width: 340px;
 	max-height: calc(95vh - 110px);
 	position: sticky;
 	top: 110px;

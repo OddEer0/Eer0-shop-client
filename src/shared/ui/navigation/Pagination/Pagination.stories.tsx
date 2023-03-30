@@ -1,7 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
-import { useState } from "react"
-import { BiBadge } from "react-icons/bi"
-import { BsArrowDownLeftCircle } from "react-icons/bs"
 
 import { Pagination } from "./Pagination"
 
@@ -14,84 +11,57 @@ const Template: ComponentStory<typeof Pagination> = args => <Pagination {...args
 
 export const Default = Template.bind({})
 Default.args = {
-	count: 20,
-	defaultCount: 6
+	pageCount: 40,
+	marginPagesDisplayed: 1,
+	pageRangeDisplayed: 9
 }
 
 export const Variant = () => (
 	<>
-		<h2>Default standard</h2>
-		<Pagination count={100} />
-		<h2>Outlined</h2>
-		<Pagination layoutId="pagination4" count={100} variant="outlined" />
-		<h2>Rounded</h2>
-		<Pagination layoutId="pagination3" variant="rounded" count={100} />
+		<h2>standard</h2>
+		<Pagination pageCount={40} />
+		<h2>outlined</h2>
+		<Pagination pageCount={40} variant="outlined" />
+		<h2>rounded</h2>
+		<Pagination pageCount={40} variant="rounded" />
 	</>
 )
 
 export const Size = () => (
 	<>
 		<h2>small</h2>
-		<Pagination size="small" count={100} />
-		<h2>default medium</h2>
-		<Pagination layoutId="pagination4" count={100} />
+		<Pagination pageCount={40} size="small" />
+		<h2>medium</h2>
+		<Pagination pageCount={40} />
 		<h2>large</h2>
-		<Pagination size="large" layoutId="pagination3" count={100} />
+		<Pagination pageCount={40} size="large" />
 	</>
 )
 
 export const Color = () => (
 	<>
-		<h2>default primary</h2>
-		<Pagination count={100} />
+		<h2>primary</h2>
+		<Pagination pageCount={40} />
 		<h2>secondary</h2>
-		<Pagination color="secondary" layoutId="pagination2" count={100} />
+		<Pagination pageCount={40} color="secondary" />
 		<h2>tertiary</h2>
-		<Pagination color="tertiary" layoutId="pagination3" count={100} />
+		<Pagination pageCount={40} color="tertiary" />
 		<h2>quaternary</h2>
-		<Pagination color="quaternary" layoutId="pagination4" count={100} />
+		<Pagination pageCount={40} color="quaternary" />
 		<h2>success</h2>
-		<Pagination color="success" layoutId="pagination5" count={100} />
+		<Pagination pageCount={40} color="success" />
 		<h2>danger</h2>
-		<Pagination color="danger" layoutId="pagination6" count={100} />
+		<Pagination pageCount={40} color="danger" />
 		<h2>warning</h2>
-		<Pagination color="warning" layoutId="pagination7" count={100} />
+		<Pagination pageCount={40} color="warning" />
 	</>
 )
 
-export const CustomArrow = () => (
-	<Pagination count={100} nextArrow={<BiBadge />} prevArrow={<BsArrowDownLeftCircle />} />
-)
-
-export const DefaultCountAndRange = () => (
+export const FullDocumentation = () => (
 	<>
-		<h2>Range 10</h2>
-		<Pagination count={100} range={10} />
-		<h2>Range 15</h2>
-		<Pagination layoutId="pagination2" count={100} range={15} />
-		<h2>Default Count 50</h2>
-		<Pagination layoutId="pagination3" defaultCount={50} count={100} range={11} />
+		<h2>Полная документация функционала по ссылке</h2>
+		<a href="https://www.npmjs.com/package/react-paginate" target="_blank" rel="noreferrer">
+			https://www.npmjs.com/package/react-paginate
+		</a>
 	</>
 )
-
-export const SiblingAndBoundary = () => (
-	<>
-		<h2>SiblingCount 2</h2>
-		<Pagination count={100} range={10} defaultCount={50} siblingCount={2} />
-		<h2>BoundaryCount 2</h2>
-		<Pagination layoutId="pagination2" count={100} range={10} defaultCount={50} boundaryCount={2} />
-		<h2>Boundary and Sibling Count 2</h2>
-		<Pagination layoutId="pagination3" count={100} range={10} defaultCount={50} boundaryCount={2} siblingCount={2} />
-	</>
-)
-
-export const ControlPagination = () => {
-	const [val, setVal] = useState(0)
-
-	return (
-		<>
-			<h2>{val}</h2>
-			<Pagination count={20} changeHandle={setVal} />
-		</>
-	)
-}

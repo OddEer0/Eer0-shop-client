@@ -12,6 +12,7 @@ export const useFilteredAndSortedDevicesQuery = <T>(
 		select,
 		enabled: !!urlQuery.category,
 		cacheTime: urlQuery.category ? convertMinutesToMs(2) : 0,
-		staleTime: convertSecondsToMs(30)
+		staleTime: convertSecondsToMs(30),
+		keepPreviousData: true
 	})
 }

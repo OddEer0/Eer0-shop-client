@@ -6,8 +6,8 @@ import { Empty } from "@/shared/ui"
 import { useFilteredAndSortedDevicesQuery } from "../../api"
 import { deviceQuerySelector } from "../../model"
 import { DeviceCard } from "../DeviceCard"
-import { DeviceCardSkeleton } from "../DeviceCard/Device.lazy"
 
+import { DeviceCardsSkeletonList } from "./DeviceCardsList.lazy"
 import { $DeviceCardsList } from "./DeviceCardsList.styles"
 
 interface CompProps {
@@ -26,7 +26,7 @@ export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, Favor
 	return (
 		<$DeviceCardsList>
 			{isLoading ? (
-				<DeviceCardSkeleton className="list-gap" />
+				<DeviceCardsSkeletonList />
 			) : error ? (
 				<span>Что-то пошло не так</span>
 			) : data && data.length ? (

@@ -1,1 +1,1 @@
-export { deviceQuerySelector } from "./device.querySelector"
+export { deviceQuerySelector, devicePageCountQuerySelector } from "./device.querySelector"

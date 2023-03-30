@@ -3,6 +3,7 @@ import { FC } from "react"
 import { DeviceCardsList } from "@/entities/Device"
 
 import { ToggleCartIcon, ToggleFavoriteIcon } from "@/features/CartAction"
+import { DevicePagination } from "@/features/DevicePagination"
 
 import { Container, Meta } from "@/shared/ui"
 
@@ -17,7 +18,10 @@ const DeviceView: FC = () => {
 			<$DeviceView>
 				<Container className="container">
 					<FilterDeviceAside />
-					<DeviceCardsList CartComponent={ToggleCartIcon} FavoriteComponent={ToggleFavoriteIcon} />
+					<div className="content">
+						<DeviceCardsList CartComponent={ToggleCartIcon} FavoriteComponent={ToggleFavoriteIcon} />
+						<DevicePagination />
+					</div>
 				</Container>
 			</$DeviceView>
 		</>
