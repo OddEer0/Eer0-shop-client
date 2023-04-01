@@ -1,1 +1,1 @@
-export type { ColorType, SizeType } from "./uikit"
+export type { ColorType, SizeType, BgType } from "./uikit"

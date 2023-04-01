@@ -144,7 +144,7 @@ export const Controllable = () => {
 	)
 }
 
-export const Other = () => (
+export const FullDocumentation = () => (
 	<>
 		<h2>Полная документация по ссылке </h2>
 		<a href="https://mmarkelov.github.io/react-nouislider/" target="_blank" rel="noreferrer">
