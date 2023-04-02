@@ -29,3 +29,8 @@ export interface StyledSelectProps {
 	menuBgColor: BgType
 	selectSize: SizeType
 }
+
+export interface ISelectOption {
+	label: string
+	value: string
+}

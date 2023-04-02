@@ -68,7 +68,7 @@
 			}
 		],
 		"boundaries/element-types": [
-			"warn",
+			"error",
 			{
 				"default": "disallow",
 				"rules": [
