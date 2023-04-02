@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion"
+import { useId } from "react"
 import { SlArrowDown } from "react-icons/sl"
 import SelectLib, { DropdownIndicatorProps, GroupBase, MenuProps, components } from "react-select"
 
@@ -51,6 +52,7 @@ export const Select = <Option, IsMulti extends boolean = false, Group extends Gr
 				}}
 				className="eer0-select"
 				classNamePrefix="eer0-select"
+				instanceId={useId()}
 			/>
 		</$Select>
 	)

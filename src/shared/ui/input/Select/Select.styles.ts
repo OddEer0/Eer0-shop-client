@@ -64,6 +64,10 @@ export const $Select = styled.div<StyledSelectProps>`
 			width: 2px;
 		}
 
+		&__single-value {
+			color: inherit;
+		}
+
 		&__placeholder {
 			color: ${({ theme }) => theme.ui.color.default_50};
 		}
@@ -76,6 +80,7 @@ export const $Select = styled.div<StyledSelectProps>`
 			box-shadow: ${({ theme }) => theme.ui.boxShadow.primary};
 			border-radius: 10px;
 			margin-top: 10px;
+			z-index: 10;
 		}
 
 		&__menu {

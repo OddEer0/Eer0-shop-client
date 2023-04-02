@@ -4,6 +4,7 @@ import { DeviceCardsList } from "@/entities/Device"
 
 import { ToggleCartIcon, ToggleFavoriteIcon } from "@/features/CartAction"
 import { DevicePagination } from "@/features/DevicePagination"
+import { DeviceSortSelect } from "@/features/DeviceSort"
 
 import { Container, Meta } from "@/shared/ui"
 
@@ -19,6 +20,9 @@ const DeviceView: FC = () => {
 				<Container className="container">
 					<FilterDeviceAside />
 					<div className="content">
+						<div className="content-head">
+							<DeviceSortSelect />
+						</div>
 						<DeviceCardsList CartComponent={ToggleCartIcon} FavoriteComponent={ToggleFavoriteIcon} />
 						<DevicePagination />
 					</div>

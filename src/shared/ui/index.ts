@@ -22,6 +22,7 @@ export type {
 	SliderProps,
 	SwitchProps,
 	SelectProps,
+	ISelectOption,
 	RatingProps,
 	UploadProps,
 	AutoCompleteProps
