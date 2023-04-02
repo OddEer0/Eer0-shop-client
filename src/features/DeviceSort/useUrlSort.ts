@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-type OrderType = "asc" | "desc"
+import { OrderType } from "./lib"
 
 export const useUrlSort = (defaultSortBy?: string, defaultOrder?: OrderType) => {
 	const router = useRouter()
