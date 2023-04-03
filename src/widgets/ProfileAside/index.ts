@@ -1,0 +1,1 @@
+export { ProfileAside } from "./ui"

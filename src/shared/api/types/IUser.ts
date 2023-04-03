@@ -3,6 +3,7 @@ export interface IUser {
 	email: string
 	nickname: string
 	firstName: string
+	subTitle: Nullable<string>
 	lastName: string
 	birthday: Nullable<Date>
 	isActivate: boolean
