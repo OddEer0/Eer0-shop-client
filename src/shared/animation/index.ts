@@ -1,2 +1,2 @@
 export { ScaleOpacityScrollable } from "./scroll/ui/ScaleOpacityScrollable"
-export { circleOpenAnimation, opacityAnimation, toggleScaleAnimation } from "./variants"
+export { circleOpenAnimation, opacityAnimation, toggleScaleAnimation, yToDownAnimation } from "./variants"

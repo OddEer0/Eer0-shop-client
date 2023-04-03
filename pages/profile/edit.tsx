@@ -1,18 +1,18 @@
 import { ReactElement } from "react"
 
-import { ProfileView } from "@/views/Profile"
+import { ProfileEditView } from "@/views/ProfileEdit"
 
 import { MainLayout } from "@/widgets/MainLayout"
 import { ProfileAside } from "@/widgets/ProfileAside"
 
-const Profile = () => {
-	return <ProfileView />
+const Edit = () => {
+	return <ProfileEditView />
 }
 
-Profile.getLayout = (page: ReactElement) => (
+Edit.getLayout = (page: ReactElement) => (
 	<MainLayout>
 		<ProfileAside>{page}</ProfileAside>
 	</MainLayout>
 )
 
-export default Profile
+export default Edit

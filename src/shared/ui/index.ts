@@ -60,4 +60,4 @@ export type {
 
 export { Portal, Meta, Compose } from "./utility"
 
-export { Circle } from "./styledComponent"
+export { Circle, Tag } from "./styledComponent"

@@ -17,7 +17,9 @@ export const ProfileAvatar: FC = () => {
 			{isLoading ? (
 				<Skeleton variant="circle" width="40px" height="40px" />
 			) : user ? (
-				<Avatar avatarSize="xsmall" url={user.avatar} defaultAvatar={user.firstName} />
+				<Link href="/profile">
+					<Avatar avatarSize="xsmall" url={user.avatar} defaultAvatar={user.firstName} />
+				</Link>
 			) : (
 				<Link href="/auth/login" className="icon">
 					<$AvatarIcon as={BiUser} />
