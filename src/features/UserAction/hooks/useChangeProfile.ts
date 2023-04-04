@@ -7,21 +7,24 @@ import { TextFieldProps } from "@/shared/ui"
 
 export const useChangeProfile = () => {
 	const { data } = useProfileQuery<IUser>()
-	const { register } = useForm<IUser>({
+	const { register, control } = useForm<IUser>({
 		values: data
 	})
 
 	const getFirstNameProps: TextFieldProps = {
 		...register("firstName"),
-		label: "Имя"
+		label: "Имя",
+		placeholder: "Марсель"
 	}
 
 	const getLastNameProps: TextFieldProps = {
 		...register("lastName"),
-		label: "Фамилия"
+		label: "Фамилия",
+		placeholder: "Каримов"
 	}
 
 	return {
+		control,
 		getFirstNameProps,
 		getLastNameProps
 	}

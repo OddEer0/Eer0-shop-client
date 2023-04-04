@@ -1,22 +1,30 @@
 import { FC } from "react"
+import { Controller } from "react-hook-form"
 
-import { TextField } from "@/shared/ui"
+import { DatePicker, TextField } from "@/shared/ui"
 
 import { useChangeProfile } from "../../hooks"
-import { ChangeUserAvatar } from "../ChangeUserAvatar"
 
 import { $ChangeProfile } from "./ChangeProfile.styles"
 
 export const ChangeProfile: FC = () => {
-	const { getFirstNameProps, getLastNameProps } = useChangeProfile()
+	const { getFirstNameProps, getLastNameProps, control } = useChangeProfile()
 
 	return (
 		<$ChangeProfile>
-			<ChangeUserAvatar className="change-avatar" />
-			<form action="">
-				<TextField {...getFirstNameProps} />
-				<TextField {...getLastNameProps} />
-			</form>
+			<TextField {...getFirstNameProps} />
+			<TextField {...getLastNameProps} />
+			<Controller
+				render={({ field }) => (
+					<DatePicker
+						customInput={<TextField label="Дата рождения" placeholder="Не указан" />}
+						selected={field.value}
+						onChange={date => field.onChange(date)}
+					/>
+				)}
+				control={control}
+				name="birthday"
+			/>
 		</$ChangeProfile>
 	)
 }

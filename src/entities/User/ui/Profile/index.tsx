@@ -19,16 +19,16 @@ export const Profile: FC = () => {
 			<UserHead avatar={data.avatar} firstName={data.firstName} subTitle={data.subTitle} lastName={data.lastName} />
 			<ul className="user-profile-info-list">
 				<motion.li variants={yToDownAnimation} animate="show" initial="hidden" custom={0} transition={{ delay: 0.4 }}>
-					<h5>Имя пользователя:</h5>
-					<h5 className="list-value">{data.nickname}</h5>
+					<p>Имя пользователя:</p>
+					<p className="list-value">{data.nickname}</p>
 				</motion.li>
 				<motion.li variants={yToDownAnimation} animate="show" initial="hidden" custom={0.5} transition={{ delay: 0.4 }}>
-					<h5>Аккаунт пользователя:</h5>
-					<h5 className="list-value">{data.email}</h5>
+					<p>Аккаунт пользователя:</p>
+					<p className="list-value">{data.email}</p>
 				</motion.li>
 				<motion.li variants={yToDownAnimation} animate="show" initial="hidden" custom={1} transition={{ delay: 0.4 }}>
-					<h5>День рождение:</h5>
-					<h5 className="list-value">Не указан</h5>
+					<p>День рождение:</p>
+					<p className="list-value">Не указан</p>
 				</motion.li>
 				<motion.li
 					className="multi-value"
@@ -38,12 +38,12 @@ export const Profile: FC = () => {
 					custom={1.5}
 					transition={{ delay: 0.4 }}
 				>
-					<h5>Роли пользователя:</h5>
-					<h5 className="list-value">
+					<p>Роли пользователя:</p>
+					<p className="list-value">
 						{data.roles.map(role => (
 							<Tag key={role}>{role}</Tag>
 						))}
-					</h5>
+					</p>
 				</motion.li>
 			</ul>
 		</$Profile>

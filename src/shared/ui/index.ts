@@ -10,7 +10,8 @@ export {
 	Select,
 	Rating,
 	Upload,
-	AutoComplete
+	AutoComplete,
+	DatePicker
 } from "./input"
 export type {
 	TextFieldProps,
@@ -25,7 +26,8 @@ export type {
 	ISelectOption,
 	RatingProps,
 	UploadProps,
-	AutoCompleteProps
+	AutoCompleteProps,
+	DatePickerProps
 } from "./input"
 
 export { Container, Layout, Grid, Overlay } from "./layout"

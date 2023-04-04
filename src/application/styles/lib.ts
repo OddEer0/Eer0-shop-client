@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 
-export const libStyle = css`
+export const libSliderStyle = css`
 	.noUi-target,
 	.noUi-target * {
 		-webkit-touch-callout: none;

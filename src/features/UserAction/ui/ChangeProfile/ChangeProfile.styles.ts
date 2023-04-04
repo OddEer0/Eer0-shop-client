@@ -1,11 +1,7 @@
 import styled from "styled-components"
 
-export const $ChangeProfile = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	.change-avatar {
-		margin-bottom: 45px;
-	}
+export const $ChangeProfile = styled.form`
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
 `
