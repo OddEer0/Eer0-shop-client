@@ -38,6 +38,16 @@ export const datePickerLibStyles = css`
 					color: ${({ theme }) => theme.ui.text.primary_50};
 				}
 			}
+
+			&--keyboard-selected {
+				background: ${({ theme }) => theme.ui.color.primary_50};
+				color: ${({ theme }) => theme.ui.text.primary_50};
+
+				&:hover {
+					background: ${({ theme }) => theme.ui.color.primary_60};
+					color: ${({ theme }) => theme.ui.text.primary_50};
+				}
+			}
 		}
 
 		&__header {
