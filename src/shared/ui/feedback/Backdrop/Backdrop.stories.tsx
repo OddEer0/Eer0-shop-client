@@ -1,4 +1,8 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { ComponentMeta } from "@storybook/react"
+import { useState } from "react"
+
+import { Button } from "../../input"
+import { Spinner } from "../Spinner"
 
 import { Backdrop } from "./Backdrop"
 
@@ -7,6 +11,18 @@ export default {
 	component: Backdrop
 } as ComponentMeta<typeof Backdrop>
 
-const Template: ComponentStory<typeof Backdrop> = args => <Backdrop {...args} />
+export const Default = () => {
+	const [isShow, setIsShow] = useState(false)
 
-export const Default = Template.bind({})
+	return (
+		<>
+			<Button onClick={() => setIsShow(prev => !prev)} variant="contained">
+				SHOW BACKDROP
+			</Button>
+			<Backdrop isShow={isShow}>
+				<Spinner variant="double-snake" />
+				<Button variant="outlined">HIDE BACKDROP</Button>
+			</Backdrop>
+		</>
+	)
+}
