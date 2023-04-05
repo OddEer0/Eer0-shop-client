@@ -3,6 +3,7 @@ export {
 	useUserLoginMutate,
 	useProfileQuery,
 	useUserProfileQuery,
-	userAvatarQuerySelector
+	userAvatarQuerySelector,
+	useChangeProfileMutate
 } from "./api"
 export { ProfileAvatar, Profile } from "./ui"

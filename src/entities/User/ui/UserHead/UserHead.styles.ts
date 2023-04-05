@@ -12,6 +12,11 @@ export const $UserHead = styled.div`
 	}
 
 	p {
+		padding: 2px 0;
 		margin-top: 25px;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 `

@@ -11,5 +11,10 @@ export const userService = {
 	async getUserProfile(id: string) {
 		const { data } = await this.api.get<IUser>(`users/${id}`)
 		return data
+	},
+
+	async updateUser(dto: IUser) {
+		const { data } = await this.api.put<IUser>(`users/${dto.id}`, dto)
+		return data
 	}
 }

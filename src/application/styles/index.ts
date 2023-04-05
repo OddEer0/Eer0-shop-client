@@ -1,12 +1,14 @@
 import { createGlobalStyle } from "styled-components"
 
+import { datePickerLibStyles } from "./datePickerLib"
 import { globalStyle } from "./global"
-import { libStyle } from "./lib"
+import { libSliderStyle } from "./lib"
 import { resetStyle } from "./reset"
 
 export const GlobalStyle = createGlobalStyle`
 	${resetStyle}
-	${libStyle}
+	${libSliderStyle}
+	${datePickerLibStyles}
 	${globalStyle}
 
 	html {
