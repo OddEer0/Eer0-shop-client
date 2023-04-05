@@ -46,7 +46,19 @@ export type {
 	TooltipProps
 } from "./dataDisplay"
 
-export { Alert, Backdrop, ConfirmModal, Drawer, Modal, Progress, Skeleton, Spinner, Tost, Empty } from "./feedback"
+export {
+	Alert,
+	Backdrop,
+	ConfirmModal,
+	Drawer,
+	Modal,
+	Progress,
+	Skeleton,
+	Spinner,
+	Tost,
+	Empty,
+	Disabled
+} from "./feedback"
 export type {
 	AlertProps,
 	BackdropProps,
@@ -57,7 +69,8 @@ export type {
 	SkeletonProps,
 	SpinnerProps,
 	TostProps,
-	EmptyProps
+	EmptyProps,
+	DisabledProps
 } from "./feedback"
 
 export { Portal, Meta, Compose } from "./utility"

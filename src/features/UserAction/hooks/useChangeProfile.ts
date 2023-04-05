@@ -7,14 +7,19 @@ import { TextAreaProps, TextFieldProps } from "@/shared/ui"
 
 export const useChangeProfile = () => {
 	const { data } = useProfileQuery<IUser>()
-	const { register, control, handleSubmit } = useForm<IUser>({
+	const {
+		register,
+		control,
+		handleSubmit,
+		formState: { isDirty }
+	} = useForm<IUser>({
 		values: data
 	})
 
-	const { mutate } = useChangeProfileMutate()
+	const { mutate, isLoading } = useChangeProfileMutate()
 
-	const submitHandler = handleSubmit((data: IUser) => {
-		mutate(data)
+	const submitHandler = handleSubmit(async (data: IUser) => {
+		await mutate(data)
 	})
 
 	const getFirstNameProps: TextFieldProps = {
@@ -36,6 +41,8 @@ export const useChangeProfile = () => {
 	}
 
 	return {
+		isDirty,
+		isLoading,
 		submitHandler,
 		control,
 		getFirstNameProps,

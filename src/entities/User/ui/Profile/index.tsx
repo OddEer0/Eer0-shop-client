@@ -16,7 +16,13 @@ export const Profile: FC = () => {
 
 	return data ? (
 		<$Profile>
-			<UserHead avatar={data.avatar} firstName={data.firstName} subTitle={data.subTitle} lastName={data.lastName} />
+			<UserHead
+				className="user-head"
+				avatar={data.avatar}
+				firstName={data.firstName}
+				subTitle={data.subTitle}
+				lastName={data.lastName}
+			/>
 			<ul className="user-profile-info-list">
 				<motion.li variants={yToDownAnimation} animate="show" initial="hidden" custom={0} transition={{ delay: 0.4 }}>
 					<p>Имя пользователя:</p>

@@ -77,5 +77,25 @@ export const datePickerLibStyles = css`
 				}
 			}
 		}
+
+		&__year-dropdown {
+			background: ${({ theme }) => theme.ui.bg.primary_40};
+			border: none;
+			box-shadow: ${({ theme }) => theme.ui.boxShadow.primary};
+		}
+
+		&__year-option {
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background: ${({ theme }) => theme.ui.color.primary_50}86;
+				color: ${({ theme }) => theme.ui.text.primary_50};
+			}
+
+			&--selected_year {
+				background: ${({ theme }) => theme.ui.color.primary_50};
+				color: ${({ theme }) => theme.ui.text.primary_50};
+			}
+		}
 	}
 `

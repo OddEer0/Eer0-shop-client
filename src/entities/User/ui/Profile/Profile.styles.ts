@@ -6,6 +6,10 @@ export const $Profile = styled.div`
 	flex-direction: column;
 	align-items: center;
 
+	.user-head {
+		max-width: 850px;
+	}
+
 	.user-profile-info-list {
 		margin-top: 30px;
 		width: 100%;

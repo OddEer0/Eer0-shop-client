@@ -12,6 +12,10 @@ export const $ProfileAside = styled(Container)`
 		padding: 16px;
 		border-radius: 15px;
 		width: 320px;
+		height: calc(100vh - 125px);
+		position: sticky;
+		top: 0;
+		max-height: 780px;
 	}
 
 	& > .body {
