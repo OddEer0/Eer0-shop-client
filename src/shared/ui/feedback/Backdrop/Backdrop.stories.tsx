@@ -1,6 +1,8 @@
 import { ComponentMeta } from "@storybook/react"
 import { useState } from "react"
 
+import { circleOpenAnimation } from "@/shared/animation"
+
 import { Button } from "../../input"
 import { Spinner } from "../Spinner"
 
@@ -19,9 +21,11 @@ export const Default = () => {
 			<Button onClick={() => setIsShow(prev => !prev)} variant="contained">
 				SHOW BACKDROP
 			</Button>
-			<Backdrop isShow={isShow}>
+			<Backdrop variants={circleOpenAnimation} initial="closed" animate="open" isShow={isShow}>
 				<Spinner variant="double-snake" />
-				<Button variant="outlined">HIDE BACKDROP</Button>
+				<Button onClick={() => setIsShow(prev => !prev)} variant="contained">
+					HIDE BACKDROP
+				</Button>
 			</Backdrop>
 		</>
 	)

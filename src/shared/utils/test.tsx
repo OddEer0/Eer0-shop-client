@@ -11,9 +11,12 @@ import { makeStore } from "@/app/store/store"
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
 	const store = makeStore()
 	return (
-		<Provider store={store}>
-			<AppProvider>{children}</AppProvider>
-		</Provider>
+		<>
+			<div id="myportal"></div>
+			<Provider store={store}>
+				<AppProvider>{children}</AppProvider>
+			</Provider>
+		</>
 	)
 }
 

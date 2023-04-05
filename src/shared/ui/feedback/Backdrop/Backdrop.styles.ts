@@ -8,5 +8,6 @@ export const $Backdrop = styled.div`
 	height: 100vh;
 	display: flex;
 	align-items: center;
+	background: rgba(0, 0, 0, 0.4);
 	justify-content: center;
 `
