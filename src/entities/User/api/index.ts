@@ -3,6 +3,7 @@ export {
 	useUserRegistrationMutate,
 	useProfileQuery,
 	useUserProfileQuery,
-	useChangeProfileMutate
+	useChangeProfileMutate,
+	useChangeUserAvatarMutate
 } from "./hooks"
 export { userAvatarQuerySelector } from "./selectors"

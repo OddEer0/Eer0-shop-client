@@ -5,6 +5,7 @@ export const userAvatarQuerySelector = (user: IUser) => {
 		return null
 	}
 	return {
+		id: user.id,
 		avatar: user.avatar,
 		firstName: user.firstName
 	}
