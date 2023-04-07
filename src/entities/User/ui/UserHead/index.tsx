@@ -18,7 +18,14 @@ export const UserHead: FC<UserHeadProps> = ({ avatar, firstName, lastName, subTi
 	return (
 		<$UserHead className={className}>
 			<motion.div variants={toggleScaleAnimation} animate="show" initial="hidden" transition={{ duration: 0.5 }}>
-				<Avatar className="avatar" defaultAvatar={firstName} url={avatar} avatarSize="xlarge" />
+				<Avatar
+					className="avatar"
+					width={175}
+					height={175}
+					defaultAvatar={firstName}
+					url={avatar}
+					avatarSize="xlarge"
+				/>
 			</motion.div>
 			<div className="">
 				<motion.h2

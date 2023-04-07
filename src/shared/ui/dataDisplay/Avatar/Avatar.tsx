@@ -27,6 +27,8 @@ export const Avatar = forwardRef<HTMLInputElement, PropsWithChildren<AvatarProps
 			isChangeable = false,
 			defaultAvatar = null,
 			variant = "circle",
+			width,
+			height,
 			changeableIcon,
 			children,
 			...props
@@ -47,7 +49,13 @@ export const Avatar = forwardRef<HTMLInputElement, PropsWithChildren<AvatarProps
 		return (
 			<AvatarWrapper randomColor={random as EnumType} className={cl}>
 				{url ? (
-					<Image draggable={false} width={ImageSize[avatarSize]} height={ImageSize[avatarSize]} src={url} alt={alt} />
+					<Image
+						draggable={false}
+						width={width ? width : ImageSize[avatarSize]}
+						height={height ? height : ImageSize[avatarSize]}
+						src={url}
+						alt={alt}
+					/>
 				) : defaultAvatar ? (
 					getFirstLetters(defaultAvatar)
 				) : (

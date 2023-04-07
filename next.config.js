@@ -15,7 +15,10 @@ const nextConfig = withPWA({
 	},
 
 	images: {
-		remotePatterns: [{ protocol: "https", hostname: "i.pinimg.com", port: "", pathname: "/**" }]
+		remotePatterns: [
+			{ protocol: "https", hostname: "i.pinimg.com", port: "", pathname: "/**" },
+			{ protocol: "http", hostname: "localhost", port: "5000", pathname: "/**" }
+		]
 	},
 
 	compiler: {
