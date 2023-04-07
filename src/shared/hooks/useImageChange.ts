@@ -15,6 +15,7 @@ export const useImageChange = (initial: Nullable<string> = null, callback?: () =
 			reader.onload = ev => {
 				setImage(ev.target?.result as string)
 			}
+			e.target.value = ""
 		}
 	}
 
