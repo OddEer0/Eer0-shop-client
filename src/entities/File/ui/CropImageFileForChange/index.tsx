@@ -14,10 +14,11 @@ export const CropImageFileForChange: FC<CropImageFileForChangeProps> = ({
 	image,
 	setImage,
 	className = "",
+	onClose,
 	onAcceptCropImage
 }) => {
 	const { getCropperProps, croppedImage, clearImage, croppedFile, showCroppedImage, clearCropImage } =
-		useCropImageFileForChange(image, setImage)
+		useCropImageFileForChange(image, setImage, onClose)
 
 	const acceptHandler = () => {
 		if (onAcceptCropImage) {

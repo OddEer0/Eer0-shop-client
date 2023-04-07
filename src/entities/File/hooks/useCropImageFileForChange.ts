@@ -2,7 +2,11 @@ import { useCallback, useState } from "react"
 
 import { ICroppedArea, ICroppedAreaPixels, getCroppedImg } from "@/shared/helpers"
 
-export const useCropImageFileForChange = (image: Nullable<string>, setImage: (val: Nullable<string>) => void) => {
+export const useCropImageFileForChange = (
+	image: Nullable<string>,
+	setImage: (val: Nullable<string>) => void,
+	onClose?: () => void
+) => {
 	const [croppedImage, setCroppedImage] = useState<Nullable<string>>(null)
 	const [croppedFile, setCroppedFile] = useState<Nullable<Blob>>(null)
 	const [crop, setCrop] = useState({ x: 0, y: 0 })
@@ -32,6 +36,9 @@ export const useCropImageFileForChange = (image: Nullable<string>, setImage: (va
 	}, [croppedAreaPixels])
 
 	const clearImage = useCallback(() => {
+		if (onClose) {
+			onClose()
+		}
 		setImage(null)
 		setCroppedImage(null)
 		setCroppedFile(null)

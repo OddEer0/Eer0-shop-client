@@ -4,5 +4,6 @@ export interface CropImageFileForChangeProps {
 	image: Nullable<string>
 	setImage: (val: Nullable<string>) => void
 	onAcceptCropImage?: (values: IAcceptCropChange) => void
+	onClose?: () => void
 	className?: string
 }

@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useRef } from "react"
 
 import { CropImageFileForChange, IAcceptCropChange } from "@/entities/File"
 import { useChangeUserAvatarMutate, useProfileQuery, userAvatarQuerySelector } from "@/entities/User"
@@ -15,10 +15,17 @@ export const ChangeUserAvatar: FC<ChangeUserAvatarProps> = ({ className }) => {
 	const { data, isLoading } = useProfileQuery(userAvatarQuerySelector)
 	const { mutate } = useChangeUserAvatarMutate()
 	const { image, setImage, changeHandler } = useImageChange()
+	const fileRef = useRef<HTMLInputElement>(null)
 
 	const acceptHandler = (e: IAcceptCropChange) => {
 		if (e.file && data) {
 			mutate({ id: data.id, image: e.file })
+		}
+	}
+
+	const closeHandler = () => {
+		if (fileRef.current) {
+			fileRef.current.value = ""
 		}
 	}
 
@@ -36,8 +43,14 @@ export const ChangeUserAvatar: FC<ChangeUserAvatarProps> = ({ className }) => {
 				onChange={changeHandler}
 				url={data?.avatar}
 				defaultAvatar={data?.firstName}
+				ref={fileRef}
 			/>
-			<CropImageFileForChange image={image} setImage={setImage} onAcceptCropImage={acceptHandler} />
+			<CropImageFileForChange
+				image={image}
+				setImage={setImage}
+				onAcceptCropImage={acceptHandler}
+				onClose={closeHandler}
+			/>
 		</>
 	)
 }
