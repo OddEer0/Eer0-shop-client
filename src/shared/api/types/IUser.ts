@@ -11,6 +11,10 @@ export interface IUser {
 	isBanned: boolean
 	banReason: Nullable<string>
 	roles: string[]
+	isAdmin: boolean
+	isModerator: boolean
+	isDeveloper: boolean
+	isEmployee: boolean
 }
 
 export interface IUserLoginBody {

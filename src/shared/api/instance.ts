@@ -1,6 +1,5 @@
 // /* eslint-disable no-console */
 import axios from "axios"
-import Cookies from "js-cookie"
 
 import { queryClient } from "../config"
 
@@ -13,11 +12,6 @@ const FAKE_API_URL = process.env.FAKE_API_URL
 export const api = axios.create({
 	withCredentials: true,
 	baseURL: API_URL
-})
-
-api.interceptors.request.use(config => {
-	config.headers.Authorization = `Bearer ${Cookies.get("accessToken")}`
-	return config
 })
 
 api.interceptors.response.use(
