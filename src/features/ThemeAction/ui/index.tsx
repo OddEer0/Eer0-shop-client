@@ -16,12 +16,12 @@ const Icon = styled.div`
 `
 
 export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
-	const { themeName, toggleTheme } = useTheme()
+	const { theme, toggleTheme } = useTheme()
 
 	return (
 		<motion.div {...props}>
 			<AnimatePresence mode="wait">
-				{themeName === ThemeEnum.dark ? (
+				{theme === ThemeEnum.dark ? (
 					<motion.div
 						key="moon"
 						onClick={toggleTheme}

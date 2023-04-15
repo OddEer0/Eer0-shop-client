@@ -1,23 +1,27 @@
-import { useActions, useAppSelector } from "@/shared/hooks"
+import { useEffect, useState } from "react"
 
-import { themeSelector } from "../model"
-import { ThemeEnum } from "../theme/theme.types"
+import { useThemeStore } from "../model/theme.store"
 
 export const useTheme = () => {
-	const { setTheme } = useActions()
-	const { type } = useAppSelector(themeSelector)
+	const { setTheme: setThemeName, theme: themeName } = useThemeStore()
+	const [theme, setTheme] = useState("dark")
+
+	useEffect(() => {
+		setTheme(themeName)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [themeName])
 
 	const toggleTheme = () => {
-		if (type === ThemeEnum.dark) {
-			setTheme("light")
+		if (themeName === "dark") {
+			setThemeName("light")
 		} else {
-			setTheme("dark")
+			setThemeName("dark")
 		}
 	}
 
 	return {
 		toggleTheme,
 		setTheme,
-		themeName: type
+		theme
 	}
 }
