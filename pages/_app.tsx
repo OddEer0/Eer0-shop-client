@@ -9,13 +9,11 @@ import { NextPage } from "next"
 import type { AppProps } from "next/app"
 import { ReactElement, ReactNode, useState } from "react"
 import "react-datepicker/dist/react-datepicker.css"
-import { Provider } from "react-redux"
 import "simplebar-react/dist/simplebar.min.css"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 
 import { AppProvider } from "@/app/providers"
-import { wrapper } from "@/app/store/store"
 import { GlobalStyle } from "@/app/styles"
 
 import { queryClient } from "@/shared/config"
@@ -29,22 +27,19 @@ type AppPropsWithLayout = AppProps & {
 }
 
 const MyApp = ({ Component, ...rest }: AppPropsWithLayout) => {
-	const { store, props } = wrapper.useWrappedStore(rest)
 	const getLayout = Component.getLayout ?? (page => page)
 	const [queryClientState] = useState(() => queryClient)
 
 	return (
-		<Provider store={store}>
-			<QueryClientProvider client={queryClientState}>
-				<Hydrate state={rest.pageProps.dehydratedState}>
-					<AppProvider>
-						<GlobalStyle />
-						{getLayout(<Component {...props.pageProps} />)}
-						<ReactQueryDevtools initialIsOpen={false} />
-					</AppProvider>
-				</Hydrate>
-			</QueryClientProvider>
-		</Provider>
+		<QueryClientProvider client={queryClientState}>
+			<Hydrate state={rest.pageProps.dehydratedState}>
+				<AppProvider>
+					<GlobalStyle />
+					{getLayout(<Component {...rest.pageProps} />)}
+					<ReactQueryDevtools initialIsOpen={false} />
+				</AppProvider>
+			</Hydrate>
+		</QueryClientProvider>
 	)
 }
 

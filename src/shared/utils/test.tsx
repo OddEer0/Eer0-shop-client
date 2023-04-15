@@ -3,19 +3,14 @@
 /* eslint-disable no-restricted-imports */
 import { RenderOptions, render } from "@testing-library/react"
 import React, { ReactElement } from "react"
-import { Provider } from "react-redux"
 
 import { AppProvider } from "@/app/providers"
-import { makeStore } from "@/app/store/store"
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
-	const store = makeStore()
 	return (
 		<>
 			<div id="myportal"></div>
-			<Provider store={store}>
-				<AppProvider>{children}</AppProvider>
-			</Provider>
+			<AppProvider>{children}</AppProvider>
 		</>
 	)
 }

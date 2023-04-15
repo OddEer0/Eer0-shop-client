@@ -2,7 +2,7 @@ import * as NextImage from 'next/image';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from '../src/application/styles'
-import {lightTheme} from '../src/entities/Theme/theme/lightTheme'
+import {lightTheme} from '../src/entities/Theme'
 
 const OriginalNextImage = NextImage.default;
 
