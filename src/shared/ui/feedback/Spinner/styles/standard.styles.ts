@@ -28,6 +28,14 @@ export const StandardSpinner = styled.div`
 		animation: ${prixClipFix} 2s linear infinite;
 	}
 
+	&.xsmall {
+		width: 32px;
+		height: 32px;
+		&::before {
+			border-width: 3px;
+		}
+	}
+
 	&.small {
 		width: 48px;
 		height: 48px;

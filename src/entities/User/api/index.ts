@@ -6,4 +6,4 @@ export {
 	useChangeProfileMutate,
 	useChangeUserAvatarMutate
 } from "./hooks"
-export { userAvatarQuerySelector } from "./selectors"
+export { userAvatarQuerySelector, userIdQuerySelector } from "./selectors"

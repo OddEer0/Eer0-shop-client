@@ -4,3 +4,4 @@ export type { IDevice, IDeviceAxiosResponse, IDeviceWithInfoAndBrand } from "./I
 export type { IFilter, IFilterWithInfo } from "./IFilter"
 export type { IInfo } from "./IInfo"
 export type { IBrand } from "./IBrand"
+export type { IAddToCart, ICart, IRemoveFromCart } from "./ICart"

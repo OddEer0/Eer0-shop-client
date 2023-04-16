@@ -35,7 +35,8 @@ export const useUserLoginForm = () => {
 		}),
 		label: "Пароль",
 		color: errors.password ? "danger" : "primary",
-		subText: errors.password?.message && errors.password.message
+		subText: errors.password?.message && errors.password.message,
+		type: "password"
 	}
 
 	return {

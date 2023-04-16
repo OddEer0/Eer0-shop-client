@@ -10,3 +10,10 @@ export const userAvatarQuerySelector = (user: IUser) => {
 		firstName: user.firstName
 	}
 }
+
+export const userIdQuerySelector = (user: IUser) => {
+	if (!user) {
+		return null
+	}
+	return user.id
+}

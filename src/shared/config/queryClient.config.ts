@@ -1,6 +1,6 @@
 import { QueryClient } from "@tanstack/react-query"
 
-import { userService } from "../api"
+import { ICart, cartService, userService } from "../api"
 
 export const queryClient = new QueryClient({
 	defaultOptions: {
@@ -12,8 +12,20 @@ export const queryClient = new QueryClient({
 
 queryClient.setQueryDefaults(["profile"], {
 	queryFn: () => {
-		if (localStorage.getItem("isAuth")) {
+		if (typeof window !== "undefined" && localStorage.getItem("isAuth")) {
 			return userService.getProfile()
+		}
+		return null
+	},
+	retry: false,
+	cacheTime: Infinity,
+	staleTime: Infinity
+})
+
+queryClient.setQueryDefaults(["cart"], {
+	queryFn(): Nullable<Promise<ICart>> {
+		if (typeof window !== "undefined" && localStorage.getItem("isAuth")) {
+			return cartService.getCartByToken()
 		}
 		return null
 	},

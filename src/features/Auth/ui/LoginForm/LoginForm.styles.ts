@@ -7,10 +7,10 @@ export const $Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-`
 
-export const $Input = styled.input`
-	margin: 20px 0;
+	& > .input {
+		margin: 20px 0;
+	}
 `
 
 export const $Button = styled(Button)`

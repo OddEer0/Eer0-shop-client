@@ -1,6 +1,9 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { FC } from "react"
+import { BiCartAlt } from "react-icons/bi"
+
+import { CartBadge } from "@/entities/Cart"
 
 import { Badge } from "@/shared/ui"
 
@@ -34,6 +37,13 @@ export const IconList: FC = () => {
 					</Badge>
 				</motion.li>
 			))}
+			<motion.li className="icon" variants={animation} initial="initial" animate="animate" custom={1}>
+				<Link href="/cart">
+					<CartBadge>
+						<BiCartAlt />
+					</CartBadge>
+				</Link>
+			</motion.li>
 		</$IconList>
 	)
 }
