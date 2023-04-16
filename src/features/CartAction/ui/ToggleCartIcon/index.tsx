@@ -1,8 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { FC, useState } from "react"
+import { FC } from "react"
 import { BsCart, BsCartCheckFill } from "react-icons/bs"
 
+import {
+	findDeviceQuerySelector,
+	useAddDeviceToCartMutate,
+	useCartQuery,
+	useRemoveDeviceFromCartMutate
+} from "@/entities/Cart"
+import { useProfileQuery, userIdQuerySelector } from "@/entities/User"
+
 import { toggleScaleAnimation } from "@/shared/animation"
+import { Spinner } from "@/shared/ui"
 
 import { $ToggleCartIcon } from "./ToggleCartIcon.styles"
 
@@ -11,18 +20,33 @@ interface ToggleCartIconProps {
 }
 
 export const ToggleCartIcon: FC<ToggleCartIconProps> = ({ id }) => {
-	const [isToCart, setIsToCart] = useState(false)
+	const { data: isToCart, isFetching } = useCartQuery(findDeviceQuerySelector(id))
+	const { mutate: addMutate, isLoading: isAddLoading } = useAddDeviceToCartMutate()
+	const { mutate: removeMutate, isLoading } = useRemoveDeviceFromCartMutate()
+	const { data: userId } = useProfileQuery(userIdQuerySelector)
 
-	const toggleHandler = () => {
-		setIsToCart(prev => !prev)
+	const removeDeviceFromCartHandler = () => {
+		if (userId) {
+			removeMutate({ deviceId: id, userId: userId })
+		}
+	}
+
+	const addDeviceToCartHandler = () => {
+		if (userId) {
+			addMutate({ deviceId: id, userId: userId })
+		}
 	}
 
 	return (
 		<$ToggleCartIcon>
 			<AnimatePresence mode="wait">
-				{isToCart ? (
+				{isFetching || isLoading || isAddLoading ? (
+					<motion.div key="load" variants={toggleScaleAnimation} exit="hidden" animate="show" initial="init">
+						<Spinner size="xsmall" />
+					</motion.div>
+				) : isToCart ? (
 					<motion.div
-						onClick={toggleHandler}
+						onClick={removeDeviceFromCartHandler}
 						key="check"
 						className="unchecked"
 						variants={toggleScaleAnimation}
@@ -34,7 +58,7 @@ export const ToggleCartIcon: FC<ToggleCartIconProps> = ({ id }) => {
 					</motion.div>
 				) : (
 					<motion.div
-						onClick={toggleHandler}
+						onClick={addDeviceToCartHandler}
 						key="uncheck"
 						variants={toggleScaleAnimation}
 						exit="hidden"

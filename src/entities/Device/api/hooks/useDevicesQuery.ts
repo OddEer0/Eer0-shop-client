@@ -10,8 +10,7 @@ export const useFilteredAndSortedDevicesQuery = <T>(
 ) => {
 	return useQuery(["device", urlQuery], () => deviceService.getFilteredAndSortedDevice(urlQuery), {
 		select,
-		enabled: !!urlQuery.category,
-		cacheTime: urlQuery.category ? convertMinutesToMs(2) : 0,
+		cacheTime: convertMinutesToMs(2),
 		staleTime: convertSecondsToMs(30),
 		keepPreviousData: true
 	})

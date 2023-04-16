@@ -52,6 +52,11 @@ export const DoubleSnakeSpinner = styled.div`
 		animation-delay: 0.4s;
 	}
 
+	&.xsmall {
+		width: 32px;
+		height: 32px;
+	}
+
 	&.small {
 		width: 48px;
 		height: 48px;

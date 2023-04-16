@@ -1,1 +1,1 @@
-export { userAvatarQuerySelector } from "./userAvatarQuerySelector"
+export { userAvatarQuerySelector, userIdQuerySelector } from "./userAvatarQuerySelector"

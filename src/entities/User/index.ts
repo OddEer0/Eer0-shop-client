@@ -5,6 +5,7 @@ export {
 	useUserProfileQuery,
 	userAvatarQuerySelector,
 	useChangeProfileMutate,
-	useChangeUserAvatarMutate
+	useChangeUserAvatarMutate,
+	userIdQuerySelector
 } from "./api"
 export { ProfileAvatar, Profile } from "./ui"

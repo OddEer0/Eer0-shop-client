@@ -17,6 +17,12 @@ export const SnakeSpinner = styled.div`
 	box-sizing: border-box;
 	animation: ${rotation} 1s linear infinite;
 
+	&.xsmall {
+		width: 32px;
+		height: 32px;
+		border-top-width: 2px;
+	}
+
 	&.small {
 		width: 48px;
 		height: 48px;

@@ -4,7 +4,7 @@ import { TextField } from "@/shared/ui"
 
 import { useUserLoginForm } from "../../lib"
 
-import { $Button, $Form, $FormWrapper, $Input, $Link, $LinkTitle, $Title } from "./LoginForm.styles"
+import { $Button, $Form, $FormWrapper, $Link, $LinkTitle, $Title } from "./LoginForm.styles"
 
 export const LoginForm: FC = () => {
 	const { getEmailInputProps, getPasswordInputProps, submitHandler } = useUserLoginForm()
@@ -13,8 +13,8 @@ export const LoginForm: FC = () => {
 		<$FormWrapper>
 			<$Title className="h4">Авторизация</$Title>
 			<$Form onSubmit={submitHandler}>
-				<$Input as={TextField} {...getEmailInputProps} />
-				<$Input as={TextField} {...getPasswordInputProps} />
+				<TextField {...getEmailInputProps} className="input" />
+				<TextField {...getPasswordInputProps} className="input" />
 				<$Button variant="contained">SUBMIT</$Button>
 			</$Form>
 			<$LinkTitle className="caption-14-b">Забыли пароль?</$LinkTitle>

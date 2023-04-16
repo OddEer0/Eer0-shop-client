@@ -10,7 +10,10 @@ export type {
 	IDeviceAxiosResponse,
 	ICategoryAxiosResponse,
 	IFilterWithInfo,
-	IInfo
+	IInfo,
+	ICart,
+	IAddToCart,
+	IRemoveFromCart
 } from "./types"
 
-export { deviceService, categoryService, brandService, filterService, userService } from "./services"
+export { deviceService, categoryService, brandService, filterService, userService, cartService } from "./services"
