@@ -26,16 +26,16 @@ type AppPropsWithLayout = AppProps & {
 	Component: NextPageWithLayout
 }
 
-const MyApp = ({ Component, ...rest }: AppPropsWithLayout) => {
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 	const getLayout = Component.getLayout ?? (page => page)
 	const [queryClientState] = useState(() => queryClient)
 
 	return (
 		<QueryClientProvider client={queryClientState}>
-			<Hydrate state={rest.pageProps.dehydratedState}>
+			<Hydrate state={pageProps.dehydratedState}>
 				<AppProvider>
 					<GlobalStyle />
-					{getLayout(<Component {...rest.pageProps} />)}
+					{getLayout(<Component {...pageProps} />)}
 					<ReactQueryDevtools initialIsOpen={false} />
 				</AppProvider>
 			</Hydrate>
