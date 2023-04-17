@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { FC } from "react"
 
+import { IDevice } from "@/shared/api"
 import { Empty } from "@/shared/ui"
 
 import { useFilteredAndSortedDevicesQuery } from "../../api"
@@ -14,9 +15,13 @@ interface CompProps {
 	id: string
 }
 
+interface FavoriteCompProps {
+	device: IDevice
+}
+
 interface DeviceCardsListProps {
 	CartComponent: FC<CompProps>
-	FavoriteComponent: FC<CompProps>
+	FavoriteComponent: FC<FavoriteCompProps>
 }
 
 export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, FavoriteComponent }) => {
@@ -37,7 +42,7 @@ export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, Favor
 							device={device}
 							cart={<CartComponent id={device.id} />}
 							className="list-gap"
-							favorite={<FavoriteComponent id={device.id} />}
+							favorite={<FavoriteComponent device={device} />}
 						/>
 					))}
 					<Empty className="list-gap" width="320px" count={3} />
