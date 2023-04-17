@@ -1,1 +1,1 @@
-export { ToggleCartIcon, ToggleFavoriteIcon } from "./ui"
+export { ToggleCartIcon } from "./ui"
