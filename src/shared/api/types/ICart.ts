@@ -1,16 +1,14 @@
 import { IDevice } from "./IDevice"
 
 export interface ICart {
+	id: string
+	count: number
 	userId: string
+	deviceId: string
 	devices: IDevice[]
 }
 
-export interface IAddToCart {
-	userId: string
-	deviceId: string
-}
-
-export interface IRemoveFromCart {
+export interface IPostCartAdd {
 	userId: string
 	deviceId: string
 }

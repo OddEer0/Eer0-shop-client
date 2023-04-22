@@ -1,7 +1,7 @@
 import { ParsedUrlQuery } from "querystring"
 
 import { api } from "../instance"
-import { IDeviceAxiosResponse, IDeviceWithInfoAndBrand } from "../types"
+import { IDevice, IDeviceAxiosResponse } from "../types"
 
 export const deviceService = {
 	api: api,
@@ -13,7 +13,7 @@ export const deviceService = {
 	},
 
 	async getOneDevice(id: string) {
-		const { data } = await this.api.get<IDeviceWithInfoAndBrand>(`device/${id}`)
+		const { data } = await this.api.get<IDevice>(`device/${id}`)
 		return data
 	}
 }

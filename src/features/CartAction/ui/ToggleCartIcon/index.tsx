@@ -27,13 +27,13 @@ export const ToggleCartIcon: FC<ToggleCartIconProps> = ({ id }) => {
 
 	const removeDeviceFromCartHandler = () => {
 		if (userId) {
-			removeMutate({ deviceId: id, userId: userId })
+			removeMutate(id)
 		}
 	}
 
 	const addDeviceToCartHandler = () => {
 		if (userId) {
-			addMutate({ deviceId: id, userId: userId })
+			addMutate({ deviceId: id, userId })
 		}
 	}
 

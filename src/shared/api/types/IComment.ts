@@ -6,12 +6,18 @@ export interface IComment {
 	description: string
 	like: number
 	dislike: number
+	createdAt: Date
+	updatedAt: Date
 }
 
-export interface ICommentWithDevice extends IComment {
+export interface IComment$Device extends IComment {
 	device: IDevice
 }
 
-export interface ICommentWithUser extends IComment {
+export interface IComment$User extends IComment {
+	user: IUser
+}
+
+export interface IComment$DeviceUser extends IComment$Device {
 	user: IUser
 }

@@ -1,13 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 
-import { IRemoveFromCart, cartService } from "@/shared/api"
+import { cartService } from "@/shared/api"
 
 export const useRemoveDeviceFromCartMutate = () => {
 	const queryClient = useQueryClient()
 
 	return useMutation({
 		mutationKey: ["cart", "remove"],
-		mutationFn: (formData: IRemoveFromCart) => cartService.removeDeviceFromCart(formData),
+		mutationFn: (cartId: string) => cartService.removeDeviceFromCart(cartId),
 		onSuccess(data) {
 			queryClient.setQueryData(["cart"], data)
 		}
