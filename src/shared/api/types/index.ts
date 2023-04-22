@@ -14,11 +14,10 @@ export type {
 	IDevice$Brand,
 	IDevice$Category,
 	IDevice$Comments,
-	IDevice$Infos,
-	IDevice$InfosAndBrand
+	IDevice$Infos
 } from "./IDevice"
 
 export type { IFilter, IFilter$Category, IFilter$Infos } from "./IFilter"
 export type { IInfo, IInfo$Devices, IInfo$Filter } from "./IInfo"
 export type { IBrand, IBrand$All, IBrand$Categories, IBrand$Device, IPostBrand, IPutBrand } from "./IBrand"
-export type { ICart, IPostCartAdd } from "./ICart"
+export type { ICart, IPostCartAdd, ISetCountCartDevice } from "./ICart"

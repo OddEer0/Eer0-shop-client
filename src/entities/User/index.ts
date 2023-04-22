@@ -1,6 +1,4 @@
 export {
-	useUserRegistrationMutate,
-	useUserLoginMutate,
 	useProfileQuery,
 	useUserProfileQuery,
 	userAvatarQuerySelector,

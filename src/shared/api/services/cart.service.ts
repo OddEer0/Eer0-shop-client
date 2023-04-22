@@ -1,5 +1,5 @@
 import { api } from "../instance"
-import { ICart, IPostCartAdd } from "../types"
+import { ICart, IPostCartAdd, ISetCountCartDevice } from "../types"
 
 export const cartService = {
 	api: api,
@@ -23,6 +23,12 @@ export const cartService = {
 
 	async removeDeviceFromCart(id: string) {
 		const { data } = await this.api.delete<ICart>(`cart/device/${id}`)
+
+		return data
+	},
+
+	async setCountCartDevice(formData: ISetCountCartDevice) {
+		const { data } = await this.api.post<ICart>(`cart/device/count/${formData.cartDeviceId}`, { count: formData.count })
 
 		return data
 	}

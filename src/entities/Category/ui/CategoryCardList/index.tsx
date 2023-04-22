@@ -18,10 +18,7 @@ export const CategoryCardList: FC = () => {
 			) : data ? (
 				<>
 					{data.map(category => (
-						<Link
-							href={{ pathname: "/category/device", query: { category: category.id, page: "1" } }}
-							key={category.id}
-						>
+						<Link href={{ pathname: `/category/${category.id}`, query: { page: "1" } }} key={category.id}>
 							<CategoryCard className="item" data={category} />
 						</Link>
 					))}

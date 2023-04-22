@@ -1,10 +1,9 @@
 import { useForm } from "react-hook-form"
 
-import { useUserRegistrationMutate } from "@/entities/User"
-
 import { IUserRegistrationBody } from "@/shared/api"
 import { TextFieldProps } from "@/shared/ui"
 
+import { useUserRegistrationMutate } from "../../api"
 import {
 	FIELD_REQUIRED,
 	LOGIN_MAX_LENGTH,

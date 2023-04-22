@@ -1,3 +1,3 @@
 export { CropImageFileForChange } from "./ui"
-export { useCropImageFileForChange } from "./hooks"
 export type { IAcceptCropChange } from "./types"
+export { useCropImageFileForChange } from "./lib"

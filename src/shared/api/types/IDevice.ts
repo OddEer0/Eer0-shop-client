@@ -36,8 +36,3 @@ export interface IDeviceAxiosResponse {
 	pageCount: number
 	devices: IDevice[]
 }
-
-export interface IDevice$InfosAndBrand {
-	infos: IInfo[]
-	brand: IBrand
-}

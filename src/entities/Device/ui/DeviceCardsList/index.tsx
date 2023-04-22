@@ -4,8 +4,7 @@ import { FC } from "react"
 import { IDevice } from "@/shared/api"
 import { Empty } from "@/shared/ui"
 
-import { useFilteredAndSortedDevicesQuery } from "../../api"
-import { deviceQuerySelector } from "../../model"
+import { deviceQuerySelector, useFilteredAndSortedDevicesQuery } from "../../api"
 import { DeviceCard } from "../DeviceCard"
 
 import { DeviceCardsSkeletonList } from "./DeviceCardsList.lazy"

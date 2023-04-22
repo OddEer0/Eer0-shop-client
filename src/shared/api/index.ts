@@ -10,6 +10,7 @@ export type {
 	IDeviceAxiosResponse,
 	IInfo,
 	ICart,
+	ISetCountCartDevice,
 	IPostCartAdd,
 	IBrand,
 	IBrand$All,
@@ -23,7 +24,6 @@ export type {
 	IDevice$Category,
 	IDevice$Comments,
 	IDevice$Infos,
-	IDevice$InfosAndBrand,
 	IFilter$Category,
 	IFilter$Infos,
 	IInfo$Devices,
@@ -32,4 +32,12 @@ export type {
 	IPutBrand
 } from "./types"
 
-export { deviceService, categoryService, brandService, filterService, userService, cartService } from "./services"
+export {
+	deviceService,
+	categoryService,
+	brandService,
+	filterService,
+	userService,
+	cartService,
+	authService
+} from "./services"
