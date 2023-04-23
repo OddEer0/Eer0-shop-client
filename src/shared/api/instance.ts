@@ -34,6 +34,7 @@ api.interceptors.response.use(
 					localStorage.removeItem("isAuth")
 				}
 				queryClient.setQueryData(["profile"], null)
+				queryClient.setQueryData(["cart"], null)
 			}
 		}
 		throw error

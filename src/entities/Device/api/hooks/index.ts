@@ -1,1 +1,0 @@
-export { useFilteredAndSortedDevicesQuery } from "./useDevicesQuery"

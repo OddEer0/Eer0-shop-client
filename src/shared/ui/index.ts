@@ -11,7 +11,8 @@ export {
 	Rating,
 	Upload,
 	AutoComplete,
-	DatePicker
+	DatePicker,
+	Counter
 } from "./input"
 export type {
 	TextFieldProps,
@@ -27,7 +28,8 @@ export type {
 	RatingProps,
 	UploadProps,
 	AutoCompleteProps,
-	DatePickerProps
+	DatePickerProps,
+	CounterProps
 } from "./input"
 
 export { Container, Layout, Grid, Overlay } from "./layout"

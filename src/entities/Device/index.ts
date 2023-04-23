@@ -1,3 +1,7 @@
-export { DeviceCard, DeviceCardSkeleton, DeviceCardsList, DeviceAside } from "./ui"
-export { useFilteredAndSortedDevicesQuery } from "./api"
-export { deviceQuerySelector, devicePageCountQuerySelector } from "./model"
+export { DeviceCard, DeviceCardSkeleton, DeviceCardsList, DeviceAside, DeviceImageSlider } from "./ui"
+export {
+	useFilteredAndSortedDevicesQuery,
+	useDeviceQuery,
+	devicePageCountQuerySelector,
+	deviceQuerySelector
+} from "./api"

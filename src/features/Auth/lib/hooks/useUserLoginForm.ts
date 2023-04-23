@@ -1,10 +1,9 @@
 import { useForm } from "react-hook-form"
 
-import { useUserLoginMutate } from "@/entities/User"
-
 import { IUserLoginBody } from "@/shared/api"
 import { TextFieldProps } from "@/shared/ui"
 
+import { useUserLoginMutate } from "../../api"
 import { FIELD_REQUIRED, LOGIN_MAX_LENGTH, LOGIN_MIN_LENGTH } from "../constants"
 
 export const useUserLoginForm = () => {

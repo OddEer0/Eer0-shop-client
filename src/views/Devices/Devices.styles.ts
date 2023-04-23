@@ -9,8 +9,5 @@ export const $DeviceView = styled.div`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
-		& > .content-head {
-		}
 	}
 `

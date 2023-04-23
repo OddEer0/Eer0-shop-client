@@ -1,1 +1,2 @@
-export { useFilteredAndSortedDevicesQuery } from "./hooks"
+export { useFilteredAndSortedDevicesQuery, useDeviceQuery } from "./hooks"
+export { devicePageCountQuerySelector, deviceQuerySelector } from "./selectors"

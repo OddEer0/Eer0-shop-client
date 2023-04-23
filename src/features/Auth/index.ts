@@ -1,1 +1,1 @@
-export { LoginForm, RegistrationForm } from "./ui"
+export { LoginForm, RegistrationForm, LogoutButton } from "./ui"

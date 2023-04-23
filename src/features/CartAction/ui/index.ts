@@ -1,1 +1,1 @@
-export { ToggleCartIcon } from "./ToggleCartIcon"
+export { AddDeviceToCartIcon } from "./AddDeviceToCartIcon"

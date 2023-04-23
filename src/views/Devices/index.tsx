@@ -2,7 +2,7 @@ import { FC } from "react"
 
 import { DeviceCardsList } from "@/entities/Device"
 
-import { ToggleCartIcon } from "@/features/CartAction"
+import { AddDeviceToCartIcon } from "@/features/CartAction"
 import { DevicePagination } from "@/features/DevicePagination"
 import { DeviceSortSelect } from "@/features/DeviceSort"
 import { ToggleFavoriteIcon } from "@/features/FavoriteAction"
@@ -24,7 +24,7 @@ const DevicesView: FC = () => {
 						<div className="content-head">
 							<DeviceSortSelect />
 						</div>
-						<DeviceCardsList CartComponent={ToggleCartIcon} FavoriteComponent={ToggleFavoriteIcon} />
+						<DeviceCardsList CartComponent={AddDeviceToCartIcon} FavoriteComponent={ToggleFavoriteIcon} />
 						<DevicePagination />
 					</div>
 				</Container>

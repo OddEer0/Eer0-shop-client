@@ -10,33 +10,29 @@ export interface IDevice {
 	price: string
 	stock: Nullable<string>
 	stockPercent: Nullable<string>
-	type: string
 	count: string
 	images: string[]
+	createdAt: Date
+	updatedAt: Date
 }
 
-export interface IDeviceWithInfo extends IDevice {
+export interface IDevice$Infos extends IDevice {
 	infos: IInfo[]
 }
 
-export interface IDeviceWithCategory extends IDevice {
+export interface IDevice$Category extends IDevice {
 	category: ICategory
 }
 
-export interface IDeviceWithBrand extends IDevice {
+export interface IDevice$Brand extends IDevice {
 	brand: IBrand
 }
 
-export interface IDeviceWithComments extends IDevice {
+export interface IDevice$Comments extends IDevice {
 	comments: IComment[]
 }
 
 export interface IDeviceAxiosResponse {
 	pageCount: number
 	devices: IDevice[]
-}
-
-export interface IDeviceWithInfoAndBrand {
-	infos: IInfo[]
-	brand: IBrand
 }

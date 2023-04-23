@@ -37,6 +37,7 @@ export const DeviceCardImageSlider: FC<DeviceCardImageSliderProps> = ({ images, 
 		prevArrow: <SamplePrevArrow />,
 		beforeChange: (cur: number, next: number) => setCurrentShow(next + 1)
 	}
+
 	return (
 		<$DeviceCardImageCarousel>
 			<Carousel {...settings}>

@@ -34,7 +34,7 @@ export const IconList: FC = () => {
 					</FavoriteBadge>
 				</Link>
 			</motion.li>
-			<motion.li className="icon" variants={animation} initial="initial" animate="animate" custom={1}>
+			<motion.li className="icon" variants={animation} initial="initial" animate="animate" custom={2}>
 				<Link href="/cart">
 					<CartBadge>
 						<BiCartAlt />

@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-import { IFilterWithInfo } from "@/shared/api"
+import { IFilter$Infos } from "@/shared/api"
 import { useInput } from "@/shared/hooks"
 import { TextField } from "@/shared/ui"
 
@@ -9,7 +9,7 @@ import { CheckboxListItem } from "../CheckboxListItem"
 import { $FilterSearchedCheckboxList } from "./FilterSearchedCheckboxList.styles"
 
 interface FilterSearchedCheckboxListProps {
-	filter: IFilterWithInfo
+	filter: IFilter$Infos
 }
 
 export const FilterSearchedCheckboxList: FC<FilterSearchedCheckboxListProps> = ({ filter }) => {

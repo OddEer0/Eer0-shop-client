@@ -5,7 +5,7 @@ import Cropper from "react-easy-crop"
 import { circleOpenAnimation, opacityAnimation } from "@/shared/animation"
 import { Avatar, Button } from "@/shared/ui"
 
-import { useCropImageFileForChange } from "../../hooks"
+import { useCropImageFileForChange } from "../../lib"
 
 import { $CropImageFileForChange } from "./CropImageFileForChange.styles"
 import { CropImageFileForChangeProps } from "./CropImageFileForChange.types"

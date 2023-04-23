@@ -1,3 +1,2 @@
-export { useAddDeviceToCartMutate, useCartQuery, useRemoveDeviceFromCartMutate } from "./api"
-export { findDeviceQuerySelector, cartDeviceQuerySelector } from "./model"
+export { useCartQuery, findDeviceQuerySelector, getCartDeviceQuerySelectorWithIdCount } from "./api"
 export { CartBadge } from "./ui"

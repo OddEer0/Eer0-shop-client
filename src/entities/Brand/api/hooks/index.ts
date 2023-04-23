@@ -1,1 +1,0 @@
-export { useBrandQuery } from "./useBrandQuery"

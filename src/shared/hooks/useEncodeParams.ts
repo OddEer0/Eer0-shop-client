@@ -4,9 +4,13 @@ export const useEncodeParams = () => {
 	const { query, push } = useRouter()
 
 	const removeAllParams = () => {
-		push({
-			query: {}
-		})
+		push(
+			{
+				query: {}
+			},
+			undefined,
+			{ shallow: true }
+		)
 	}
 
 	const getParams = (paramName: string) => {
@@ -23,9 +27,13 @@ export const useEncodeParams = () => {
 		const queryResult = query
 		delete queryResult[paramName]
 
-		push({
-			query: queryResult
-		})
+		push(
+			{
+				query: queryResult
+			},
+			undefined,
+			{ shallow: true }
+		)
 	}
 
 	const has = (paramName: string, value: string) => {
@@ -53,12 +61,16 @@ export const useEncodeParams = () => {
 			}
 		}
 
-		push({
-			query: {
-				...query,
-				[paramName]: result
-			}
-		})
+		push(
+			{
+				query: {
+					...query,
+					[paramName]: result
+				}
+			},
+			undefined,
+			{ shallow: true }
+		)
 	}
 
 	const appendMany = (paramsObj: { [key: string]: string }) => {
@@ -84,9 +96,13 @@ export const useEncodeParams = () => {
 			}
 		})
 
-		push({
-			query: Object.fromEntries(queryResult)
-		})
+		push(
+			{
+				query: Object.fromEntries(queryResult)
+			},
+			undefined,
+			{ shallow: true }
+		)
 	}
 
 	const remove = (paramName: string, value: string) => {
@@ -109,9 +125,13 @@ export const useEncodeParams = () => {
 			queryResult.set(paramName, result)
 		}
 
-		push({
-			query: Object.fromEntries(queryResult)
-		})
+		push(
+			{
+				query: Object.fromEntries(queryResult)
+			},
+			undefined,
+			{ shallow: true }
+		)
 	}
 
 	return {

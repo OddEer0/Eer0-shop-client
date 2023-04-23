@@ -1,3 +1,4 @@
+import { ICategory } from "./ICategory"
 import { IInfo } from "./IInfo"
 
 type FilterType = "checkboxList"
@@ -9,9 +10,12 @@ export interface IFilter {
 	title: string
 	maxValue?: number
 	minValue?: number
-	value?: string[]
 }
 
-export interface IFilterWithInfo extends IFilter {
+export interface IFilter$Infos extends IFilter {
 	infos: IInfo[]
+}
+
+export interface IFilter$Category extends IFilter {
+	category: ICategory
 }

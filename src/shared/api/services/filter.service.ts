@@ -1,10 +1,10 @@
 import { api } from "../instance"
-import { IFilter, IFilterWithInfo } from "../types"
+import { IFilter, IFilter$Infos } from "../types"
 
 export const filterService = {
 	api: api,
 	async getFiltersByCategoryId(id: string) {
-		const { data } = await this.api.get<IFilterWithInfo[]>(`filter/category/${id}`)
+		const { data } = await this.api.get<IFilter$Infos[]>(`filter/category/${id}`)
 		return data
 	},
 
