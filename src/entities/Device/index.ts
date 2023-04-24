@@ -1,12 +1,4 @@
-export {
-	DeviceCard,
-	DeviceCardSkeleton,
-	DeviceCardsList,
-	DeviceAside,
-	DeviceImageSlider,
-	DevicePriceAside,
-	BuyDeviceButton
-} from "./ui"
+export { DeviceCard, DeviceCardSkeleton, DeviceCardsList, DeviceAside, DeviceImageSlider, DevicePriceAside } from "./ui"
 export {
 	useFilteredAndSortedDevicesQuery,
 	useDeviceQuery,

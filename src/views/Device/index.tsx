@@ -2,9 +2,10 @@ import { useRouter } from "next/router"
 import { FC } from "react"
 import { BsCart } from "react-icons/bs"
 
-import { BuyDeviceButton, DeviceImageSlider, DevicePriceAside } from "@/entities/Device"
+import { DeviceImageSlider, DevicePriceAside } from "@/entities/Device"
 
 import { AddDeviceToCartButton } from "@/features/CartAction"
+import { BuyDeviceButton } from "@/features/DeviceAction"
 import { ToggleFavoriteButton } from "@/features/FavoriteAction"
 
 import { Container } from "@/shared/ui"
