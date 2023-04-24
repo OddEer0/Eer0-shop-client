@@ -12,7 +12,9 @@ export const Counter: FC<CounterProps> = ({
 	setCount = 1,
 	changeValue,
 	className = "",
-	debounceTime = 0
+	debounceTime = 0,
+	color = "primary",
+	size = "medium"
 }) => {
 	const { state, changeHandler, minusHandler, plusHandler } = useCounter(
 		setCount,
@@ -24,7 +26,7 @@ export const Counter: FC<CounterProps> = ({
 	)
 
 	return (
-		<$Counter className={className}>
+		<$Counter color={color} size={size} className={className}>
 			<button className="counter-btn minus-btn" onClick={minusHandler}>
 				-
 			</button>

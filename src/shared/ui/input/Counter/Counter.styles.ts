@@ -1,18 +1,21 @@
 import styled from "styled-components"
 
-export const $Counter = styled.div`
+import { SizeFontSizeEnum, SizeHeightEnum, SizeWidthEnum, StyledCounterProps } from "./Counter.types"
+
+export const $Counter = styled.div<StyledCounterProps>`
 	display: inline-flex;
 	width: 100%;
-	max-width: 150px;
-	height: 30px;
+	max-width: ${({ size }) => SizeWidthEnum[size]}px;
+	height: ${({ size }) => SizeHeightEnum[size]}px;
 	border-radius: 10px;
 	overflow: hidden;
+	font-size: ${({ size }) => SizeFontSizeEnum[size]}px;
 
 	.counter-btn {
 		height: 100%;
 		width: 25%;
-		background: ${({ theme }) => theme.ui.color.primary_50};
-		color: ${({ theme }) => theme.ui.text.primary_50};
+		background: ${({ theme, color }) => theme.ui.color[`${color}_50`]};
+		color: ${({ theme, color }) => theme.ui.text[`${color}_50`]};
 	}
 
 	.counter-input {

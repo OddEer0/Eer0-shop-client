@@ -16,7 +16,8 @@ export const getCartDeviceQuerySelectorWithIdCount = (id: string) => {
 			if (!device) return null
 			return {
 				id: device.id,
-				count: device.count
+				count: device.count,
+				maxValue: device.device.count
 			}
 		}
 		return null
