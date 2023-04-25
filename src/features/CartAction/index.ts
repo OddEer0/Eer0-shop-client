@@ -1,1 +1,1 @@
-export { AddDeviceToCartIcon } from "./ui"
+export { AddDeviceToCartIcon, AddDeviceToCartButton } from "./ui"

@@ -2,13 +2,10 @@ import { AnimatePresence, motion } from "framer-motion"
 import { FC } from "react"
 import { BsCart } from "react-icons/bs"
 
-import { findDeviceQuerySelector, useCartQuery } from "@/entities/Cart"
-import { useProfileQuery, userIdQuerySelector } from "@/entities/User"
-
 import { toggleScaleAnimation } from "@/shared/animation"
 import { Spinner } from "@/shared/ui"
 
-import { useAddDeviceToCartMutate } from "../../api"
+import { useAddToCart } from "../../lib"
 import { CartDeviceCounter } from "../CartDeviceCounter"
 
 import { $AddDeviceToCart } from "./AddDeviceToCartIcon.styles"
@@ -18,15 +15,7 @@ interface AddDeviceToCartIcon {
 }
 
 export const AddDeviceToCartIcon: FC<AddDeviceToCartIcon> = ({ id }) => {
-	const { data: isToCart, isFetching } = useCartQuery(findDeviceQuerySelector(id))
-	const { mutate: addMutate, isLoading: isAddLoading } = useAddDeviceToCartMutate()
-	const { data: userId } = useProfileQuery(userIdQuerySelector)
-
-	const addDeviceToCartHandler = () => {
-		if (userId) {
-			addMutate({ deviceId: id, userId })
-		}
-	}
+	const { addDeviceToCartHandler, isAddLoading, isFetching, isToCart } = useAddToCart(id)
 
 	return (
 		<$AddDeviceToCart>
@@ -36,7 +25,7 @@ export const AddDeviceToCartIcon: FC<AddDeviceToCartIcon> = ({ id }) => {
 						<Spinner size="xsmall" />
 					</motion.div>
 				) : isToCart ? (
-					<CartDeviceCounter id={id} />
+					<CartDeviceCounter size="small" id={id} />
 				) : (
 					<motion.div
 						onClick={addDeviceToCartHandler}

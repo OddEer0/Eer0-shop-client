@@ -1,2 +1,7 @@
 export { useFilteredAndSortedDevicesQuery, useDeviceQuery } from "./hooks"
-export { devicePageCountQuerySelector, deviceQuerySelector } from "./selectors"
+export {
+	devicePageCountQuerySelector,
+	deviceQuerySelector,
+	devicePriceQuerySelector,
+	deviceImageQuerySelector
+} from "./selectors"

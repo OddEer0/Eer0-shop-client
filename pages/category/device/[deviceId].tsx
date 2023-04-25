@@ -4,12 +4,22 @@ import { ReactElement } from "react"
 
 import DeviceView from "@/views/Device"
 
-import { deviceService } from "@/shared/api"
+import { IDevice, deviceService } from "@/shared/api"
+import { Meta } from "@/shared/ui"
 
 import { MainLayout } from "@/widgets/MainLayout"
 
-const Device = () => {
-	return <DeviceView />
+interface DeviceProps {
+	meta: string
+}
+
+const Device = ({ meta }: DeviceProps) => {
+	return (
+		<>
+			<Meta title={`Eer0 Shop | ${meta}`} />
+			<DeviceView />
+		</>
+	)
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
@@ -19,8 +29,10 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 		deviceService.getOneDevice(params?.deviceId as string)
 	)
 
+	const device = queryClient.getQueryData<IDevice>(["device", params?.deviceId])
+
 	return {
-		props: { dehydratedState: dehydrate(queryClient) }
+		props: { dehydratedState: dehydrate(queryClient), meta: device?.name || "Not" }
 	}
 }
 

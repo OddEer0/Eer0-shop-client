@@ -2,15 +2,10 @@ import { AnimatePresence, motion } from "framer-motion"
 import { FC } from "react"
 import { BsHeart, BsHeartFill } from "react-icons/bs"
 
-import {
-	favoriteActionSelector,
-	isFavoriteDeviceSelector,
-	useFavoritePersistStore,
-	useFavoriteStore
-} from "@/entities/Favorite"
-
 import { toggleScaleAnimation } from "@/shared/animation"
 import { IDevice } from "@/shared/api"
+
+import { useToggleFavorite } from "../../lib"
 
 import { $ToggleFavoriteIcon } from "./ToggleFavoriteIcon.styles"
 
@@ -19,16 +14,7 @@ interface ToggleCartIconProps {
 }
 
 export const ToggleFavoriteIcon: FC<ToggleCartIconProps> = ({ device }) => {
-	const { addDevice, removeDevice } = useFavoriteStore(favoriteActionSelector)
-	const isHaveCart = useFavoritePersistStore(isFavoriteDeviceSelector(device.id), false)
-
-	const addFavoriteHandler = () => {
-		addDevice(device)
-	}
-
-	const removeFavoriteHandler = () => {
-		removeDevice(device.id)
-	}
+	const { isHaveCart, addFavoriteHandler, removeFavoriteHandler } = useToggleFavorite(device)
 
 	return (
 		<$ToggleFavoriteIcon>

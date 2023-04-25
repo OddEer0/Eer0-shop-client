@@ -7,7 +7,7 @@ import { DevicePagination } from "@/features/DevicePagination"
 import { DeviceSortSelect } from "@/features/DeviceSort"
 import { ToggleFavoriteIcon } from "@/features/FavoriteAction"
 
-import { Container, Meta } from "@/shared/ui"
+import { Container } from "@/shared/ui"
 
 import { FilterDeviceAside } from "@/widgets/DeviceFilterAside"
 
@@ -15,21 +15,18 @@ import { $DeviceView } from "./Devices.styles"
 
 const DevicesView: FC = () => {
 	return (
-		<>
-			<Meta title="Eer0 Shop | Home" />
-			<$DeviceView>
-				<Container className="container">
-					<FilterDeviceAside />
-					<div className="content">
-						<div className="content-head">
-							<DeviceSortSelect />
-						</div>
-						<DeviceCardsList CartComponent={AddDeviceToCartIcon} FavoriteComponent={ToggleFavoriteIcon} />
-						<DevicePagination />
+		<$DeviceView>
+			<Container className="container">
+				<FilterDeviceAside />
+				<div className="content">
+					<div className="content-head">
+						<DeviceSortSelect />
 					</div>
-				</Container>
-			</$DeviceView>
-		</>
+					<DeviceCardsList CartComponent={AddDeviceToCartIcon} FavoriteComponent={ToggleFavoriteIcon} />
+					<DevicePagination />
+				</div>
+			</Container>
+		</$DeviceView>
 	)
 }
 

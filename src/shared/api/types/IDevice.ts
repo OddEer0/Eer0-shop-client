@@ -7,10 +7,10 @@ export interface IDevice {
 	id: string
 	name: string
 	description: string
-	price: string
-	stock: Nullable<string>
-	stockPercent: Nullable<string>
-	count: string
+	price: number
+	stock: Nullable<number>
+	stockPercent: Nullable<number>
+	count: number
 	images: string[]
 	createdAt: Date
 	updatedAt: Date

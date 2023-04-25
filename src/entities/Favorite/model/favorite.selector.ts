@@ -7,5 +7,5 @@ export const favoriteActionSelector = ({ addDevice, removeDevice }: FavoriteStor
 
 export const favoriteDeviceSelector = (state: FavoriteStoreState) => state.devices
 
-export const isFavoriteDeviceSelector = (id: string) => (state: FavoriteStoreState) =>
+export const isFavoriteDeviceSelector = (id: Nullable<string>) => (state: FavoriteStoreState) =>
 	state.devices.some(device => device.id === id)

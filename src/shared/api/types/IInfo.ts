@@ -6,6 +6,7 @@ export interface IInfo {
 	name: string
 	title: string
 	value: string
+	filterId: string
 }
 
 export interface IInfo$Devices extends IInfo {
