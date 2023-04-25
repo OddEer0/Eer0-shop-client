@@ -8,6 +8,7 @@ export const $DeviceView = styled.div`
 
 		& > .aside {
 			height: 500px;
+			margin-top: 20px;
 		}
 
 		.add-device-to-cart-button {
@@ -21,6 +22,13 @@ export const $DeviceView = styled.div`
 			display: flex;
 			margin-left: 10px;
 			font-size: 26px;
+		}
+
+		.device-info-content {
+			flex: 1;
+			margin-top: 45px;
+			margin-right: 15px;
+			margin-left: 15px;
 		}
 
 		.favorite-button {
