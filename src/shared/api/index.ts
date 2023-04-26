@@ -29,7 +29,13 @@ export type {
 	IInfo$Devices,
 	IInfo$Filter,
 	IPostBrand,
-	IPutBrand
+	IPutBrand,
+	IComment,
+	IComment$Avatar,
+	IComment$Device,
+	IComment$DeviceUser,
+	IComment$User,
+	IPostComment
 } from "./types"
 
 export {
@@ -39,5 +45,7 @@ export {
 	filterService,
 	userService,
 	cartService,
-	authService
+	authService,
+	commentService,
+	infoService
 } from "./services"

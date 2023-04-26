@@ -3,8 +3,7 @@ import { FC } from "react"
 
 import { Container } from "@/shared/ui"
 
-import { FirstSection } from "./ui"
-import { SecondSection } from "./ui/SecondSection"
+import { FirstSection, SecondSection, ThirdSection } from "./ui"
 
 const DeviceView: FC = () => {
 	const { query } = useRouter()
@@ -17,6 +16,7 @@ const DeviceView: FC = () => {
 		<Container>
 			<FirstSection id={query.deviceId} />
 			<SecondSection id={query.deviceId} />
+			<ThirdSection id={query.deviceId} />
 		</Container>
 	)
 }
