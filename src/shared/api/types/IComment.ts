@@ -28,4 +28,4 @@ export interface IComment$DeviceUser extends IComment$Device {
 	user: IUser
 }
 
-export type IPostComment = Pick<IComment, "description" | "deviceId" | "userId">
+export type IPostComment = Pick<IComment, "description" | "deviceId">

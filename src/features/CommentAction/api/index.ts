@@ -1,1 +1,1 @@
-export { useLikeComment, useDislikeComment } from "./hooks"
+export { useLikeComment, useDislikeComment, useAddComment } from "./hooks"

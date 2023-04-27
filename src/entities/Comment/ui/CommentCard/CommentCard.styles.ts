@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const $CommentCard = styled.div`
 	padding: 16px;
 	border-radius: 15px;
+	width: 100%;
 
 	.comment-card {
 		&__header {

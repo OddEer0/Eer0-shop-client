@@ -1,1 +1,1 @@
-export { DislikeComment, LikeComment } from "./ui"
+export { DislikeComment, LikeComment, AddComment } from "./ui"
