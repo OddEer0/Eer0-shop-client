@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 
-import { infoService } from "@/shared/api/services"
+import { infoService } from "@/shared/api"
 import { convertMinutesToMs } from "@/shared/helpers"
 
 export const useDeviceInfosQuery = (id: string, limit?: number | "all") => {

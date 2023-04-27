@@ -21,3 +21,11 @@ export type { IFilter, IFilter$Category, IFilter$Infos } from "./IFilter"
 export type { IInfo, IInfo$Devices, IInfo$Filter } from "./IInfo"
 export type { IBrand, IBrand$All, IBrand$Categories, IBrand$Device, IPostBrand, IPutBrand } from "./IBrand"
 export type { ICart, IPostCartAdd, ISetCountCartDevice } from "./ICart"
+export type {
+	IComment,
+	IComment$Device,
+	IComment$DeviceUser,
+	IComment$User,
+	IComment$Avatar,
+	IPostComment
+} from "./IComment"
