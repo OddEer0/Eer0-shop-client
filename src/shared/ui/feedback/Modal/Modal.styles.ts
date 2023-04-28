@@ -22,7 +22,6 @@ export const $Modal = styled.div<StyledModal>`
 	}
 
 	.modal-main {
-		background: red;
 		border-radius: 10px;
 		position: relative;
 		padding: 16px;
