@@ -5,7 +5,7 @@ import { Controller } from "react-hook-form"
 import { yToDownAnimation } from "@/shared/animation"
 import { Backdrop, Button, DatePicker, Disabled, Spinner, TextArea, TextField } from "@/shared/ui"
 
-import { useChangeProfile } from "../../hooks"
+import { useChangeProfile } from "../../lib/hooks"
 
 import { $ChangeProfile } from "./ChangeProfile.styles"
 

@@ -1,6 +1,9 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+import { toast } from "react-toastify"
 
 import { userService } from "@/shared/api"
+
+import { AVATAR_CHANGE_SUCCESS } from "../constants"
 
 interface IChangeAvatarMutate {
 	id: string
@@ -14,6 +17,7 @@ export const useChangeUserAvatarMutate = () => {
 		mutationKey: ["profile"],
 		onSuccess(data) {
 			if (data) {
+				toast.success(AVATAR_CHANGE_SUCCESS)
 				queryClient.setQueryData(["profile"], data)
 			}
 		}

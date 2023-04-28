@@ -1,7 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/router"
+import { toast } from "react-toastify"
 
 import { IUser, IUserLoginBody, api } from "@/shared/api"
+
+import { LOGIN_SUCCESS } from "../constants"
 
 export const useUserLoginMutate = () => {
 	const router = useRouter()
@@ -19,6 +22,7 @@ export const useUserLoginMutate = () => {
 				queryClient.setQueryData(["profile"], data)
 				queryClient.refetchQueries({ queryKey: ["cart"] })
 				router.push("/")
+				toast.success(LOGIN_SUCCESS)
 			}
 		}
 	})

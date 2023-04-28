@@ -3,10 +3,13 @@ import { useForm } from "react-hook-form"
 import { useChangeProfileMutate, useProfileQuery } from "@/entities/User"
 
 import { IUser } from "@/shared/api"
-import { TextAreaProps, TextFieldProps } from "@/shared/ui"
+import { TextAreaProps, TextFieldProps, confirmSelector, useConfirmStore } from "@/shared/ui"
+
+import { CONFIRM_CHANGE } from "../constants"
 
 export const useChangeProfile = () => {
-	const { data } = useProfileQuery<IUser>()
+	const confirm = useConfirmStore(confirmSelector)
+	const { data } = useProfileQuery()
 	const {
 		register,
 		control,
@@ -18,8 +21,8 @@ export const useChangeProfile = () => {
 
 	const { mutate, isLoading } = useChangeProfileMutate()
 
-	const submitHandler = handleSubmit(async (data: IUser) => {
-		await mutate(data)
+	const submitHandler = handleSubmit((data: IUser) => {
+		confirm(CONFIRM_CHANGE, () => mutate(data))
 	})
 
 	const getFirstNameProps: TextFieldProps = {
