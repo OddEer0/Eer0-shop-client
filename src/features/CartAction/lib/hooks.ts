@@ -1,5 +1,9 @@
+import { toast } from "react-toastify"
+
 import { findDeviceQuerySelector, useCartQuery } from "@/entities/Cart"
 import { useProfileQuery, userIdQuerySelector } from "@/entities/User"
+
+import { UNAUTHORIZED } from "@/shared/constants"
 
 import { useAddDeviceToCartMutate } from "../api"
 
@@ -11,6 +15,8 @@ export const useAddToCart = (id: string) => {
 	const addDeviceToCartHandler = () => {
 		if (userId) {
 			addMutate({ deviceId: id, userId })
+		} else {
+			toast.error(UNAUTHORIZED)
 		}
 	}
 

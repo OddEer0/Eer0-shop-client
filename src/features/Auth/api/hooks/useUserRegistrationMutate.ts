@@ -1,7 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/router"
+import { toast } from "react-toastify"
 
 import { IUser, IUserRegistrationBody, api } from "@/shared/api"
+
+import { REGISTRATION_SUCCESS } from "../constants"
 
 export const useUserRegistrationMutate = () => {
 	const router = useRouter()
@@ -19,6 +22,7 @@ export const useUserRegistrationMutate = () => {
 				client.setQueryData(["profile"], data)
 				client.invalidateQueries({ queryKey: ["cart"] })
 				router.push("/")
+				toast.success(REGISTRATION_SUCCESS)
 			}
 		}
 	})

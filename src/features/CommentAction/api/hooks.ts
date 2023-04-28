@@ -1,6 +1,9 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+import { toast } from "react-toastify"
 
 import { IPostComment, commentService } from "@/shared/api"
+
+import { ADD_COMMENT_MESSAGE } from "./constants"
 
 export const useLikeComment = () => {
 	const queryClient = useQueryClient()
@@ -10,6 +13,7 @@ export const useLikeComment = () => {
 		mutationFn: (commentId: string) => commentService.likeComment(commentId),
 		onSuccess(data, variables) {
 			queryClient.setQueryData(["comment", variables], data)
+			toast.success(ADD_COMMENT_MESSAGE)
 		}
 	})
 }

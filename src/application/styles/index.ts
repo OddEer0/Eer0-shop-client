@@ -4,12 +4,14 @@ import { datePickerLibStyles } from "./datePickerLib"
 import { globalStyle } from "./global"
 import { libSliderStyle } from "./lib"
 import { resetStyle } from "./reset"
+import { StyledToastifyLib } from "./toastify.lib"
 
 export const GlobalStyle = createGlobalStyle`
 	${resetStyle}
 	${libSliderStyle}
 	${datePickerLibStyles}
 	${globalStyle}
+	${StyledToastifyLib}
 
 	html {
 		scrollbar-width: thin;

@@ -1,6 +1,6 @@
 import { IUser } from "@/shared/api"
 
-export const userAvatarQuerySelector = (user: IUser) => {
+export const userAvatarQuerySelector = (user: Nullable<IUser>) => {
 	if (!user) {
 		return null
 	}
@@ -11,7 +11,7 @@ export const userAvatarQuerySelector = (user: IUser) => {
 	}
 }
 
-export const userIdQuerySelector = (user: IUser) => {
+export const userIdQuerySelector = (user: Nullable<IUser>) => {
 	if (!user) {
 		return null
 	}
