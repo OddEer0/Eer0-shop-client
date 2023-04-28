@@ -1,11 +1,35 @@
 import { createStore } from "@/shared/utils"
 
 interface ConfirmStore {
-	isShow?: boolean
+	isShow: boolean
 	message: Nullable<string>
+	closeConfirm: () => void
+	cancel?: Nullable<() => void>
+	confirm?: Nullable<() => void>
+	setConfirm: (message: string, confirm?: Nullable<() => void>, close?: Nullable<() => void>) => void
 }
 
 export const useConfirmStore = createStore<ConfirmStore>(set => ({
 	isShow: false,
-	message: null
+	message: null,
+	closeConfirm() {
+		set(store => {
+			store.isShow = false
+			store.message = null
+			store.cancel = null
+			store.confirm = null
+		})
+	},
+	setConfirm(message, fn, f) {
+		set(store => {
+			store.cancel = f
+			store.confirm = fn
+			store.isShow = true
+			store.message = message
+		})
+	},
+	confirm: null,
+	cancel: null
 }))
+
+export const confirmSelector = (state: ConfirmStore) => state.setConfirm
