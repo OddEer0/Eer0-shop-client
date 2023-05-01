@@ -1,1 +1,1 @@
-export { ToggleThemeIcon } from "./ui"
+export * from "./ui"

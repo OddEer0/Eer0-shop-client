@@ -11,13 +11,14 @@ import { $ToggleFavoriteIcon } from "./ToggleFavoriteIcon.styles"
 
 interface ToggleCartIconProps {
 	device: IDevice
+	className?: string
 }
 
-export const ToggleFavoriteIcon: FC<ToggleCartIconProps> = ({ device }) => {
+export const ToggleFavoriteIcon: FC<ToggleCartIconProps> = ({ device, className = "" }) => {
 	const { isHaveCart, addFavoriteHandler, removeFavoriteHandler } = useToggleFavorite(device)
 
 	return (
-		<$ToggleFavoriteIcon>
+		<$ToggleFavoriteIcon className={className}>
 			<AnimatePresence mode="wait">
 				{isHaveCart ? (
 					<motion.div

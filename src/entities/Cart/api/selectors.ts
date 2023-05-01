@@ -1,4 +1,5 @@
 import { ICart } from "@/shared/api"
+import { differenceNumberToPercent } from "@/shared/helpers"
 
 export const findDeviceQuerySelector = (id: string) => {
 	return (state: Nullable<ICart[]>) => {
@@ -21,5 +22,24 @@ export const getCartDeviceQuerySelectorWithIdCount = (id: string) => {
 			}
 		}
 		return null
+	}
+}
+
+export const getTotalCartPrice = (state: Nullable<ICart[]>) => {
+	let price = 0
+	let total = 0
+
+	if (state) {
+		state.forEach(device => {
+			const stockOrPrice = device.device.stock ? device.device.stock : device.device.price
+			price += device.device.price * device.count
+			total += stockOrPrice * device.count
+		})
+	}
+
+	return {
+		price,
+		stock: total,
+		percentStock: differenceNumberToPercent(price, total).toFixed(1)
 	}
 }

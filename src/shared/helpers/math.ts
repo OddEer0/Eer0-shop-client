@@ -42,3 +42,7 @@ export const getCircularCoords = (
 	}
 	return { x, y }
 }
+
+export const differenceNumberToPercent = (num1: number, num2: number) => {
+	return ((num1 - num2) / num1) * 100
+}

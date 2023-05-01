@@ -1,9 +1,2 @@
-export {
-	useProfileQuery,
-	useUserProfileQuery,
-	userAvatarQuerySelector,
-	useChangeProfileMutate,
-	useChangeUserAvatarMutate,
-	userIdQuerySelector
-} from "./api"
-export { ProfileAvatar, Profile } from "./ui"
+export * from "./api"
+export * from "./ui"
