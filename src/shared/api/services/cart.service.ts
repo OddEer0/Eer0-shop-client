@@ -10,7 +10,7 @@ export const cartService = {
 	},
 
 	async getCartByToken() {
-		const { data } = await this.api.get<ICart>("cart/token/access")
+		const { data } = await this.api.get<ICart>(`cart/token/access`)
 
 		return data
 	},

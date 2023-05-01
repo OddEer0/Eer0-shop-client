@@ -3,6 +3,8 @@ import { toast } from "react-toastify"
 
 import { IPostCartAdd, ISetCountCartDevice, cartService } from "@/shared/api"
 
+import { SUCCESS_ADD_CART_DEVICE, SUCCESS_REMOVE_CART_DEVICE, SUCCESS_SET_COUNT_CART_DEVICE } from "../lib"
+
 export const useAddDeviceToCartMutate = () => {
 	const queryClient = useQueryClient()
 
@@ -11,7 +13,7 @@ export const useAddDeviceToCartMutate = () => {
 		mutationFn: (formData: IPostCartAdd) => cartService.addDeviceToCart(formData),
 		onSuccess(data) {
 			queryClient.setQueryData(["cart"], data)
-			toast.success("Добавлен в корзину")
+			toast.success(SUCCESS_ADD_CART_DEVICE)
 		}
 	})
 }
@@ -24,7 +26,7 @@ export const useRemoveDeviceFromCartMutate = () => {
 		mutationFn: (cartDeviceId: string) => cartService.removeDeviceFromCart(cartDeviceId),
 		onSuccess(data) {
 			queryClient.setQueryData(["cart"], data)
-			toast.success("Удалено из корзины")
+			toast.success(SUCCESS_REMOVE_CART_DEVICE)
 		}
 	})
 }
@@ -37,7 +39,7 @@ export const useSetCountCartDeviceMutate = () => {
 		mutationFn: (formData: ISetCountCartDevice) => cartService.setCountCartDevice(formData),
 		onSuccess(data) {
 			queryClient.setQueryData(["cart"], data)
-			toast.success("Количество изменено")
+			toast.success(SUCCESS_SET_COUNT_CART_DEVICE)
 		}
 	})
 }
