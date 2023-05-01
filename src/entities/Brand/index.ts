@@ -1,1 +1,1 @@
-export { useBrandQuery } from "./api"
+export * from "./api"

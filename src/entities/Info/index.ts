@@ -1,1 +1,1 @@
-export { DeviceInfo, DeviceFullInfo } from "./ui"
+export * from "./ui"

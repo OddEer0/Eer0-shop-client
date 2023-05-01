@@ -1,8 +1,2 @@
-export { FavoriteBadge } from "./ui"
-export {
-	favoriteActionSelector,
-	favoriteDeviceSelector,
-	useFavoriteStore,
-	isFavoriteDeviceSelector,
-	useFavoritePersistStore
-} from "./model"
+export * from "./ui"
+export * from "./model"

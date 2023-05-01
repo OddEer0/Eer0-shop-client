@@ -1,1 +1,1 @@
-export { ChangeProfile, ChangeUserAvatar } from "./ui"
+export * from "./ui"
