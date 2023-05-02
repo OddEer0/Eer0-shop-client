@@ -25,14 +25,8 @@ api.interceptors.response.use(
 			try {
 				const user = await axios.get<IUser>(`${API_URL}/auth/refresh`, { withCredentials: true })
 				queryClient.setQueriesData(["profile"], user.data)
-				if (typeof window !== "undefined") {
-					localStorage.setItem("isAuth", "true")
-				}
 				return api.request(originalRequest)
 			} catch (e) {
-				if (typeof window !== "undefined") {
-					localStorage.removeItem("isAuth")
-				}
 				queryClient.setQueryData(["profile"], null)
 				queryClient.setQueryData(["cart"], null)
 			}
