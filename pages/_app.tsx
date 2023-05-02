@@ -5,6 +5,7 @@
 /* eslint-disable no-restricted-imports */
 import { Hydrate, QueryClient, QueryClientProvider, dehydrate } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
+import { getCookies } from "cookies-next"
 import { NextPage } from "next"
 import type { AppContext, AppProps } from "next/app"
 import { ReactElement, ReactNode, useState } from "react"
@@ -46,14 +47,21 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 }
 
 MyApp.getInitialProps = async ({ ctx }: AppContext) => {
-	const { req } = ctx
+	const { req, res } = ctx
 	const queryClient = new QueryClient()
 
 	if (!!req) {
-		const response = await authService.refreshToken(ctx)
+		const cookies = getCookies({ req, res })
 
-		queryClient.setQueryData(["profile"], response ? response.profile : null)
-		queryClient.setQueryData(["cart"], response ? response.cart : null)
+		if (cookies.refreshToken) {
+			const response = await authService.refreshToken(ctx)
+
+			queryClient.setQueryData(["profile"], response ? response.profile : null)
+			queryClient.setQueryData(["cart"], response ? response.cart : null)
+		} else {
+			queryClient.setQueryData(["profile"], null)
+			queryClient.setQueryData(["cart"], null)
+		}
 	}
 
 	return {
