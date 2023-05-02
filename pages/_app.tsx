@@ -5,7 +5,7 @@
 /* eslint-disable no-restricted-imports */
 import { Hydrate, QueryClient, QueryClientProvider, dehydrate } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import { getCookies } from "cookies-next"
+import { getCookies, setCookie } from "cookies-next"
 import { NextPage } from "next"
 import type { AppContext, AppProps } from "next/app"
 import { ReactElement, ReactNode, useState } from "react"
@@ -16,7 +16,10 @@ import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 
 import { AppProvider } from "@/app/providers"
+import { StoreProvider, initializeStore } from "@/app/store"
 import { GlobalStyle } from "@/app/styles"
+
+import { ThemeTypes } from "@/entities/Theme/model/theme.types"
 
 import { authService } from "@/shared/api"
 import { queryClient } from "@/shared/config"
@@ -36,11 +39,15 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 	return (
 		<QueryClientProvider client={queryClientState}>
 			<Hydrate state={pageProps.dehydratedState}>
-				<AppProvider>
-					<GlobalStyle />
-					{getLayout(<Component {...pageProps} />)}
-					<ReactQueryDevtools initialIsOpen={false} />
-				</AppProvider>
+				<Hydrate state={pageProps.dehydratedInitState}>
+					<StoreProvider {...pageProps.initZustandState}>
+						<AppProvider>
+							<GlobalStyle />
+							{getLayout(<Component {...pageProps} />)}
+							<ReactQueryDevtools initialIsOpen={false} />
+						</AppProvider>
+					</StoreProvider>
+				</Hydrate>
 			</Hydrate>
 		</QueryClientProvider>
 	)
@@ -49,10 +56,9 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 MyApp.getInitialProps = async ({ ctx }: AppContext) => {
 	const { req, res } = ctx
 	const queryClient = new QueryClient()
+	const cookies = getCookies({ req, res })
 
 	if (!!req) {
-		const cookies = getCookies({ req, res })
-
 		if (cookies.refreshToken) {
 			const response = await authService.refreshToken(ctx)
 
@@ -64,9 +70,18 @@ MyApp.getInitialProps = async ({ ctx }: AppContext) => {
 		}
 	}
 
+	let theme: ThemeTypes = "dark"
+	if (cookies.theme === "light") {
+		theme = "light"
+	} else {
+		setCookie("theme", "dark")
+	}
+	const store = initializeStore({ theme })
+
 	return {
 		pageProps: {
-			dehydratedState: dehydrate(queryClient)
+			dehydratedInitState: dehydrate(queryClient),
+			initZustandState: JSON.parse(JSON.stringify(store.getState()))
 		}
 	}
 }

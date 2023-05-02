@@ -5,12 +5,15 @@ import { RenderOptions, render } from "@testing-library/react"
 import React, { ReactElement } from "react"
 
 import { AppProvider } from "@/app/providers"
+import { StoreProvider } from "@/app/store"
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<>
 			<div id="myportal"></div>
-			<AppProvider>{children}</AppProvider>
+			<StoreProvider>
+				<AppProvider>{children}</AppProvider>
+			</StoreProvider>
 		</>
 	)
 }

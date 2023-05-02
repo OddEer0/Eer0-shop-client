@@ -4,7 +4,10 @@ import { BiMoon } from "react-icons/bi"
 import { ImSun } from "react-icons/im"
 import styled from "styled-components"
 
-import { ThemeEnum, useTheme } from "@/entities/Theme"
+// eslint-disable-next-line no-restricted-imports
+import { useAppStore } from "@/app/store"
+
+import { ThemeEnum, themeSelector } from "@/entities/Theme"
 
 import { toggleScaleAnimation } from "@/shared/animation"
 
@@ -16,7 +19,7 @@ const Icon = styled.div`
 `
 
 export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
-	const { theme, toggleTheme } = useTheme()
+	const { theme, toggleHandle } = useAppStore(themeSelector)
 
 	return (
 		<motion.div {...props}>
@@ -24,7 +27,7 @@ export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
 				{theme === ThemeEnum.dark ? (
 					<motion.div
 						key="moon"
-						onClick={toggleTheme}
+						onClick={() => toggleHandle()}
 						variants={toggleScaleAnimation}
 						animate="show"
 						exit="hidden"
@@ -35,7 +38,7 @@ export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
 				) : (
 					<motion.div
 						key="sun"
-						onClick={toggleTheme}
+						onClick={() => toggleHandle()}
 						variants={toggleScaleAnimation}
 						animate="show"
 						exit="hidden"

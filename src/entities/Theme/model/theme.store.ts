@@ -1,15 +1,21 @@
-import { createPersistStore } from "@/shared/utils"
+import Cookies from "js-cookie"
+import { StateCreator } from "zustand"
 
 import { ThemeStateTypes, ThemeTypes } from "./theme.types"
 
-export const useThemeStore = createPersistStore<ThemeStateTypes>(
-	set => ({
-		theme: "dark",
-		setTheme(theme: ThemeTypes) {
-			set(state => {
-				state.theme = theme
-			})
+export const themeSlice: StateCreator<ThemeStateTypes> = set => ({
+	theme: "dark",
+	setTheme(theme: ThemeTypes) {
+		set({ theme })
+	},
+	toggleTheme() {
+		const themeCookie = Cookies.get("theme")
+		if (themeCookie === "light") {
+			Cookies.set("theme", "dark")
+			set({ theme: "dark" })
+		} else {
+			Cookies.set("theme", "light")
+			set({ theme: "light" })
 		}
-	}),
-	{ name: "themeStore", version: 1 }
-)
+	}
+})
