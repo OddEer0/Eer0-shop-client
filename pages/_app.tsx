@@ -53,13 +53,19 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 	)
 }
 
-MyApp.getInitialProps = async ({ ctx }: AppContext) => {
+MyApp.getInitialProps = async ({ ctx, Component }: AppContext) => {
 	const { req, res } = ctx
 	const queryClient = new QueryClient()
 	const cookies = getCookies({ req, res })
 
+	if (Component.getInitialProps) {
+		return {
+			pageProps: await Component.getInitialProps(ctx)
+		}
+	}
+
 	if (!!req) {
-		if (cookies.refreshToken) {
+		if (cookies && cookies.refreshToken) {
 			const response = await authService.refreshToken(ctx)
 
 			queryClient.setQueryData(["profile"], response ? response.profile : null)
