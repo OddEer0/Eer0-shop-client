@@ -1,12 +1,10 @@
 import { FC, PropsWithChildren } from "react"
 import { ThemeProvider } from "styled-components"
 
-import { darkTheme, lightTheme, themeSelector } from "@/entities/Theme"
-
-import { useAppStore } from "../store"
+import { darkTheme, lightTheme, useTheme } from "@/entities/Theme"
 
 export const WithThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-	const { theme } = useAppStore(themeSelector)
+	const { theme } = useTheme()
 
 	return <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>{children}</ThemeProvider>
 }

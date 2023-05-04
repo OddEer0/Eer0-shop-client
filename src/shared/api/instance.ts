@@ -2,7 +2,7 @@
 import axios from "axios"
 import Cookies from "js-cookie"
 
-import { queryClient } from "../config"
+import { queryClient } from "../configs"
 
 import { IUser } from "./types"
 
@@ -28,7 +28,7 @@ api.interceptors.response.use(
 			} catch (e) {
 				queryClient.setQueryData(["profile"], null)
 				queryClient.setQueryData(["cart"], null)
-				Cookies.set("isAuth", "true")
+				Cookies.remove("isAuth")
 			}
 		}
 		throw error

@@ -1,10 +1,18 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import Cookies from "js-cookie"
 
 import { ICart, IPostCartAdd, cartService } from "@/shared/api"
 
-export const useCartQuery = <T = ICart[]>(select?: (data: ICart[]) => T) => {
+export const useCartQuery = <T = ICart[]>(select?: (data: Nullable<ICart[]>) => T) => {
 	return useQuery(["cart"], {
+		queryFn: () => {
+			if (typeof window !== "undefined" && Cookies.get("isAuth")) {
+				return cartService.getCartByToken()
+			}
+			return null
+		},
 		select,
+		retry: false,
 		cacheTime: Infinity,
 		staleTime: Infinity
 	})

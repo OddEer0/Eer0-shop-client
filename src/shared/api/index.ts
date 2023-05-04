@@ -1,4 +1,4 @@
-export { api, fakeApi } from "./instance"
+export { api } from "./instance"
 
 export type {
 	IUser,

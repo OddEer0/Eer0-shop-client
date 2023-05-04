@@ -5,8 +5,10 @@ import { ThemeStateTypes, ThemeTypes } from "./theme.types"
 
 export const themeSlice: StateCreator<ThemeStateTypes> = set => ({
 	theme: "dark",
-	setTheme(theme: ThemeTypes) {
-		set({ theme })
+	isInit: false,
+	setTheme(themeValue: ThemeTypes) {
+		Cookies.set("theme", themeValue)
+		set({ theme: themeValue })
 	},
 	toggleTheme() {
 		const themeCookie = Cookies.get("theme")

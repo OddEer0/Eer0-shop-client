@@ -1,6 +1,8 @@
 export const themeSelector = (state: AppState) => {
 	return {
 		theme: state.theme,
-		toggleHandle: state.toggleTheme
+		isInit: state.isInit,
+		toggle: state.toggleTheme,
+		setTheme: state.setTheme
 	}
 }
