@@ -7,7 +7,6 @@ import "simplebar-react/dist/simplebar.min.css"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 
-// eslint-disable-next-line no-restricted-imports
 import { AppProvider } from "@/app/providers"
 
 type NextPageWithLayout = NextPage & {
