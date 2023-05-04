@@ -1,6 +1,7 @@
 import { QueryClient } from "@tanstack/react-query"
+import Cookies from "js-cookie"
 
-import { ICart, cartService, userService } from "../api"
+import { ICart, authService, cartService } from "../api"
 
 export const queryClient = new QueryClient({
 	defaultOptions: {
@@ -12,8 +13,8 @@ export const queryClient = new QueryClient({
 
 queryClient.setQueryDefaults(["profile"], {
 	queryFn: () => {
-		if (typeof window !== "undefined" && localStorage.getItem("isAuth")) {
-			return userService.getProfile()
+		if (typeof window !== "undefined" && Cookies.get("isAuth")) {
+			return authService.auth()
 		}
 		return null
 	},
@@ -24,7 +25,7 @@ queryClient.setQueryDefaults(["profile"], {
 
 queryClient.setQueryDefaults(["cart"], {
 	queryFn(): Nullable<Promise<ICart>> {
-		if (typeof window !== "undefined" && localStorage.getItem("isAuth")) {
+		if (Cookies.get("isAuth")) {
 			return cartService.getCartByToken()
 		}
 		return null

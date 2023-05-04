@@ -3,25 +3,23 @@
 /* eslint-disable import/no-named-as-default-member */
 
 /* eslint-disable no-restricted-imports */
-import { Hydrate, QueryClient, QueryClientProvider, dehydrate } from "@tanstack/react-query"
+import { Hydrate, QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import { getCookies, setCookie } from "cookies-next"
 import { NextPage } from "next"
-import type { AppContext, AppProps } from "next/app"
+import type { AppProps } from "next/app"
 import { ReactElement, ReactNode, useState } from "react"
 import "react-datepicker/dist/react-datepicker.css"
+import { Provider } from "react-redux"
 import "react-toastify/dist/ReactToastify.css"
 import "simplebar-react/dist/simplebar.min.css"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 
 import { AppProvider } from "@/app/providers"
-import { StoreProvider, initializeStore } from "@/app/store"
+import { StoreProvider } from "@/app/store"
+import { wrapper } from "@/app/store/store"
 import { GlobalStyle } from "@/app/styles"
 
-import { ThemeTypes } from "@/entities/Theme/model/theme.types"
-
-import { authService } from "@/shared/api"
 import { queryClient } from "@/shared/config"
 
 type NextPageWithLayout = NextPage & {
@@ -32,64 +30,28 @@ type AppPropsWithLayout = AppProps & {
 	Component: NextPageWithLayout
 }
 
-const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+const MyApp = ({ Component, ...rest }: AppPropsWithLayout) => {
 	const getLayout = Component.getLayout ?? (page => page)
 	const [queryClientState] = useState(() => queryClient)
+	const { store, props } = wrapper.useWrappedStore(rest)
 
 	return (
 		<QueryClientProvider client={queryClientState}>
-			<Hydrate state={pageProps.dehydratedState}>
-				<Hydrate state={pageProps.dehydratedInitState}>
-					<StoreProvider {...pageProps.initZustandState}>
-						<AppProvider>
-							<GlobalStyle />
-							{getLayout(<Component {...pageProps} />)}
-							<ReactQueryDevtools initialIsOpen={false} />
-						</AppProvider>
+			<Hydrate state={rest.pageProps.dehydratedState}>
+				<Hydrate state={rest.pageProps.dehydratedInitState}>
+					<StoreProvider {...rest.pageProps.initZustandState}>
+						<Provider store={store}>
+							<AppProvider>
+								<GlobalStyle />
+								{getLayout(<Component {...props.pageProps} />)}
+								<ReactQueryDevtools initialIsOpen={false} />
+							</AppProvider>
+						</Provider>
 					</StoreProvider>
 				</Hydrate>
 			</Hydrate>
 		</QueryClientProvider>
 	)
-}
-
-MyApp.getInitialProps = async ({ ctx, Component }: AppContext) => {
-	const { req, res } = ctx
-	const queryClient = new QueryClient()
-	const cookies = getCookies({ req, res })
-
-	if (Component.getInitialProps) {
-		return {
-			pageProps: await Component.getInitialProps(ctx)
-		}
-	}
-
-	if (!!req) {
-		if (cookies && cookies.refreshToken) {
-			const response = await authService.refreshToken(ctx)
-
-			queryClient.setQueryData(["profile"], response ? response.profile : null)
-			queryClient.setQueryData(["cart"], response ? response.cart : null)
-		} else {
-			queryClient.setQueryData(["profile"], null)
-			queryClient.setQueryData(["cart"], null)
-		}
-	}
-
-	let theme: ThemeTypes = "dark"
-	if (cookies.theme === "light") {
-		theme = "light"
-	} else {
-		setCookie("theme", "dark")
-	}
-	const store = initializeStore({ theme })
-
-	return {
-		pageProps: {
-			dehydratedInitState: dehydrate(queryClient),
-			initZustandState: JSON.parse(JSON.stringify(store.getState()))
-		}
-	}
 }
 
 export default MyApp

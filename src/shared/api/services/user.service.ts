@@ -9,11 +9,6 @@ export class UserService {
 		this.api = api
 	}
 
-	async getProfile() {
-		const { data } = await this.api.get<IUser>("auth/refresh")
-		return data
-	}
-
 	async getUserProfile(id: string) {
 		const { data } = await this.api.get<IUser>(`users/${id}`)
 		return data

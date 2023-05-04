@@ -1,9 +1,11 @@
+/* eslint-disable import/no-named-as-default-member */
 import { AxiosInstance } from "axios"
-import { setCookie } from "cookies-next"
-import { NextPageContext } from "next"
+import { getCookies, setCookie } from "cookies-next"
+import { GetServerSidePropsContext } from "next"
+import cookie from "set-cookie-parser"
 
 import { api } from "../instance"
-import { IUser } from "../types"
+import { IUser, RoleEnum } from "../types"
 
 import { cartService } from "./cart.service"
 
@@ -17,33 +19,55 @@ class AuthService {
 		await this.api.post("auth/logout")
 	}
 
-	async refreshToken(ctx?: NextPageContext) {
-		if (!!ctx) {
-			const { req, res } = ctx
+	async refresh() {
+		return await this.api.get<IUser>("auth/refresh")
+	}
 
+	async auth() {
+		const { data } = await this.api.get<IUser>("auth/refresh")
+		return data
+	}
+
+	private checkRole(roles: RoleEnum[], userRole: string[]) {
+		return roles.some(role => userRole.includes(role))
+	}
+
+	async authGuard(ctx: GetServerSidePropsContext, roles?: RoleEnum[]) {
+		const { req, res } = ctx
+
+		const cookies = getCookies({ req, res })
+
+		if (cookies.refreshToken) {
 			try {
-				api.defaults.headers.cookie = req?.headers.cookie as string
+				api.defaults.headers.cookie = req?.headers.cookie || null
 
-				const response = await this.api.get<IUser>("auth/refresh")
-				const cartRes = await cartService.getCartByToken()
+				const userResponse = await this.refresh()
 
-				if (response.headers["set-cookie"]) {
-					const cookies = response.headers["set-cookie"]
+				if (roles && !this.checkRole(roles, userResponse.data.roles)) {
+					return null
+				}
 
-					cookies.forEach((cookieStr: string) => {
-						const [name, value] = cookieStr.split(";")[0].split("=")
-						const maxAge = cookieStr.split(";")[1].split("=")[1]
+				const cartResponse = await cartService.getCartByToken()
+				if (userResponse.headers["set-cookie"]) {
+					const resCookie = cookie.parse(userResponse.headers["set-cookie"])
 
+					resCookie.forEach(cookie => {
+						const { name, value, maxAge } = cookie
 						if (name === "refreshToken" || name === "accessToken") {
-							setCookie(name, value, { res, req, httpOnly: true, maxAge: Number(maxAge) })
+							setCookie(name, value, { req, res, httpOnly: true, maxAge })
 						}
 					})
 				}
+
 				return {
-					profile: response.data,
-					cart: cartRes
+					user: userResponse.data,
+					cart: cartResponse
 				}
-			} catch (error: unknown) {}
+			} catch (error) {
+				return null
+			}
+		} else {
+			return null
 		}
 	}
 }

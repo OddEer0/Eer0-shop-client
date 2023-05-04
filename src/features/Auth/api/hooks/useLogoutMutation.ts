@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+import Cookies from "js-cookie"
 import { toast } from "react-toastify"
 
 import { authService } from "@/shared/api"
@@ -17,6 +18,7 @@ export const useLogoutMutate = (callback?: () => void) => {
 			}
 			queryClient.setQueryData(["profile"], null)
 			queryClient.setQueryData(["cart"], null)
+			Cookies.remove("isAuth")
 			toast.success(LOGOUT_SUCCESS)
 		}
 	})

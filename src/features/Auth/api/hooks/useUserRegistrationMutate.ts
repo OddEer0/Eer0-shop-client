@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+import Cookies from "js-cookie"
 import { useRouter } from "next/router"
 import { toast } from "react-toastify"
 
@@ -22,6 +23,7 @@ export const useUserRegistrationMutate = () => {
 				client.invalidateQueries({ queryKey: ["cart"] })
 				router.push("/")
 				toast.success(REGISTRATION_SUCCESS)
+				Cookies.set("isAuth", "true")
 			}
 		}
 	})

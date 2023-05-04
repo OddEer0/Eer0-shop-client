@@ -22,6 +22,11 @@ export const $Profile = styled.div`
 			justify-content: space-between;
 			align-items: center;
 			flex-wrap: wrap;
+			margin-top: 20px;
+
+			p {
+				margin-top: 0;
+			}
 
 			.list-value {
 				margin-left: 15px;

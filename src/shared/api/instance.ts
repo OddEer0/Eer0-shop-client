@@ -1,5 +1,6 @@
 // /* eslint-disable no-console */
 import axios from "axios"
+import Cookies from "js-cookie"
 
 import { queryClient } from "../config"
 
@@ -29,6 +30,7 @@ api.interceptors.response.use(
 			} catch (e) {
 				queryClient.setQueryData(["profile"], null)
 				queryClient.setQueryData(["cart"], null)
+				Cookies.set("isAuth", "true")
 			}
 		}
 		throw error

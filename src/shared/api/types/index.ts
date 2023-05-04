@@ -29,3 +29,5 @@ export type {
 	IComment$Avatar,
 	IPostComment
 } from "./IComment"
+
+export { RoleEnum } from "./RolesEnum"
