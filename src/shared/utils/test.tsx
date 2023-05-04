@@ -4,7 +4,7 @@
 import { RenderOptions, render } from "@testing-library/react"
 import React, { ReactElement } from "react"
 
-import { AppProvider } from "@/app/providers"
+import { ComposeProvider } from "@/app/providers/Compose"
 import { StoreProvider } from "@/app/store"
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
@@ -12,7 +12,7 @@ const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
 		<>
 			<div id="myportal"></div>
 			<StoreProvider>
-				<AppProvider>{children}</AppProvider>
+				<ComposeProvider>{children}</ComposeProvider>
 			</StoreProvider>
 		</>
 	)

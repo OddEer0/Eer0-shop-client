@@ -8,8 +8,6 @@ import { IUser } from "./types"
 
 const API_URL = process.env.API_URL
 
-const FAKE_API_URL = process.env.FAKE_API_URL
-
 export const api = axios.create({
 	withCredentials: true,
 	baseURL: API_URL
@@ -36,7 +34,3 @@ api.interceptors.response.use(
 		throw error
 	}
 )
-
-export const fakeApi = axios.create({
-	baseURL: FAKE_API_URL
-})

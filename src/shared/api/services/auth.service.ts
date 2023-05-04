@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default-member */
 import { AxiosInstance } from "axios"
-import { getCookies, setCookie } from "cookies-next"
+import { getCookies, removeCookies, setCookie } from "cookies-next"
 import { GetServerSidePropsContext } from "next"
 import cookie from "set-cookie-parser"
 
@@ -64,6 +64,7 @@ class AuthService {
 					cart: cartResponse
 				}
 			} catch (error) {
+				removeCookies("isAuth")
 				return null
 			}
 		} else {
