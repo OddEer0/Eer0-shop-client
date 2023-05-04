@@ -13,7 +13,7 @@ export const ProfileAvatar: FC = () => {
 	const { data: user, isLoading } = useProfileQuery(userAvatarQuerySelector)
 
 	return (
-		<$Wrapper transition={{ delay: 0.2 }} as={motion.div} initial={{ y: -100 }} animate={{ y: 0 }}>
+		<$Wrapper transition={{ delay: 0.2 }} as={motion.div} initial={{ y: 0 }} animate={{ y: 0 }}>
 			{isLoading ? (
 				<Skeleton variant="circle" width="40px" height="40px" />
 			) : user ? (

@@ -1,13 +1,12 @@
 // /* eslint-disable no-console */
 import axios from "axios"
+import Cookies from "js-cookie"
 
-import { queryClient } from "../config"
+import { queryClient } from "../configs"
 
 import { IUser } from "./types"
 
 const API_URL = process.env.API_URL
-
-const FAKE_API_URL = process.env.FAKE_API_URL
 
 export const api = axios.create({
 	withCredentials: true,
@@ -25,22 +24,13 @@ api.interceptors.response.use(
 			try {
 				const user = await axios.get<IUser>(`${API_URL}/auth/refresh`, { withCredentials: true })
 				queryClient.setQueriesData(["profile"], user.data)
-				if (typeof window !== "undefined") {
-					localStorage.setItem("isAuth", "true")
-				}
 				return api.request(originalRequest)
 			} catch (e) {
-				if (typeof window !== "undefined") {
-					localStorage.removeItem("isAuth")
-				}
 				queryClient.setQueryData(["profile"], null)
 				queryClient.setQueryData(["cart"], null)
+				Cookies.remove("isAuth")
 			}
 		}
 		throw error
 	}
 )
-
-export const fakeApi = axios.create({
-	baseURL: FAKE_API_URL
-})

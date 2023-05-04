@@ -1,5 +1,5 @@
 import { QueryClient, dehydrate } from "@tanstack/react-query"
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 
 import CategoryView from "@/views/Category"
@@ -15,7 +15,7 @@ Category.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default Category
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const queryClient = new QueryClient()
 
 	await queryClient.prefetchQuery(["category"], () => categoryService.getCategory())
@@ -23,7 +23,6 @@ export const getStaticProps: GetStaticProps = async () => {
 	return {
 		props: {
 			dehydratedState: dehydrate(queryClient)
-		},
-		revalidate: 60 * 60
+		}
 	}
 }

@@ -16,7 +16,7 @@ const Icon = styled.div`
 `
 
 export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
-	const { theme, toggleTheme } = useTheme()
+	const { theme, toggle } = useTheme()
 
 	return (
 		<motion.div {...props}>
@@ -24,7 +24,7 @@ export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
 				{theme === ThemeEnum.dark ? (
 					<motion.div
 						key="moon"
-						onClick={toggleTheme}
+						onClick={toggle}
 						variants={toggleScaleAnimation}
 						animate="show"
 						exit="hidden"
@@ -35,7 +35,7 @@ export const ToggleThemeIcon: FC<HTMLMotionProps<"div">> = ({ ...props }) => {
 				) : (
 					<motion.div
 						key="sun"
-						onClick={toggleTheme}
+						onClick={toggle}
 						variants={toggleScaleAnimation}
 						animate="show"
 						exit="hidden"

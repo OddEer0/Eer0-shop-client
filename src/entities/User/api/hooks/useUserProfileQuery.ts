@@ -4,7 +4,7 @@ import { IUser, userService } from "@/shared/api"
 import { convertMinutesToMs } from "@/shared/helpers"
 import { useSsr } from "@/shared/hooks"
 
-export const useUserProfileQuery = <T extends IUser>(id: string, select?: (data: IUser) => T) => {
+export const useUserProfileQuery = <T extends IUser>(id: string, select?: (data: Nullable<IUser>) => T) => {
 	const { isBrowser } = useSsr()
 
 	return useQuery(
@@ -13,7 +13,7 @@ export const useUserProfileQuery = <T extends IUser>(id: string, select?: (data:
 			if (id) {
 				return userService.getUserProfile(id)
 			}
-			return userService.getProfile()
+			return null
 		},
 		{
 			select,

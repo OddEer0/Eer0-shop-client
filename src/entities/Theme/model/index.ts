@@ -1,2 +1,3 @@
 export { themeSelector } from "./theme.selector"
-export { useThemeStore } from "./theme.store"
+export { themeSlice } from "./theme.store"
+export type { ThemeStateTypes } from "./theme.types"

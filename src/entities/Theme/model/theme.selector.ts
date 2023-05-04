@@ -1,3 +1,8 @@
-import { ThemeStateTypes } from "./theme.types"
-
-export const themeSelector = (state: ThemeStateTypes) => state.theme
+export const themeSelector = (state: AppState) => {
+	return {
+		theme: state.theme,
+		isInit: state.isInit,
+		toggle: state.toggleTheme,
+		setTheme: state.setTheme
+	}
+}

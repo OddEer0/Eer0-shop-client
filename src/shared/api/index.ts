@@ -1,4 +1,4 @@
-export { api, fakeApi } from "./instance"
+export { api } from "./instance"
 
 export type {
 	IUser,
@@ -38,14 +38,6 @@ export type {
 	IPostComment
 } from "./types"
 
-export {
-	deviceService,
-	categoryService,
-	brandService,
-	filterService,
-	userService,
-	cartService,
-	authService,
-	commentService,
-	infoService
-} from "./services"
+export { RoleEnum } from "./types"
+
+export * from "./services"

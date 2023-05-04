@@ -20,10 +20,10 @@ export const useConfirmStore = createStore<ConfirmStore>(set => ({
 			store.confirm = null
 		})
 	},
-	setConfirm(message, fn, f) {
+	setConfirm(message, confirmFn, cancelFn) {
 		set(store => {
-			store.cancel = f
-			store.confirm = fn
+			store.cancel = cancelFn
+			store.confirm = confirmFn
 			store.isShow = true
 			store.message = message
 		})
