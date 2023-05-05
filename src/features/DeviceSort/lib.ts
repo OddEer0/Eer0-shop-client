@@ -8,8 +8,6 @@ export interface ISortSelectOption {
 }
 
 export const SORT_SELECT_OPTIONS: ISortSelectOption[] = [
-	{ value: "popular", label: "Сначала популярные", sortBy: "rate", order: "desc" },
-	{ value: "unpopular", label: "Сначала не популярные", sortBy: "rate", order: "asc" },
 	{ value: "new", label: "Сначала новые", sortBy: "createdAt", order: "desc" },
 	{ value: "old", label: "Сначала старые", sortBy: "createdAt", order: "asc" },
 	{ value: "cheap", label: "Сначала дешевые", sortBy: "price", order: "asc" },

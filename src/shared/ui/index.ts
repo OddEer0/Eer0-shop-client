@@ -75,6 +75,6 @@ export type {
 	DisabledProps
 } from "./feedback"
 
-export { Portal, Meta, Compose, useConfirmStore, confirmSelector } from "./utility"
+export { Portal, Meta, Compose, useConfirmStore, confirmSelector, useConfirm } from "./utility"
 
 export { Circle, Tag } from "./styledComponent"

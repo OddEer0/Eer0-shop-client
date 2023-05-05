@@ -41,3 +41,8 @@ export interface IDeviceBuy {
 	count: number
 	device: IDevice
 }
+
+export interface IBuyDevicePost {
+	count: number
+	deviceId: string
+}
