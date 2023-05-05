@@ -30,6 +30,7 @@ export const $Aside = styled.aside`
 				text-decoration: line-through;
 				background-color: transparent;
 				opacity: 0.8;
+				color: ${({ theme }) => theme.base.text.primary_50};
 				font-size: 20px;
 			}
 		}

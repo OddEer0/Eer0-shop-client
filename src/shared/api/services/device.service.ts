@@ -2,7 +2,7 @@ import { AxiosInstance } from "axios"
 import { ParsedUrlQuery } from "querystring"
 
 import { api } from "../instance"
-import { IDevice$Infos, IDeviceAxiosResponse } from "../types"
+import { IBuyDevicePost, IDevice$Infos, IDeviceAxiosResponse } from "../types"
 
 export class DeviceService {
 	readonly api: AxiosInstance
@@ -19,6 +19,11 @@ export class DeviceService {
 
 	async getOneDevice(id: string) {
 		const { data } = await this.api.get<IDevice$Infos>(`device/${id}`)
+		return data
+	}
+
+	async buyDevices(devices: IBuyDevicePost[]) {
+		const { data } = await this.api.post("device/buy-many", devices)
 		return data
 	}
 }

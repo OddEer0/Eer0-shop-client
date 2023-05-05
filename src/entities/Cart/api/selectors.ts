@@ -10,6 +10,8 @@ export const findDeviceQuerySelector = (id: string) => {
 	}
 }
 
+export const cartLengthQuerySelector = (state: Nullable<ICart[]>) => state?.length || 0
+
 export const getCartDeviceQuerySelectorWithIdCount = (id: string) => {
 	return (state: Nullable<ICart[]>) => {
 		if (state) {
@@ -40,6 +42,6 @@ export const getTotalCartPrice = (state: Nullable<ICart[]>) => {
 	return {
 		price,
 		stock: total,
-		percentStock: differenceNumberToPercent(price, total).toFixed(1)
+		percentStock: differenceNumberToPercent(price, total).toFixed(1) || 0
 	}
 }

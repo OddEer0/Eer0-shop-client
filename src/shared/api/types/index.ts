@@ -14,7 +14,9 @@ export type {
 	IDevice$Brand,
 	IDevice$Category,
 	IDevice$Comments,
-	IDevice$Infos
+	IDevice$Infos,
+	IDeviceBuy,
+	IBuyDevicePost
 } from "./IDevice"
 
 export type { IFilter, IFilter$Category, IFilter$Infos } from "./IFilter"

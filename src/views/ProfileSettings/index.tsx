@@ -1,5 +1,12 @@
 import { FC } from "react"
 
+import { Meta } from "@/shared/ui"
+
 export const ProfileSettingsView: FC = () => {
-	return <div></div>
+	return (
+		<>
+			<Meta title="Eer0 Shop | Настройки" />
+			<div className=""></div>
+		</>
+	)
 }

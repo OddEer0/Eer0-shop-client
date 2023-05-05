@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const HomeView: FC = () => {
 	return (
 		<>
-			<Meta title="Eer0 Shop | Home" />
+			<Meta title="Eer0 Shop | Главная" />
 			<Wrapper />
 		</>
 	)

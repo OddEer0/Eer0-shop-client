@@ -11,3 +11,5 @@ export const devicePriceQuerySelector = (data: IDevice$Infos) => ({
 	stock: data.stock,
 	stockPercent: data.stockPercent
 })
+
+export const deviceNameQuerySelector = (data: IDevice$Infos) => data.name

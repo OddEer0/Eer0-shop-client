@@ -36,3 +36,13 @@ export interface IDeviceAxiosResponse {
 	pageCount: number
 	devices: IDevice[]
 }
+
+export interface IDeviceBuy {
+	count: number
+	device: IDevice
+}
+
+export interface IBuyDevicePost {
+	count: number
+	deviceId: string
+}

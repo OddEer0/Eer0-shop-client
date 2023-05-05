@@ -11,7 +11,7 @@ import { $ProfileEdit } from "./ProfileEdit.styles"
 export const ProfileEditView: FC = () => {
 	return (
 		<>
-			<Meta title="Eer0 Shop | Profile" />
+			<Meta title="Eer0 Shop | Редактирование профиля" />
 			<$ProfileEdit>
 				<motion.div
 					variants={toggleScaleAnimation}

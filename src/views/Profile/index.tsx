@@ -9,7 +9,7 @@ import { $Profile } from "./Profile.styles"
 export const ProfileView: FC = () => {
 	return (
 		<>
-			<Meta title="Eer0 Shop | Profile" />
+			<Meta title="Eer0 Shop | Профиль" />
 			<$Profile>
 				<Profile />
 			</$Profile>

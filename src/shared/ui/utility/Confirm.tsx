@@ -33,3 +33,7 @@ export const useConfirmStore = createStore<ConfirmStore>(set => ({
 }))
 
 export const confirmSelector = (state: ConfirmStore) => state.setConfirm
+
+export const useConfirm = () => {
+	return useConfirmStore(confirmSelector)
+}

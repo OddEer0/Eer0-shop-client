@@ -3,5 +3,6 @@ export {
 	devicePageCountQuerySelector,
 	deviceQuerySelector,
 	devicePriceQuerySelector,
-	deviceImageQuerySelector
+	deviceImageQuerySelector,
+	deviceNameQuerySelector
 } from "./selectors"

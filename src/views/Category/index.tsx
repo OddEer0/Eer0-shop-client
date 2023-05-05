@@ -7,7 +7,7 @@ import { Container, Meta } from "@/shared/ui"
 const CategoryView: FC = () => {
 	return (
 		<>
-			<Meta title="Eer0 Shop | Category" />
+			<Meta title="Eer0 Shop | Категория" />
 			<Container>
 				<CategoryCardList />
 			</Container>

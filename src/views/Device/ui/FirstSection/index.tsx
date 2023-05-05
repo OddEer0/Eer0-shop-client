@@ -8,6 +8,8 @@ import { AddDeviceToCartButton } from "@/features/CartAction"
 import { BuyDeviceButton } from "@/features/DeviceAction"
 import { ToggleFavoriteButton } from "@/features/FavoriteAction"
 
+import { DeviceName } from "../DeviceName"
+
 import { $FirstSection } from "./FirstSection.styles"
 
 interface FirstSectionProps {
@@ -18,7 +20,10 @@ export const FirstSection: FC<FirstSectionProps> = ({ id }) => {
 	return (
 		<$FirstSection>
 			<DeviceImageSlider id={id} />
-			<DeviceInfo id={id} className="device-info-content" />
+			<div className="info">
+				<DeviceName id={id} className="device-name h3" />
+				<DeviceInfo id={id} />
+			</div>
 			<DevicePriceAside
 				id={id}
 				className="aside"
