@@ -8,7 +8,7 @@ export const buyPriceSelector = ({ device }: BuyDeviceStoreTypes) => {
 		(acc, $device) => acc + ($device.device.stock ? $device.device.stock : $device.device.price) * $device.count,
 		0
 	)
-	const stockPercent = differenceNumberToPercent(price, total).toFixed(1)
+	const stockPercent = differenceNumberToPercent(price, total).toFixed(1) || 0
 	const stockDiff = price - total
 
 	return {

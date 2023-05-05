@@ -42,6 +42,6 @@ export const getTotalCartPrice = (state: Nullable<ICart[]>) => {
 	return {
 		price,
 		stock: total,
-		percentStock: differenceNumberToPercent(price, total).toFixed(1)
+		percentStock: differenceNumberToPercent(price, total).toFixed(1) || 0
 	}
 }
