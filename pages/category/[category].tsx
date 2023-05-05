@@ -46,7 +46,15 @@ export const getServerSideProps: GetServerSideProps = withCSR(
 				props: { dehydratedState: dehydrate(queryClient), meta: category?.title || "Not", initZustandState: store }
 			}
 		}
-	})
+	}),
+	async ctx => {
+		const { params } = ctx
+		const category = await categoryService.getOneCategory(params?.category as string)
+
+		return {
+			props: { meta: category?.title || "Not" }
+		}
+	}
 )
 
 export default CategoryDevice

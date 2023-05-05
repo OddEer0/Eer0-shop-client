@@ -27,8 +27,8 @@ export const BuyPrice: FC<BuyPriceProps> = ({ ...props }) => {
 				<p className="h5">{stockDiff}</p>
 			</motion.div>
 			<motion.div className="buy-price-row" variants={yToDownAnimation} initial="hidden" animate="show" custom={3}>
-				<h3 className="h3">Итого</h3>
-				<p className="h3">{total}</p>
+				<h3 className="h4">Итого</h3>
+				<p className="h4">{total}</p>
 			</motion.div>
 		</$BuyPrice>
 	)

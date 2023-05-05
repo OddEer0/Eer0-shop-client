@@ -16,10 +16,10 @@ export const BuyDeviceCardList: FC<BuyDeviceCardListProps> = ({ ...props }) => {
 				devices.map(device => (
 					<BuyDeviceCard
 						className="buy-device-list"
-						name={device.name}
-						img={device.images[0]}
-						price={device.stock || device.price}
-						key={device.id}
+						name={device.device.name}
+						img={device.device.images[0]}
+						price={device.device.stock || device.device.price}
+						key={device.device.id}
 					/>
 				))}
 		</$BuyDeviceCardList>

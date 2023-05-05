@@ -2,6 +2,7 @@ export { api } from "./instance"
 
 export type {
 	IUser,
+	IDeviceBuy,
 	IUserLoginBody,
 	IUserRegistrationBody,
 	ICategory,

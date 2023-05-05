@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { toast } from "react-toastify"
 
 import { IUser, IUserLoginBody, api } from "@/shared/api"
+import { CART_KEY } from "@/shared/constants"
 
 import { LOGIN_SUCCESS } from "../constants"
 
@@ -24,6 +25,7 @@ export const useUserLoginMutate = () => {
 				router.push("/")
 				toast.success(LOGIN_SUCCESS)
 				Cookies.set("isAuth", "true")
+				queryClient.refetchQueries({ queryKey: CART_KEY })
 			}
 		}
 	})

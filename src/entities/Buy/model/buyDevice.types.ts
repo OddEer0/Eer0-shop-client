@@ -1,8 +1,9 @@
-import { IDevice } from "@/shared/api"
+import { ICart, IDeviceBuy } from "@/shared/api"
 
 export interface BuyDeviceStoreTypes {
-	device: IDevice[]
+	device: IDeviceBuy[]
 	method: Nullable<string>
-	addDevice: (device: Nullable<IDevice>) => void
+	addDevice: (device: Nullable<IDeviceBuy>) => void
 	setMethod: (method: string) => void
+	addDevices: (device: Nullable<ICart[]>) => void
 }

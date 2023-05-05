@@ -3,8 +3,11 @@ import { differenceNumberToPercent } from "@/shared/helpers"
 import { BuyDeviceStoreTypes } from "./buyDevice.types"
 
 export const buyPriceSelector = ({ device }: BuyDeviceStoreTypes) => {
-	const price = device.reduce((acc, $device) => acc + $device.price, 0)
-	const total = device.reduce((acc, $device) => acc + ($device.stock ? $device.stock : $device.price), 0)
+	const price = device.reduce((acc, $device) => acc + $device.device.price * $device.count, 0)
+	const total = device.reduce(
+		(acc, $device) => acc + ($device.device.stock ? $device.device.stock : $device.device.price) * $device.count,
+		0
+	)
 	const stockPercent = differenceNumberToPercent(price, total).toFixed(1)
 	const stockDiff = price - total
 

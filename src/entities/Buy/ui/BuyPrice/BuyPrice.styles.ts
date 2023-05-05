@@ -9,8 +9,5 @@ export const $BuyPrice = styled.div`
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 30px;
-
-		h5 {
-		}
 	}
 `

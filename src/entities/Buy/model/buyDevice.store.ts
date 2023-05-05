@@ -8,13 +8,20 @@ export const useBuyDeviceStore = createStore<BuyDeviceStoreTypes>(set => ({
 	addDevice(device) {
 		set(state => {
 			if (device) {
-				state.device.push(device)
+				state.device = [device]
 			}
 		})
 	},
 	setMethod(method) {
 		set(state => {
 			state.method = method
+		})
+	},
+	addDevices(devices) {
+		set(state => {
+			if (devices) {
+				state.device = devices.map(device => ({ count: device.count, device: device.device }))
+			}
 		})
 	}
 }))

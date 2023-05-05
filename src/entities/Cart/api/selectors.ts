@@ -10,6 +10,8 @@ export const findDeviceQuerySelector = (id: string) => {
 	}
 }
 
+export const cartLengthQuerySelector = (state: Nullable<ICart[]>) => state?.length || 0
+
 export const getCartDeviceQuerySelectorWithIdCount = (id: string) => {
 	return (state: Nullable<ICart[]>) => {
 		if (state) {

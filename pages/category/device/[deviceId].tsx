@@ -40,7 +40,15 @@ export const getServerSideProps: GetServerSideProps = withCSR(
 				props: { dehydratedState: dehydrate(queryClient), meta: device?.name || "Not", initZustandState: store }
 			}
 		}
-	})
+	}),
+	async ctx => {
+		const { params } = ctx
+
+		const device = await deviceService.getOneDevice(params?.deviceId as string)
+		return {
+			props: { meta: device.name || "Not" }
+		}
+	}
 )
 
 Device.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
