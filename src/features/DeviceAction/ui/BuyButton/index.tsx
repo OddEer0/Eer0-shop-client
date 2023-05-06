@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { FC, PropsWithChildren } from "react"
 
-import { buyDeviceSelector, useBuyDeviceStore } from "@/entities/Buy"
+import { buyDeviceSelector, useBuyDeviceStore } from "@/entities/BookingDevice"
 
 import { Button, ButtonProps, useConfirm } from "@/shared/ui"
 

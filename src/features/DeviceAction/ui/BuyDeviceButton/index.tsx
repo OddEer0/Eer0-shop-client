@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/router"
 import { FC, PropsWithChildren, useState } from "react"
 
-import { buyActionSelector, useBuyDeviceStore } from "@/entities/Buy"
+import { buyActionSelector, useBuyDeviceStore } from "@/entities/BookingDevice"
 
 import { IDevice } from "@/shared/api"
 import { Button, ButtonProps, Counter } from "@/shared/ui"

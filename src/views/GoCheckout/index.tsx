@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-import { BuyDeviceCardList, BuyPrice } from "@/entities/Buy"
+import { BuyDeviceCardList, BuyPrice } from "@/entities/BookingDevice"
 
 import { BuyButton, BuyMethod } from "@/features/DeviceAction"
 

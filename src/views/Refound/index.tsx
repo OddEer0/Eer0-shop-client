@@ -2,10 +2,10 @@ import { FC } from "react"
 
 import { Meta } from "@/shared/ui"
 
-export const ProfileSettingsView: FC = () => {
+export const RefoundView: FC = () => {
 	return (
 		<>
-			<Meta title="Eer0 Shop | Настройки" />
+			<Meta title="Eer0 Shop | Возвраты" />
 			<div className="">В разработке</div>
 		</>
 	)
