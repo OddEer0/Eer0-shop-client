@@ -38,10 +38,11 @@ export const getTotalCartPrice = (state: Nullable<ICart[]>) => {
 			total += stockOrPrice * device.count
 		})
 	}
+	const percentStock = differenceNumberToPercent(price, total)
 
 	return {
 		price,
 		stock: total,
-		percentStock: differenceNumberToPercent(price, total).toFixed(1) || 0
+		percentStock: isNaN(percentStock) ? 0 : percentStock.toFixed(1)
 	}
 }

@@ -6,7 +6,7 @@ export const ProfileSettingsView: FC = () => {
 	return (
 		<>
 			<Meta title="Eer0 Shop | Настройки" />
-			<div className=""></div>
+			<div className="">В разработке</div>
 		</>
 	)
 }

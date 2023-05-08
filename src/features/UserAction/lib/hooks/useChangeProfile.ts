@@ -22,7 +22,9 @@ export const useChangeProfile = () => {
 	const { mutate, isLoading } = useChangeProfileMutate()
 
 	const submitHandler = handleSubmit((data: IUser) => {
-		confirm(CONFIRM_CHANGE, () => mutate(data))
+		const birthday = typeof data.birthday === "number" ? new Date(data.birthday) : data.birthday
+
+		confirm(CONFIRM_CHANGE, () => mutate({ ...data, birthday }))
 	})
 
 	const getFirstNameProps: TextFieldProps = {

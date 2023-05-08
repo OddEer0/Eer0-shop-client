@@ -7,6 +7,7 @@ export const $DeviceCardImageCarousel = styled.div`
 	.img {
 		width: 100%;
 		height: 350px;
+		object-fit: cover;
 	}
 
 	.carousel-image-count {

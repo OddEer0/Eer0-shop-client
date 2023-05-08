@@ -15,6 +15,7 @@ export const $CategoryCard = styled.div`
 
 		img {
 			border-radius: 20px;
+			object-fit: cover;
 			transition: all 0.3s ease-in-out;
 		}
 	}

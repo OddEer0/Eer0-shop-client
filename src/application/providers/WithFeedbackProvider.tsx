@@ -14,6 +14,14 @@ const $Modal = styled(Modal)`
 			margin-left: 15px;
 		}
 	}
+
+	.confirm-feature {
+		display: flex;
+		width: 100%;
+		gap: 15px;
+		align-items: center;
+		justify-content: center;
+	}
 `
 
 export const WithFeedbackProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -38,12 +46,14 @@ export const WithFeedbackProvider: FC<PropsWithChildren> = ({ children }) => {
 			<ToastContainer theme="colored" position="bottom-right" />
 			<$Modal isShow={isShow} closeHandler={closeConfirm}>
 				<p className="h5">{message}</p>
-				<Button variant="contained" color="success" onClick={confirmHandler}>
-					Подтвердить
-				</Button>
-				<Button className="cancel" variant="outlined" onClick={cancelHandler} color="danger">
-					Отмена
-				</Button>
+				<div className="confirm-feature">
+					<Button variant="contained" color="success" onClick={confirmHandler}>
+						Подтвердить
+					</Button>
+					<Button className="cancel" variant="outlined" onClick={cancelHandler} color="danger">
+						Отмена
+					</Button>
+				</div>
 			</$Modal>
 			{children}
 		</>

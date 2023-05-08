@@ -2,7 +2,7 @@ import { LayoutGroup, motion } from "framer-motion"
 import Image from "next/image"
 import { FC, HTMLAttributes } from "react"
 
-import { BUY_METHOD, buyMethodSelector, useBuyDeviceStore } from "@/entities/Buy"
+import { BUY_METHOD, buyMethodSelector, useBuyDeviceStore } from "@/entities/BookingDevice"
 
 import { yToDownAnimation } from "@/shared/animation"
 import { cn } from "@/shared/helpers"

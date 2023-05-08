@@ -24,7 +24,7 @@ export const useUserRegistrationMutate = () => {
 				client.invalidateQueries({ queryKey: ["cart"] })
 				router.push("/")
 				toast.success(REGISTRATION_SUCCESS)
-				Cookies.set("isAuth", "true")
+				Cookies.set("isAuth", "true", { expires: 30 })
 				client.refetchQueries({ queryKey: CART_KEY })
 			}
 		}

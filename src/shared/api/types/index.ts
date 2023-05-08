@@ -33,3 +33,9 @@ export type {
 } from "./IComment"
 
 export { RoleEnum } from "./RolesEnum"
+
+export type { IBookingDevice } from "./IBookingDevice"
+
+export type { IRefound } from "./IRefound"
+
+export type { IPurchaseDevice } from "./IPurchaseDevice"

@@ -12,7 +12,7 @@ export const $IconList = styled.ul`
 		cursor: pointer;
 
 		&:not(:last-child) {
-			margin-right: 2vw;
+			margin-right: 35px;
 		}
 
 		a {
