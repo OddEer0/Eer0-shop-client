@@ -14,7 +14,7 @@ export const $ProfileAside = styled(Container)`
 		width: 320px;
 		height: calc(100vh - 125px);
 		position: sticky;
-		top: 0;
+		top: 125px;
 		max-height: 780px;
 	}
 

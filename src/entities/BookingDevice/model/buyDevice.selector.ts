@@ -8,13 +8,13 @@ export const buyPriceSelector = ({ device }: BuyDeviceStoreTypes) => {
 		(acc, $device) => acc + ($device.device.stock ? $device.device.stock : $device.device.price) * $device.count,
 		0
 	)
-	const stockPercent = differenceNumberToPercent(price, total).toFixed(1) || 0
+	const stockPercent = differenceNumberToPercent(price, total)
 	const stockDiff = price - total
 
 	return {
 		price,
 		total,
-		stockPercent,
+		stockPercent: isNaN(stockPercent) ? 0 : stockPercent.toFixed(1),
 		stockDiff
 	}
 }

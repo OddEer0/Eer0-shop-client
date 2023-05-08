@@ -37,7 +37,10 @@ export type {
 	IComment$DeviceUser,
 	IComment$User,
 	IPostComment,
-	IBuyDevicePost
+	IBuyDevicePost,
+	IBookingDevice,
+	IRefound,
+	IPurchaseDevice
 } from "./types"
 
 export { RoleEnum } from "./types"

@@ -57,7 +57,7 @@ export const $SecondSection = styled.section`
 			margin-right: 2vw;
 
 			button {
-				margin-right: 2vw;
+				margin-right: 35px;
 				display: flex;
 				align-items: center;
 

@@ -64,7 +64,9 @@ class AuthService {
 					cart: cartResponse
 				}
 			} catch (error) {
-				removeCookies("isAuth")
+				removeCookies("isAuth", { req, res })
+				removeCookies("accessToken", { req, res })
+				removeCookies("refreshToken", { req, res })
 				return null
 			}
 		} else {

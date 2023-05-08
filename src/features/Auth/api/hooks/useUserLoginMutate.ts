@@ -24,7 +24,7 @@ export const useUserLoginMutate = () => {
 				queryClient.refetchQueries({ queryKey: ["cart"] })
 				router.push("/")
 				toast.success(LOGIN_SUCCESS)
-				Cookies.set("isAuth", "true")
+				Cookies.set("isAuth", "true", { expires: 30 })
 				queryClient.refetchQueries({ queryKey: CART_KEY })
 			}
 		}

@@ -16,19 +16,19 @@ export const BuyPrice: FC<BuyPriceProps> = ({ ...props }) => {
 		<$BuyPrice {...props}>
 			<motion.div className="buy-price-row" variants={yToDownAnimation} initial="hidden" animate="show" custom={0}>
 				<h5 className="h5">Товары</h5>
-				<p className="h5">{price}</p>
+				<p className="h5">{price} Руб</p>
 			</motion.div>
 			<motion.div className="buy-price-row" variants={yToDownAnimation} initial="hidden" animate="show" custom={1}>
 				<h5 className="h5">Скидка</h5>
-				<p className="h5">{stockPercent}</p>
+				<p className="h5">{stockPercent}%</p>
 			</motion.div>
 			<motion.div className="buy-price-row" variants={yToDownAnimation} initial="hidden" animate="show" custom={2}>
 				<h5 className="h5">Выгода</h5>
-				<p className="h5">{stockDiff}</p>
+				<p className="h5">{stockDiff} Руб</p>
 			</motion.div>
 			<motion.div className="buy-price-row" variants={yToDownAnimation} initial="hidden" animate="show" custom={3}>
 				<h3 className="h4">Итого</h3>
-				<p className="h4">{total}</p>
+				<p className="h4">{total} Руб</p>
 			</motion.div>
 		</$BuyPrice>
 	)

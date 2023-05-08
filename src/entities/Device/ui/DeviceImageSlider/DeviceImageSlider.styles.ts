@@ -8,6 +8,7 @@ export const $DeviceImageSlider = styled.div`
 	.img {
 		max-width: 750px;
 		width: 100%;
+		object-fit: cover;
 		height: 100%;
 		height: 600px;
 	}
@@ -62,6 +63,7 @@ export const $DeviceImageSlider = styled.div`
 			}
 
 			img {
+				object-fit: cover;
 				height: 100%;
 				width: 130px;
 			}
