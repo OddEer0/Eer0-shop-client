@@ -32,3 +32,19 @@ export const $BookingDeviceCard = styled.div`
 		}
 	}
 `
+
+export const $BookingDeviceCardLazy = styled.div`
+	display: flex;
+	padding: 10px 16px;
+	justify-content: space-between;
+
+	.booking-card {
+		&__content {
+			flex: 1;
+			padding: 16px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+	}
+`

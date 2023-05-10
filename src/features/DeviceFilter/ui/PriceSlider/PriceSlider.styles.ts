@@ -11,10 +11,10 @@ export const $PriceSlider = styled.div`
 
 		& > .input {
 			padding: 10px 0;
-			width: 120px;
+			width: 90px;
 
 			.wrapper input {
-				width: 120px;
+				width: 90px;
 				min-width: 0;
 			}
 		}
@@ -22,6 +22,7 @@ export const $PriceSlider = styled.div`
 
 	button {
 		margin-top: 20px;
+		margin-left: 40px;
 	}
 
 	.slider {

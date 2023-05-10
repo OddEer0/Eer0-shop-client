@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const $DeviceCard = styled.div`
 	background: ${({ theme }) => theme.base.bg.primary_40};
 	border-radius: 15px;
-	width: 320px;
-	height: 520px;
+	width: 280px;
+	height: 480px;
 	overflow: hidden;
 	display: inline-flex;
 	flex-direction: column;

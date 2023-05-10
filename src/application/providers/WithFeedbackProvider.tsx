@@ -43,7 +43,7 @@ export const WithFeedbackProvider: FC<PropsWithChildren> = ({ children }) => {
 
 	return (
 		<>
-			<ToastContainer theme="colored" position="bottom-right" />
+			<ToastContainer limit={4} theme="colored" position="bottom-right" />
 			<$Modal isShow={isShow} closeHandler={closeConfirm}>
 				<p className="h5">{message}</p>
 				<div className="confirm-feature">

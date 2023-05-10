@@ -19,6 +19,7 @@ export const $CartView = styled.div`
 			background: ${({ theme }) => theme.base.bg.primary_40};
 			border-radius: 15px;
 			flex: 1;
+			height: 220px;
 		}
 	}
 `

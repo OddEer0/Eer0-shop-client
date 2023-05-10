@@ -55,4 +55,9 @@ export const $FirstSection = styled.section`
 			}
 		}
 	}
+
+	.device-page__buy-button {
+		width: 100%;
+		max-width: none;
+	}
 `

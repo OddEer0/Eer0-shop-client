@@ -44,7 +44,7 @@ export const DeviceCardsList: FC<DeviceCardsListProps> = ({ CartComponent, Favor
 							favorite={<FavoriteComponent device={device} />}
 						/>
 					))}
-					<Empty className="list-gap" width="320px" count={3} />
+					<Empty className="list-gap" width="280px" count={2} />
 				</>
 			) : (
 				<h2 className="h2">Товаров с данной категорией на данный момент нет (((</h2>

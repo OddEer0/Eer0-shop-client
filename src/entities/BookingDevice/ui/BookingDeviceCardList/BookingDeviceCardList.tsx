@@ -5,6 +5,7 @@ import { ButtonProps } from "@/shared/ui"
 import { useBookingsDevices } from "../../api"
 import { BookingDeviceCard } from "../BookingDeviceCard"
 
+import { BookingDeviceCardListLazy } from "./BookingDeviceCardList.lazy"
 import { $BookingDeviceCardList } from "./BookingDeviceCardList.styles"
 
 interface IButton extends ButtonProps {
@@ -19,17 +20,15 @@ interface BookingDeviceCardListProps {
 export const BookingDeviceCardList: FC<BookingDeviceCardListProps> = ({ approve: Approve, refound: Refound }) => {
 	const { data, isLoading, error } = useBookingsDevices()
 
-	if (isLoading) {
-		return <div className="">Loading...</div>
-	}
-
 	if (error) {
 		return <div className="">Error</div>
 	}
 
 	return (
 		<$BookingDeviceCardList>
-			{data && data.length ? (
+			{isLoading ? (
+				<BookingDeviceCardListLazy />
+			) : data && data.length ? (
 				data.map(booking => (
 					<BookingDeviceCard
 						count={booking.count}

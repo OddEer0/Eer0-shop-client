@@ -29,7 +29,7 @@ export const BrandSearchedList: FC = () => {
 		<>
 			{brands ? (
 				<$BrandSearchedList>
-					<TextField placeholder="Поиск..." {...input} />
+					<TextField inputSize="small" placeholder="Поиск..." {...input} />
 					<div className="">
 						{brands.map(brand => (
 							<CheckboxListItem name="brand" value={brand.name} key={brand.id} />

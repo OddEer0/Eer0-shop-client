@@ -15,6 +15,7 @@ import {
 	REGULAR_PASSWORD,
 	REGULAR_PASSWORD_MESSAGE
 } from "../constants"
+import { COPY_PASSWORD_MESSAGE } from "../constants/auth"
 
 export const useUserRegistrationForm = () => {
 	const { mutate } = useUserRegistrationMutate()
@@ -22,10 +23,15 @@ export const useUserRegistrationForm = () => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors }
-	} = useForm<IUserRegistrationBody>({ mode: "onBlur" })
+		formState: { errors },
+		setError
+	} = useForm<IUserRegistrationBody>({ mode: "onChange" })
 
 	const submitHandler = handleSubmit((data: IUserRegistrationBody) => {
+		if (data.copyPassword !== data.password) {
+			setError("copyPassword", { message: COPY_PASSWORD_MESSAGE, type: "custom" })
+			return
+		}
 		mutate(data)
 	})
 
@@ -62,7 +68,8 @@ export const useUserRegistrationForm = () => {
 		label: "Пароль",
 		color: errors.password ? "danger" : "primary",
 		subText: errors.password?.message && errors.password.message,
-		placeholder: "mypassword13"
+		placeholder: "password",
+		type: "password"
 	}
 
 	const getFirstNameInputProps: TextFieldProps = {
@@ -81,12 +88,24 @@ export const useUserRegistrationForm = () => {
 		placeholder: "Дубов"
 	}
 
+	const getCopyPasswordInputProps: TextFieldProps = {
+		...register("copyPassword", {
+			required: FIELD_REQUIRED
+		}),
+		label: "Повторите пароль",
+		color: errors.copyPassword ? "danger" : "primary",
+		subText: errors.copyPassword?.message && errors.copyPassword.message,
+		placeholder: "password",
+		type: "password"
+	}
+
 	return {
 		submitHandler,
 		getEmailInputProps,
 		getPasswordInputProps,
 		getNicknameInputProps,
 		getFirstNameInputProps,
-		getLastNameInputProps
+		getLastNameInputProps,
+		getCopyPasswordInputProps
 	}
 }

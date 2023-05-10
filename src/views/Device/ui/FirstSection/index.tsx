@@ -37,7 +37,13 @@ export const FirstSection: FC<FirstSectionProps> = ({ id }) => {
 					<ToggleFavoriteButton size="small" color="secondary" variant="outlined" className="favorite-button" id={id} />
 				}
 				buy={
-					<BuyDeviceButton variant="contained" color="quaternary" id={id}>
+					<BuyDeviceButton
+						className="device-page__buy-button"
+						size="small"
+						variant="contained"
+						color="quaternary"
+						id={id}
+					>
 						Купить в один клик
 					</BuyDeviceButton>
 				}

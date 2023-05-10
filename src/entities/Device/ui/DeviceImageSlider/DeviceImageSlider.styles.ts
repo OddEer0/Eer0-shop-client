@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const $DeviceImageSlider = styled.div`
-	width: 70vw;
+	width: 40%;
 	max-width: 750px;
 	height: 650px;
 

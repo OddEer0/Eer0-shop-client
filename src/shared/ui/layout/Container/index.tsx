@@ -11,7 +11,7 @@ interface StyledContainerProps {
 
 const $Container = styled.div<StyledContainerProps>`
 	width: 100%;
-	max-width: ${({ width }) => width || 1920}px;
+	max-width: ${({ width }) => width || 1420}px;
 	margin: 0 auto;
 	height: 100%;
 	padding: 0 10px;

@@ -2,7 +2,7 @@ import { HTMLMotionProps, motion } from "framer-motion"
 import Link from "next/link"
 import { FC, ReactNode } from "react"
 
-import { ScaleOpacityScrollable } from "@/shared/animation"
+import { ScaleScrollable } from "@/shared/animation"
 import { IDevice } from "@/shared/api"
 import { Circle } from "@/shared/ui"
 
@@ -20,7 +20,7 @@ export const DeviceCard: FC<DeviceCardProps> = ({ device, cart, favorite, ...pro
 	const animationDelay = Math.floor(Math.random() * 10)
 
 	return (
-		<$DeviceCard as={ScaleOpacityScrollable} {...props}>
+		<$DeviceCard as={ScaleScrollable} {...props}>
 			<Link href={{ pathname: `/category/device/${device.id}` }}>
 				<DeviceCardImageSlider name={device.name} images={device.images} />
 			</Link>

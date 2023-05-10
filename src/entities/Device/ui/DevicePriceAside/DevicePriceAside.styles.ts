@@ -6,7 +6,7 @@ export const $Aside = styled.aside`
 	align-items: center;
 	border-radius: 15px;
 	padding: 16px;
-	width: 340px;
+	width: 280px;
 	height: auto;
 	background: ${({ theme }) => theme.base.bg.primary_40};
 	box-shadow: ${({ theme }) => theme.base.boxShadow.primary};
@@ -21,7 +21,7 @@ export const $Aside = styled.aside`
 
 		& > .price {
 			display: inline-block;
-			padding: 12px;
+			padding: 6px;
 			background: ${({ theme }) => theme.ui.color.secondary_50};
 			color: ${({ theme }) => theme.ui.text.secondary_50};
 			border-radius: 10px;
@@ -31,7 +31,6 @@ export const $Aside = styled.aside`
 				background-color: transparent;
 				opacity: 0.8;
 				color: ${({ theme }) => theme.base.text.primary_50};
-				font-size: 20px;
 			}
 		}
 
@@ -51,7 +50,7 @@ export const $Aside = styled.aside`
 	}
 
 	& > .third {
-		margin-top: 50px;
+		margin-top: 25px;
 	}
 
 	& > .fourth {
@@ -59,6 +58,7 @@ export const $Aside = styled.aside`
 	}
 
 	& > .fifth {
-		margin-top: 45px;
+		margin-top: 20px;
+		width: 100%;
 	}
 `

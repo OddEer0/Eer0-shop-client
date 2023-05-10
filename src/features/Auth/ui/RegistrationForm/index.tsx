@@ -13,6 +13,7 @@ export const RegistrationForm: FC = () => {
 		getPasswordInputProps,
 		getFirstNameInputProps,
 		getLastNameInputProps,
+		getCopyPasswordInputProps,
 		submitHandler
 	} = useUserRegistrationForm()
 
@@ -26,7 +27,7 @@ export const RegistrationForm: FC = () => {
 					<TextField {...getFirstNameInputProps} />
 					<TextField {...getLastNameInputProps} />
 					<TextField {...getPasswordInputProps} />
-					<TextField />
+					<TextField {...getCopyPasswordInputProps} />
 				</$FormInputSection>
 				<$Button variant="contained">SUBMIT</$Button>
 			</$Form>
