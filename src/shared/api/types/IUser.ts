@@ -26,4 +26,5 @@ export interface IUserRegistrationBody extends IUserLoginBody {
 	email: string
 	firstName: string
 	lastName: string
+	copyPassword: string
 }

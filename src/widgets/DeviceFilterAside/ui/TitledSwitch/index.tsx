@@ -10,7 +10,7 @@ interface TitledSwitchProps {
 export const TitledSwitch: FC<TitledSwitchProps> = ({ title, switchComponent }) => {
 	return (
 		<$TitledSwitch>
-			<h5 className="h5">{title}</h5>
+			<h5 className="h6">{title}</h5>
 			{switchComponent}
 		</$TitledSwitch>
 	)

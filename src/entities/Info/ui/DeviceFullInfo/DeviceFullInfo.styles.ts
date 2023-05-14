@@ -12,6 +12,7 @@ export const $DeviceFullInfo = styled.div`
 		.info-row {
 			display: flex;
 			align-items: center;
+			gap: 20px;
 			justify-content: space-between;
 			width: 40%;
 

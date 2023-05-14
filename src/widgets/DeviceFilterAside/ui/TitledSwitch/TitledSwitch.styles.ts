@@ -7,4 +7,8 @@ export const $TitledSwitch = styled.div`
 	padding: 15px 0;
 	justify-content: space-between;
 	border-bottom: 1px solid ${({ theme }) => theme.ui.color.default_40};
+
+	h5 {
+		margin-right: 5px;
+	}
 `

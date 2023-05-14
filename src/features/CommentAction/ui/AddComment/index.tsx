@@ -1,6 +1,10 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
 import { useForm } from "react-hook-form"
+import { toast } from "react-toastify"
 
+import { useProfileQuery, userIdQuerySelector } from "@/entities/User"
+
+import { UNAUTHORIZED } from "@/shared/constants"
 import { Button, TextArea } from "@/shared/ui"
 
 import { useAddComment } from "../../api"
@@ -19,9 +23,14 @@ interface IFormState extends HTMLAttributes<HTMLFormElement> {
 export const AddComment: FC<PropsWithChildren<IAddCommentProps>> = ({ deviceId, children, ...props }) => {
 	const { mutate } = useAddComment()
 	const { handleSubmit, register } = useForm<IFormState>()
+	const { data: isAuth } = useProfileQuery(userIdQuerySelector)
 
 	const submitHandler = handleSubmit((data: IFormState) => {
-		mutate({ description: data.description, deviceId })
+		if (isAuth) {
+			mutate({ description: data.description, deviceId })
+		} else {
+			toast.error(UNAUTHORIZED)
+		}
 	})
 
 	return (

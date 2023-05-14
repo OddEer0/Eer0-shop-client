@@ -1,1 +1,1 @@
-export { useDeviceInfosQuery } from "./hooks"
+export { useDeviceInfosQuery, useDeviceFullInfosQuery } from "./hooks"

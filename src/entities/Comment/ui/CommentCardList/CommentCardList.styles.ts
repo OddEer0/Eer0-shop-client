@@ -6,4 +6,8 @@ export const $CommentCardList = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 30px;
+
+	.not-comment {
+		margin-top: 40px;
+	}
 `

@@ -16,6 +16,14 @@ export const GlobalStyle = createGlobalStyle`
 	html {
 		scrollbar-width: thin;
 		scrollbar-color: ${({ theme }) => theme.ui.color.primary_50} transparent;
+		
+	}
+
+	html,
+	body,
+	#__next {
+		width: 100%;
+		height: 100%;
 	}
 
 	body {

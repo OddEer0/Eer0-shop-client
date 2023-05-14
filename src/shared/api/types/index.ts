@@ -39,3 +39,4 @@ export type { IBookingDevice } from "./IBookingDevice"
 export type { IRefound } from "./IRefound"
 
 export type { IPurchaseDevice } from "./IPurchaseDevice"
+export type { IHomeSlider } from "./IHomeSlider"

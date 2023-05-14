@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { ToggleThemeIcon } from "@/features/ThemeAction"
 
 export const $Header = styled.header`
-	position: sticky;
+	position: fixed;
 	z-index: 100;
 	top: 0;
 	left: 0;

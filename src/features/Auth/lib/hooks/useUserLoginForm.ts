@@ -25,7 +25,8 @@ export const useUserLoginForm = () => {
 		}),
 		label: "Логин",
 		color: errors.nickname ? "danger" : "primary",
-		subText: errors.nickname?.message && errors.nickname.message
+		subText: errors.nickname?.message && errors.nickname.message,
+		placeholder: "nickname"
 	}
 
 	const getPasswordInputProps: TextFieldProps = {
@@ -35,7 +36,8 @@ export const useUserLoginForm = () => {
 		label: "Пароль",
 		color: errors.password ? "danger" : "primary",
 		subText: errors.password?.message && errors.password.message,
-		type: "password"
+		type: "password",
+		placeholder: "password"
 	}
 
 	return {

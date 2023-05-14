@@ -40,7 +40,8 @@ export type {
 	IBuyDevicePost,
 	IBookingDevice,
 	IRefound,
-	IPurchaseDevice
+	IPurchaseDevice,
+	IHomeSlider
 } from "./types"
 
 export { RoleEnum } from "./types"

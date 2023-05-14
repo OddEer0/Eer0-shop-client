@@ -1,0 +1,1 @@
+export { HomeSlider } from "./HomeSlider"

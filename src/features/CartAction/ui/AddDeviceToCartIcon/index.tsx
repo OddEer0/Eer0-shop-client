@@ -25,7 +25,7 @@ export const AddDeviceToCartIcon: FC<AddDeviceToCartIcon> = ({ id }) => {
 						<Spinner size="xsmall" />
 					</motion.div>
 				) : isToCart ? (
-					<CartDeviceCounter size="small" id={id} />
+					<CartDeviceCounter className="device-cart__counter" size="small" id={id} />
 				) : (
 					<motion.div
 						onClick={addDeviceToCartHandler}

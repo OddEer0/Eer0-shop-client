@@ -16,7 +16,7 @@ export const SecondSection: FC = () => {
 			<Container className="container">
 				<div className=""></div>
 				<div className="right-wrapper">
-					<Button onClick={() => router.push("/category")} size="small" variant="contained">
+					<Button onClick={() => router.push("/category")} variant="contained">
 						<RiApps2Line className="icon" />
 						Категорий
 					</Button>

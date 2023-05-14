@@ -13,8 +13,22 @@ export const PriceSlider: FC = () => {
 	return (
 		<$PriceSlider>
 			<div className="input-section">
-				<TextField className="input" label="От" value={minPrice} onChange={changeMinPriceHandler} type="number" />
-				<TextField className="input" label="До" value={maxPrice} onChange={changeMaxPriceHandler} type="number" />
+				<TextField
+					inputSize="small"
+					className="input"
+					label="От"
+					value={minPrice}
+					onChange={changeMinPriceHandler}
+					type="number"
+				/>
+				<TextField
+					inputSize="small"
+					className="input"
+					label="До"
+					value={maxPrice}
+					onChange={changeMaxPriceHandler}
+					type="number"
+				/>
 			</div>
 			<Slider
 				className="slider"
@@ -41,7 +55,7 @@ export const PriceSlider: FC = () => {
 					}
 				]}
 			/>
-			<Button onClick={clickHandler} variant="contained">
+			<Button size="small" onClick={clickHandler} variant="contained">
 				OK
 			</Button>
 		</$PriceSlider>

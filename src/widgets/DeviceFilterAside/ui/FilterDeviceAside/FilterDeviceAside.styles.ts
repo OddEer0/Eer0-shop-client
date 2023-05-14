@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const $FilterDeviceAside = styled.aside`
-	max-width: 340px;
-	min-width: 340px;
+	max-width: 240px;
+	min-width: 240px;
 	max-height: calc(95vh - 110px);
 	position: sticky;
 	top: 110px;
@@ -27,7 +27,7 @@ export const $FilterDeviceAside = styled.aside`
 		max-width: 340px;
 		height: 100%;
 		max-height: 1220px;
-		padding: 20px;
+		padding: 10px;
 		background: ${({ theme }) => theme.base.bg.primary_40};
 
 		.h2 {
@@ -58,5 +58,9 @@ export const $FilterDeviceAside = styled.aside`
 				padding: 0;
 			}
 		}
+	}
+
+	.open-device-modal-btn {
+		margin-left: 50px;
 	}
 `

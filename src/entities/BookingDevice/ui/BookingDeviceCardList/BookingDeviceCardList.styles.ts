@@ -6,3 +6,5 @@ export const $BookingDeviceCardList = styled.div`
 	gap: 20px;
 	padding: 5px 25px;
 `
+
+export const $BookingDeviceCardListLazy = styled.div``

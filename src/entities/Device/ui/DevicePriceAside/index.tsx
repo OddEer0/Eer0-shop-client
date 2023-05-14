@@ -18,12 +18,12 @@ interface DevicePageAsideProps {
 
 export const DevicePriceAside: FC<DevicePageAsideProps> = ({ id, buy, cart, favorite, className = "" }) => {
 	const { data } = useDeviceQuery(id, devicePriceQuerySelector)
-	const cl = cn("price", "h4", data?.stock ? "stock" : "")
+	const cl = cn("price", "caption-14-b", data?.stock ? "stock" : "")
 
 	return data ? (
 		<$Aside className={className}>
 			<motion.div variants={yToDownAnimation} custom={1} animate="show" initial="hidden" className="first">
-				{data.stock ? <h4 className="h4 stock-price">{data.stock} Руб</h4> : null}
+				{data.stock ? <h4 className="h5 stock-price">{data.stock} Руб</h4> : null}
 				<h4 className={cl}>{data.price} Руб</h4>
 			</motion.div>
 			{data.stockPercent ? (
@@ -33,8 +33,8 @@ export const DevicePriceAside: FC<DevicePageAsideProps> = ({ id, buy, cart, favo
 					transition={{ delay: 0.4, duration: 0.5 }}
 					className="second"
 				>
-					<p className="h5">Скидка</p>
-					<h5 className="h5">-{data.price * (data.stockPercent / 100)} руб</h5>
+					<p className="h6">Скидка</p>
+					<h5 className="h6">-{data.price * (data.stockPercent / 100)} руб</h5>
 				</motion.div>
 			) : null}
 			{cart && (

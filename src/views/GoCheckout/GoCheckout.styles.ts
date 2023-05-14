@@ -21,6 +21,10 @@ export const $GoCheckoutView = styled(Container)`
 	}
 
 	& > .aside {
+		button {
+			margin-top: 20px;
+			width: 100%;
+		}
 	}
 
 	.go-checkout {

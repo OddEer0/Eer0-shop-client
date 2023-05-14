@@ -23,11 +23,15 @@ export const $FirstSection = styled.section`
 		margin-right: 15px;
 		margin-left: 15px;
 
-		.device-name {
+		.device-name-wrapper {
 			padding: 16px;
+		}
+
+		.device-name {
 			display: -webkit-box;
 			-webkit-line-clamp: 2;
 			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
 			overflow: hidden;
 		}
 	}
@@ -54,5 +58,10 @@ export const $FirstSection = styled.section`
 				color: ${({ theme }) => theme.ui.color.danger_50};
 			}
 		}
+	}
+
+	.device-page__buy-button {
+		width: 100%;
+		max-width: none;
 	}
 `

@@ -37,8 +37,8 @@ export const DeviceInfo: FC<DeviceInfoProps> = ({ id, className = "" }) => {
 							className="info-row"
 							key={info.id}
 						>
-							<h5 className="h4">{info.title}</h5>
-							<p className="h4">{info.value}</p>
+							<h5 className="h6">{info.title}</h5>
+							<p className="h6">{info.value}</p>
 						</motion.li>
 					))}
 				</ul>
