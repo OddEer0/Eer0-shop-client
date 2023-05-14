@@ -29,7 +29,7 @@ export const CartDeviceCardList: FC<CartDeviceCardListProps> = ({
 	favorite: Favorite,
 	className = ""
 }) => {
-	const { data, isLoading } = useCartQuery()
+	const { data } = useCartQuery()
 
 	return (
 		<$CartDeviceCardList className={className}>

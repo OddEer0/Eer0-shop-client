@@ -20,7 +20,7 @@ const GoCheckoutView: FC = () => {
 				</div>
 				<aside className="aside">
 					<BuyPrice className="go-checkout__price" />
-					<BuyButton>Купить онлайн</BuyButton>
+					<BuyButton variant="contained">Купить онлайн</BuyButton>
 				</aside>
 			</$GoCheckoutView>
 		</>

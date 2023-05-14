@@ -11,7 +11,7 @@ interface DeviceCardSkeletonProps {
 export const DeviceCardSkeleton: FC<DeviceCardSkeletonProps> = ({ className }) => {
 	return (
 		<$DeviceSkeleton className={className}>
-			<Skeleton width="320px" height="350px" />
+			<Skeleton width="280px" height="310px" />
 			<Skeleton width="290px" height="30px" variant="rounded" className="title-skeleton" />
 			<div className="circle-list">
 				<Skeleton variant="circle" width="15px" height="15px" />

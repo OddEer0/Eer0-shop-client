@@ -23,11 +23,15 @@ export const $FirstSection = styled.section`
 		margin-right: 15px;
 		margin-left: 15px;
 
-		.device-name {
+		.device-name-wrapper {
 			padding: 16px;
+		}
+
+		.device-name {
 			display: -webkit-box;
 			-webkit-line-clamp: 2;
 			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
 			overflow: hidden;
 		}
 	}

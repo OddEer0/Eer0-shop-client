@@ -1,12 +1,25 @@
 import { animate, motion, useMotionValue } from "framer-motion"
 import { FC, PropsWithChildren } from "react"
+import styled from "styled-components"
 
 import { Aside } from "../Aside"
+import { Footer } from "../Footer"
 import { Header } from "../Header"
 
 import { LayoutProvider } from "./LayoutProvider"
 
 export { LayoutContext } from "./LayoutProvider"
+
+const Wrapper = styled.div`
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	& > .main {
+		padding-top: 125px;
+		flex: 1;
+	}
+`
 
 export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	const x = useMotionValue(0)
@@ -28,10 +41,11 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<LayoutProvider closeHandle={closeHandle} openHandle={openHandle}>
 			<Aside style={{ x }}></Aside>
-			<motion.div style={{ x }}>
+			<Wrapper as={motion.div} style={{ x }}>
 				<Header />
-				<motion.main>{children}</motion.main>
-			</motion.div>
+				<main className="main">{children}</main>
+				<Footer />
+			</Wrapper>
 		</LayoutProvider>
 	)
 }

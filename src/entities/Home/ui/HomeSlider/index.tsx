@@ -43,7 +43,7 @@ export const HomeSlider: FC = () => {
 			) : data && data.length ? (
 				<Carousel {...settings}>
 					{data.map(home => (
-						<Image key={home.id} src={home.image} alt={home.title} width={1980} height={1080} />
+						<Image key={home.id} src={home.image} alt={home.title} width={1980} height={1080} priority />
 					))}
 				</Carousel>
 			) : (

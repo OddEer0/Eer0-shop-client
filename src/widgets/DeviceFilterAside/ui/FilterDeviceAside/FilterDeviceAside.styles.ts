@@ -59,4 +59,8 @@ export const $FilterDeviceAside = styled.aside`
 			}
 		}
 	}
+
+	.open-device-modal-btn {
+		margin-left: 50px;
+	}
 `

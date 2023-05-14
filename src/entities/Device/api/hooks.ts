@@ -12,6 +12,20 @@ export const useDeviceQuery = <T = IDevice$Infos>(id: string, select?: (state: I
 	})
 }
 
+export const useNewDevicesQuery = () => {
+	return useQuery(["device", "new"], () => deviceService.getNewDevices(), {
+		cacheTime: convertMinutesToMs(10),
+		staleTime: convertMinutesToMs(5)
+	})
+}
+
+export const useGameDevicesQuery = () => {
+	return useQuery(["device", "game"], () => deviceService.getDeviceByInfo("Игровой"), {
+		cacheTime: convertMinutesToMs(10),
+		staleTime: convertMinutesToMs(5)
+	})
+}
+
 export const useDeviceWithoutInfoQuery = <T = IDevice$Infos>(id: string, select?: (state: IDevice$Infos) => T) => {
 	return useQuery(["device", "without-info", id], () => deviceService.getOneDevice(id), {
 		select,

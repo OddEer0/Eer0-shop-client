@@ -2,7 +2,7 @@ import { AxiosInstance } from "axios"
 import { ParsedUrlQuery } from "querystring"
 
 import { api } from "../instance"
-import { IBuyDevicePost, IDevice$Infos, IDeviceAxiosResponse } from "../types"
+import { IBuyDevicePost, IDevice, IDevice$Infos, IDeviceAxiosResponse } from "../types"
 
 export class DeviceService {
 	readonly api: AxiosInstance
@@ -11,9 +11,29 @@ export class DeviceService {
 	}
 
 	async getFilteredAndSortedDevice(urlQuery: ParsedUrlQuery) {
-		const { data } = await this.api.get<IDeviceAxiosResponse>("device", {
+		const { data } = await this.api.get<IDeviceAxiosResponse>("device/filtered", {
 			params: { ...urlQuery, limit: 40, page: urlQuery.page ? urlQuery.page : "1" }
 		})
+		return data
+	}
+
+	async getNewDevices() {
+		const { data } = await this.api.get<IDevice[]>("device", {
+			params: {
+				limit: 8
+			}
+		})
+		return data
+	}
+
+	async getDeviceByInfo<T = IDevice[]>(info: string, limit = 8) {
+		const { data } = await this.api.get<T>("device", {
+			params: {
+				limit,
+				info
+			}
+		})
+
 		return data
 	}
 

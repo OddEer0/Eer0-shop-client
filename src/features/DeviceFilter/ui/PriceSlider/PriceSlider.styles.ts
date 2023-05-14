@@ -22,7 +22,8 @@ export const $PriceSlider = styled.div`
 
 	button {
 		margin-top: 20px;
-		margin-left: 40px;
+		margin-left: 20px;
+		width: 80%;
 	}
 
 	.slider {

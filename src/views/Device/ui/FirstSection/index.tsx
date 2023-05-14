@@ -21,7 +21,9 @@ export const FirstSection: FC<FirstSectionProps> = ({ id }) => {
 		<$FirstSection>
 			<DeviceImageSlider id={id} />
 			<div className="info">
-				<DeviceName id={id} className="device-name h3" />
+				<div className="device-name-wrapper">
+					<DeviceName id={id} className="device-name h3" />
+				</div>
 				<DeviceInfo id={id} />
 			</div>
 			<DevicePriceAside

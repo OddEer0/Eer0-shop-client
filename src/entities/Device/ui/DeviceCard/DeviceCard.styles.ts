@@ -15,8 +15,16 @@ export const $DeviceCard = styled.div`
 		flex: 1;
 		padding: 16px;
 
+		a {
+			overflow: hidden;
+		}
+
 		h5 {
-			margin-top: 20px;
+			width: 248px;
+			margin-top: 14px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 
 		.circle-list {
@@ -44,8 +52,8 @@ export const $DeviceCard = styled.div`
 `
 
 export const $DeviceSkeleton = styled.div`
-	width: 320px;
-	height: 520px;
+	width: 280px;
+	height: 480px;
 	border-radius: 15px;
 	display: inline-flex;
 	flex-direction: column;

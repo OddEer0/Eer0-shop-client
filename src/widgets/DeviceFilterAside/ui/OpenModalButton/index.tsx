@@ -10,7 +10,7 @@ export const OpenModalButton: FC<PropsWithChildren> = ({ children }) => {
 
 	return (
 		<>
-			<Button size="small" variant="contained" onClick={toggleHandler}>
+			<Button className="open-device-modal-btn" size="small" variant="contained" onClick={toggleHandler}>
 				{children}
 			</Button>
 			<FilterDeviceModal isShow={state} closeHandler={toggleHandler} />

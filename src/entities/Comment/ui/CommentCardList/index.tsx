@@ -30,7 +30,7 @@ export const CommentCardList: FC<CommentCardListProps> = ({ id, dislike: Dislike
 					/>
 				))
 			) : (
-				<p className="h3">Нет комментариев</p>
+				<p className="h3 not-comment">Нет комментариев</p>
 			)}
 		</$CommentCardList>
 	)

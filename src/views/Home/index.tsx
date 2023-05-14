@@ -1,13 +1,10 @@
 import { FC } from "react"
-import styled from "styled-components"
 
 import { Container, Meta } from "@/shared/ui"
 
 import { FirstSection } from "./sections/first"
-
-const Wrapper = styled.div`
-	height: 2000px;
-`
+import { SecondSection } from "./sections/second"
+import { ThirdSection } from "./sections/third"
 
 const HomeView: FC = () => {
 	return (
@@ -15,7 +12,8 @@ const HomeView: FC = () => {
 			<Meta title="Eer0 Shop | Главная" />
 			<Container>
 				<FirstSection />
-				<Wrapper />
+				<SecondSection />
+				<ThirdSection />
 			</Container>
 		</>
 	)
