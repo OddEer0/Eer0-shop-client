@@ -16,6 +16,7 @@ const Wrapper = styled.div`
 	flex-direction: column;
 
 	& > .main {
+		min-height: 860pxs;
 		padding-top: 125px;
 		flex: 1;
 	}

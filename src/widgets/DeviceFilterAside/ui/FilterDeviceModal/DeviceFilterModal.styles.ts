@@ -17,5 +17,6 @@ export const $Modal = styled(Modal)`
 	.modal-main {
 		width: 85vw;
 		height: 85vh;
+		overflow: auto;
 	}
 `
