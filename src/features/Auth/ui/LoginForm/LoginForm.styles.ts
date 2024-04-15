@@ -7,10 +7,10 @@ export const $Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-`
 
-export const $Input = styled.input`
-	margin: 20px 0;
+	& > .input {
+		margin: 20px 0;
+	}
 `
 
 export const $Button = styled(Button)`
@@ -21,7 +21,7 @@ export const $FormWrapper = styled.div`
 	padding: 40px;
 	border-radius: 15px;
 	box-shadow: ${({ theme }) => theme.base.boxShadow.primary};
-	background: ${({ theme }) => theme.base.bg.primary_60};
+	background: ${({ theme }) => theme.base.bg.primary_40};
 `
 
 export const $Title = styled.h2`

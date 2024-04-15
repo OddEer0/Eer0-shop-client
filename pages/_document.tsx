@@ -37,10 +37,14 @@ export default class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
 						rel="stylesheet"
 					></link>
+					<link rel="manifest" href="/manifest.json" />
+					<link rel="apple-touch-icon" href="/icons/icon-192x192.png"></link>
+					<meta name="theme-color" content="#FA1F60" />
+					<link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
 				</Head>
 				<body>
 					<Main />
-					<div id='myportal' />
+					<div id="myportal" />
 					<NextScript />
 				</body>
 			</Html>

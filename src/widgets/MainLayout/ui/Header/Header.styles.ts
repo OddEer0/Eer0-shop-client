@@ -1,78 +1,70 @@
 import styled from "styled-components"
 
+import { ToggleThemeIcon } from "@/features/ThemeAction"
+
 export const $Header = styled.header`
 	position: fixed;
-	z-index: 1000;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: none;
-	backdrop-filter: saturate(180%) blur(10px);
+	user-select: none;
 `
 
-export const $FirstSection = styled.section`
-	padding: 0 15px;
-	height: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+export const $ToggleThemeIcon = styled(ToggleThemeIcon)`
+	height: 32px;
+`
 
-	.header {
-		&__left,
-		&__right {
+export const $FirstSection = styled.div`
+	width: 100%;
+	background: ${({ theme }) => theme.base.bg.tertiary_40};
+	color: ${({ theme }) => theme.base.text.tertiary_40};
+
+	& > .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 50px;
+
+		& > .left-wrapper {
 			flex: 1;
 			display: flex;
 			align-items: center;
 		}
-		&__right {
-			justify-content: end;
-		}
-		&__contact {
-			display: inline-block;
-			font-weight: 600;
-			margin-left: 6vw;
-		}
-		&__category {
+
+		& > .right-wrapper {
+			flex: 1;
 			display: flex;
 			align-items: center;
-		}
-		&__category-icon {
-			font-size: 24px;
-			margin-right: 10px;
-			margin-left: -26px;
-		}
-		&__search {
-			margin-left: 35px;
+			justify-content: flex-end;
 		}
 	}
 `
 
 export const $SecondSection = styled.section`
-	padding: 0 15px;
-	height: 75px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	width: 100%;
+	background: none;
+	backdrop-filter: saturate(180%) blur(10px);
+	& > .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 60px;
 
-	.nav {
-		&__list {
-			display: flex;
-			height: 100%;
-		}
-
-		&__link {
+		& > .right-wrapper {
 			display: flex;
 			align-items: center;
-			justify-content: center;
-			padding: 0 45px;
-			border-radius: 12px;
+			margin-right: 2vw;
 
-			&--active {
-				background: ${({ theme }) => theme.base.bg.quaternary_50};
-				color: ${({ theme }) => theme.base.text.secondary_50};
-			}
-			&:not(:last-child) {
-				margin-right: 15px;
+			button {
+				margin-right: 35px;
+				display: flex;
+				align-items: center;
+
+				.icon {
+					margin-right: 8px;
+					font-size: 20px;
+				}
 			}
 		}
 	}

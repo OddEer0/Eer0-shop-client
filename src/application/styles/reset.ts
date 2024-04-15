@@ -1,4 +1,6 @@
-export const resetStyle = `
+import { css } from "styled-components"
+
+export const resetStyle = css`
 	*,
 	*::after,
 	*::before {
@@ -71,7 +73,7 @@ export const resetStyle = `
 	}
 
 	button,
-	input[type='submit'] {
+	input[type="submit"] {
 		display: inline-block;
 		box-shadow: none;
 		background-color: transparent;
@@ -97,5 +99,15 @@ export const resetStyle = `
 
 	legend {
 		display: block;
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"] {
+		-moz-appearance: textfield;
 	}
 `

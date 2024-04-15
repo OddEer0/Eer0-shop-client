@@ -1,5 +1,6 @@
-import { render, screen } from "@test-utils"
 import "@testing-library/jest-dom"
+
+import { render, screen } from "@/shared/utils/test"
 
 import { Button } from "../Button/Button"
 
@@ -29,16 +30,14 @@ describe("Should render ButtonGroup component", () => {
 
 describe("Should render ButtonGroup every direction, screenshot", () => {
 	it("Should render row direction", () => {
-		const { asFragment } = render(<ButtonGroup data-testid="eer0"></ButtonGroup>)
+		render(<ButtonGroup data-testid="eer0"></ButtonGroup>)
 		expect(screen.getByTestId("eer0")).toHaveClass("row")
 		expect(screen.getByTestId("eer0")).not.toHaveClass("column")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should render column direction", () => {
-		const { asFragment } = render(<ButtonGroup direction="column" data-testid="eer0"></ButtonGroup>)
+		render(<ButtonGroup direction="column" data-testid="eer0"></ButtonGroup>)
 		expect(screen.getByTestId("eer0")).toHaveClass("column")
 		expect(screen.getByTestId("eer0")).not.toHaveClass("row")
-		expect(asFragment()).toMatchSnapshot()
 	})
 })

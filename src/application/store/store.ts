@@ -1,13 +1,25 @@
-import { configureStore } from "@reduxjs/toolkit"
-import { createWrapper } from "next-redux-wrapper"
+import { useContext } from "react"
+import { useStore as useZustandStore } from "zustand"
 
-import { rootReducer } from "./rootReducer"
+import { ThemeStateTypes, themeSlice } from "@/entities/Theme"
 
-export const makeStore = () => {
-	return configureStore({
-		reducer: rootReducer,
-		devTools: process.env.NODE_ENV === "development"
-	})
+import { createStore } from "@/shared/utils"
+
+import { appStoreContext } from "./store.provider"
+
+type AppStoreTypes = ThemeStateTypes
+
+export const initializeStore = (preloadedState: Partial<AppStoreTypes> = {}) => {
+	return createStore<AppStoreTypes>((...a) => ({
+		...themeSlice(...a),
+		...preloadedState
+	}))
 }
 
-export const wrapper = createWrapper<AppStore>(makeStore, { debug: Boolean(process.env.DEBUG) })
+export const useAppStore = <T>(selector: (state: AppStoreTypes) => T) => {
+	const store = useContext(appStoreContext)
+
+	if (!store) throw new Error("Store is missing the provider")
+
+	return useZustandStore(store, selector)
+}

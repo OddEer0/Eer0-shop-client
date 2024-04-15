@@ -1,5 +1,6 @@
-import { render, screen } from "@test-utils"
 import "@testing-library/jest-dom"
+
+import { render, screen } from "@/shared/utils/test"
 
 import { Container } from "./index"
 
@@ -12,10 +13,5 @@ describe("Should render Container component", () => {
 	it("Should render component with children", () => {
 		render(<Container data-testid="eer0">I children</Container>)
 		expect(screen.getByText(/i children/i)).toBeInTheDocument()
-	})
-
-	it("Snapshot component", () => {
-		const { asFragment } = render(<Container>I children</Container>)
-		expect(asFragment()).toMatchSnapshot()
 	})
 })

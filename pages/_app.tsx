@@ -1,21 +1,26 @@
+import { NextPage } from "next"
 import type { AppProps } from "next/app"
-import { Provider } from "react-redux"
+import { ReactElement, ReactNode } from "react"
+import "react-datepicker/dist/react-datepicker.css"
+import "react-toastify/dist/ReactToastify.css"
+import "simplebar-react/dist/simplebar.min.css"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
 
 import { AppProvider } from "@/app/providers"
-import { wrapper } from "@/app/store/store"
-import { GlobalStyle } from "@/app/styles"
 
-const App = ({ Component, ...rest }: AppProps) => {
-	const { store, props } = wrapper.useWrappedStore(rest)
-
-	return (
-		<Provider store={store}>
-			<AppProvider>
-				<GlobalStyle />
-				<Component {...props.pageProps} />
-			</AppProvider>
-		</Provider>
-	)
+type NextPageWithLayout = NextPage & {
+	getLayout?: (page: ReactElement) => ReactNode
 }
 
-export default App
+type AppPropsWithLayout = AppProps & {
+	Component: NextPageWithLayout
+}
+
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+	const getLayout = Component.getLayout ?? (page => page)
+
+	return <AppProvider pageProps={pageProps}>{getLayout(<Component {...pageProps} />)}</AppProvider>
+}
+
+export default MyApp

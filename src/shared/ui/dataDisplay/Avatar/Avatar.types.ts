@@ -15,4 +15,6 @@ export interface AvatarProps extends InputHTMLAttributes<HTMLInputElement> {
 	variant?: VariantType
 	defaultAvatar?: Nullable<string>
 	className?: string
+	width?: number
+	height?: number
 }

@@ -1,7 +1,13 @@
-import { FC } from "react"
+import { ReactElement } from "react"
 
-const Favorites: FC = () => {
-	return <div></div>
+import FavoritesView from "@/views/Favorites"
+
+import { MainLayout } from "@/widgets/MainLayout"
+
+const Favorites = () => {
+	return <FavoritesView />
 }
+
+Favorites.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default Favorites

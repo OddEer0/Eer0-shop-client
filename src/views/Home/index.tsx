@@ -1,25 +1,22 @@
-import Head from "next/head"
 import { FC } from "react"
-import styled from "styled-components"
 
-import { Portal } from "@/shared/ui"
+import { Container, Meta } from "@/shared/ui"
 
-import { MainLayout } from "@/widgets/MainLayout"
+import { FirstSection } from "./sections/first"
+import { SecondSection } from "./sections/second"
+import { ThirdSection } from "./sections/third"
 
-const Wrapper = styled.div`
-	height: 2000px;
-`
-
-export const HomeView: FC = () => {
+const HomeView: FC = () => {
 	return (
-		<MainLayout>
-			<Head>
-				<title>Create Next App</title>
-			</Head>
-			<Wrapper></Wrapper>
-			<Portal>
-				<div className="">sdsd</div>
-			</Portal>
-		</MainLayout>
+		<>
+			<Meta title="Eer0 Shop | Главная" />
+			<Container>
+				<FirstSection />
+				<SecondSection />
+				<ThirdSection />
+			</Container>
+		</>
 	)
 }
+
+export default HomeView

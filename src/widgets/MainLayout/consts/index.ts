@@ -1,1 +1,0 @@
-export { navList } from "./navList"

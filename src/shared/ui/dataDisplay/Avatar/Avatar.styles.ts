@@ -81,7 +81,7 @@ export const AvatarWrapper = styled.div<StyledProps>`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: rgba(0, 0, 0, 0.2);
+		background: rgba(0, 0, 0, 0.4);
 		cursor: pointer;
 		transition: opacity 0.2s ease-in-out;
 		color: #ffffff;

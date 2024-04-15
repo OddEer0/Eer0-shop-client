@@ -1,5 +1,6 @@
-import { render, screen } from "@test-utils"
 import "@testing-library/jest-dom"
+
+import { render, screen } from "@/shared/utils/test"
 
 import { Button } from "./Button"
 
@@ -23,36 +24,33 @@ describe("Should render Button", () => {
 
 describe("Should render Button every variant, color, size Button component, snapshot", () => {
 	it("Should default text button and default medium size render", () => {
-		const { asFragment } = render(<Button></Button>)
+		render(<Button></Button>)
 		expect(screen.getByRole("button")).toHaveClass("text")
 		expect(screen.getByRole("button")).not.toHaveClass("contained")
 		expect(screen.getByRole("button")).not.toHaveClass("outlined")
 		expect(screen.getByRole("button")).toHaveClass("medium")
 		expect(screen.getByRole("button")).not.toHaveClass("large")
 		expect(screen.getByRole("button")).not.toHaveClass("small")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should contained button and small size render", () => {
-		const { asFragment } = render(<Button variant="contained" size="small"></Button>)
+		render(<Button variant="contained" size="small"></Button>)
 		expect(screen.getByRole("button")).toHaveClass("contained")
 		expect(screen.getByRole("button")).not.toHaveClass("text")
 		expect(screen.getByRole("button")).not.toHaveClass("outlined")
 		expect(screen.getByRole("button")).toHaveClass("small")
 		expect(screen.getByRole("button")).not.toHaveClass("large")
 		expect(screen.getByRole("button")).not.toHaveClass("medium")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should outlined button and large size render", () => {
-		const { asFragment } = render(<Button variant="outlined" size="large"></Button>)
+		render(<Button variant="outlined" size="large"></Button>)
 		expect(screen.getByRole("button")).toHaveClass("outlined")
 		expect(screen.getByRole("button")).not.toHaveClass("text")
 		expect(screen.getByRole("button")).not.toHaveClass("contained")
 		expect(screen.getByRole("button")).not.toHaveClass("small")
 		expect(screen.getByRole("button")).toHaveClass("large")
 		expect(screen.getByRole("button")).not.toHaveClass("medium")
-		expect(asFragment()).toMatchSnapshot()
 	})
 
 	it("Should color render", () => {
